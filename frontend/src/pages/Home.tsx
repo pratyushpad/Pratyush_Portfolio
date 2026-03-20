@@ -90,7 +90,7 @@ export default function Home() {
     <PageTransition>
       <main id="main-content" className="max-w-6xl mx-auto px-6 pt-24 md:pt-32 pb-28 md:pb-20">
 
-        {/* ── Hero ─────────────────────────────────────────────── */}
+        {/* Hero */}
         <section className="min-h-[82vh] flex flex-col justify-center mb-24 relative overflow-hidden">
           <div
             className="absolute pointer-events-none"
@@ -219,7 +219,7 @@ export default function Home() {
           </motion.div>
         </section>
 
-        {/* ── Projects with thumbnails + animated border ──────── */}
+        {/* Projects */}
         <FadeUp>
           <section id="projects" className="mb-28 scroll-mt-24">
             <p className="font-mono text-xs mb-2" style={{ color: '#3b82f6' }}>SELECTED WORK</p>
@@ -346,7 +346,7 @@ export default function Home() {
           </section>
         </FadeUp>
 
-        {/* ── Skills ───────────────────────────────────────────── */}
+        {/* Skills */}
         <FadeUp>
           <section className="mb-28">
             <p className="font-mono text-xs mb-2" style={{ color: '#3b82f6' }}>TECH STACK</p>
@@ -385,7 +385,7 @@ export default function Home() {
           </section>
         </FadeUp>
 
-        {/* ── Contact ──────────────────────────────────────────── */}
+        {/* Contact */}
         <FadeUp>
           <section
             className="rounded-2xl p-10 md:p-14 text-center relative overflow-hidden"

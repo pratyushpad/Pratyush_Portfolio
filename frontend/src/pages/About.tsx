@@ -5,7 +5,7 @@ import FadeUp from '../components/animations/FadeUp'
 import GlowCard from '../components/animations/GlowCard'
 import StaggerContainer, { staggerItem } from '../components/animations/StaggerContainer'
 
-// ── Animated counter component ──────────────────────────────────
+// Animated counter component
 function AnimatedCounter({ value, suffix = '', label }: { value: number; suffix?: string; label: string }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-40px' })
@@ -41,7 +41,7 @@ function AnimatedCounter({ value, suffix = '', label }: { value: number; suffix?
   )
 }
 
-// ── Static counter for non-numeric stats ────────────────────────
+// Static counter for non-numeric stats
 function StaticStat({ value, label }: { value: string; label: string }) {
   return (
     <motion.div
@@ -63,7 +63,7 @@ function StaticStat({ value, label }: { value: string; label: string }) {
   )
 }
 
-// ── Data ─────────────────────────────────────────────────────────
+// Data
 const experiences = [
   {
     role: 'Undergraduate Mentor',
