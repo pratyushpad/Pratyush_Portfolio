@@ -8,7 +8,7 @@ const pages = [
   { label: 'Projects', path: '/projects', keywords: 'projects work portfolio' },
   { label: 'Emotion Detection', path: '/projects/emotion-detection', keywords: 'fer2013 cnn vgg16 emotion detection' },
   { label: 'Language Model', path: '/projects/fake-news', keywords: 'rnn lstm character language model text generation' },
-  { label: 'API Demo', path: '/api-demo', keywords: 'api demo image caption pixabay openrouter' },
+
   { label: 'Resume', path: '/Pratyush_Padhy_Resume.pdf', keywords: 'resume cv pdf download' },
   { label: 'GitHub', path: 'https://github.com/Pratyushpad27', keywords: 'github code source' },
   { label: 'LinkedIn', path: 'https://www.linkedin.com/in/pratyush-padhy-b7017a269/', keywords: 'linkedin social connect' },

@@ -13,7 +13,7 @@ const About = lazy(() => import('./pages/About'))
 const Projects = lazy(() => import('./pages/Projects'))
 const EmotionDetection = lazy(() => import('./pages/EmotionDetection'))
 const FakeNews = lazy(() => import('./pages/FakeNews'))
-const ImageAPI = lazy(() => import('./pages/ImageAPI'))
+
 
 // AnimatePresence needs to be inside the Router to access location
 function AnimatedRoutes() {
@@ -26,7 +26,7 @@ function AnimatedRoutes() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/emotion-detection" element={<EmotionDetection />} />
         <Route path="/projects/fake-news" element={<FakeNews />} />
-        <Route path="/api-demo" element={<ImageAPI />} />
+
         <Route path="*" element={
           <main id="main-content" className="max-w-4xl mx-auto px-6 pt-28 md:pt-36 pb-28 md:pb-20 text-center">
             <p className="font-mono text-sm mb-4" style={{ color: '#3b82f6' }}>404</p>
