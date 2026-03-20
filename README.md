@@ -6,8 +6,7 @@ Personal portfolio showcasing ML/AI projects, built with React, TypeScript, and 
 
 ## Tech Stack
 
-**Frontend:** React 19 · TypeScript · Vite · Tailwind CSS · Framer Motion
-**Deployment:** Netlify
+React 19 · TypeScript · Vite · Tailwind CSS · Framer Motion
 
 ## Features
 
@@ -23,7 +22,7 @@ Personal portfolio showcasing ML/AI projects, built with React, TypeScript, and 
 ```
 frontend/
 ├── src/
-│   ├── pages/          # Home, About, Projects, EmotionDetection, FakeNews
+│   ├── pages/          # Home, About, Projects, EmotionDetection, LanguageModel
 │   ├── components/     # Navbar, Footer, CommandPalette, ErrorBoundary, Lightbox
 │   └── components/animations/  # FadeUp, GlowCard, StaggerContainer, PageTransition
 └── public/             # Static assets, resume PDF, project images
@@ -34,12 +33,12 @@ frontend/
 ```bash
 cd frontend
 npm install
-npm run dev          # starts on http://localhost:5173
+npm run dev
 ```
 
 ## Deployment
 
-**Netlify** (frontend):
+Hosted on **Netlify**:
 - Build command: `npm run build`
 - Publish directory: `dist`
 - Base directory: `frontend`

@@ -20,7 +20,7 @@ const projects = [
     title: 'Character-Level Language Model',
     description: 'Trained RNN and LSTM on 200,000 characters with temperature sampling controlling creativity vs coherence in generated text.',
     tech: ['Python', 'TensorFlow', 'RNN', 'LSTM'],
-    path: '/projects/fake-news',
+    path: '/projects/language-model',
     github: 'https://github.com/Pratyushpad27/char-level-language-model',
     number: '02',
     thumbnail: '/fakenews/training_loss.png',
@@ -31,7 +31,7 @@ const skillGroups: Record<string, string[]> = {
   'Languages': ['Python', 'Java', 'R', 'C++', 'TypeScript', 'JavaScript'],
   'ML / AI': ['TensorFlow', 'Keras', 'CNNs', 'LSTMs', 'scikit-learn'],
   'Libraries': ['numpy', 'Pandas', 'Matplotlib'],
-  'Web': ['React', 'Node.js', 'Express', 'Tailwind CSS'],
+  'Web': ['React', 'Tailwind CSS', 'HTML', 'CSS'],
   'Tools': ['Git', 'VS Code', 'Google Colab', 'Vite'],
 }
 

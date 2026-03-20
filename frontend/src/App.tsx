@@ -25,7 +25,7 @@ function AnimatedRoutes() {
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/emotion-detection" element={<EmotionDetection />} />
-        <Route path="/projects/fake-news" element={<FakeNews />} />
+        <Route path="/projects/language-model" element={<FakeNews />} />
 
         <Route path="*" element={
           <main id="main-content" className="max-w-4xl mx-auto px-6 pt-28 md:pt-36 pb-28 md:pb-20 text-center">

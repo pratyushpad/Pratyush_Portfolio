@@ -116,7 +116,7 @@ const skillGroups: Record<string, string[]> = {
   'Languages': ['Python', 'Java', 'R', 'C++', 'TypeScript', 'JavaScript', 'HTML', 'CSS'],
   'ML / AI': ['TensorFlow', 'Keras', 'CNNs', 'LSTMs', 'scikit-learn', 'Machine Learning'],
   'Libraries': ['numpy', 'Pandas', 'Matplotlib', 'OS', 'JSON'],
-  'Web': ['React', 'Node.js', 'Express', 'Tailwind CSS'],
+  'Web': ['React', 'Tailwind CSS', 'HTML', 'CSS'],
   'Tools': ['Git', 'VS Code', 'PyCharm', 'Google Colab', 'Vite'],
 }
 

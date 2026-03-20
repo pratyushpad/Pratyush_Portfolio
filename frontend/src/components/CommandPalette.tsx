@@ -7,7 +7,7 @@ const pages = [
   { label: 'About', path: '/about', keywords: 'about bio education experience' },
   { label: 'Projects', path: '/projects', keywords: 'projects work portfolio' },
   { label: 'Emotion Detection', path: '/projects/emotion-detection', keywords: 'fer2013 cnn vgg16 emotion detection' },
-  { label: 'Language Model', path: '/projects/fake-news', keywords: 'rnn lstm character language model text generation' },
+  { label: 'Language Model', path: '/projects/language-model', keywords: 'rnn lstm character language model text generation' },
 
   { label: 'Resume', path: '/Pratyush_Padhy_Resume.pdf', keywords: 'resume cv pdf download' },
   { label: 'GitHub', path: 'https://github.com/Pratyushpad27', keywords: 'github code source' },

@@ -221,7 +221,7 @@ export default function EmotionDetection() {
               <p className="text-white font-semibold">Character-Level Language Model</p>
             </div>
             <Link
-              to="/projects/fake-news"
+              to="/projects/language-model"
               className="px-5 py-2.5 rounded-lg font-medium text-white text-sm transition-all duration-200 hover:opacity-90 flex-shrink-0"
               style={{ background: 'linear-gradient(135deg, #3b82f6, #6366f1)' }}
             >

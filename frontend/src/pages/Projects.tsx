@@ -21,7 +21,7 @@ const projects = [
     title: 'Character-Level Language Model',
     description: 'An RNN and LSTM trained character-by-character on 200,000 characters of text — building a generative language model from scratch. Uses a 70-character vocabulary, sliding window of 40 characters creating 66,000+ training pairs, and temperature sampling to control how creative vs coherent the output is.',
     tech: ['Python', 'TensorFlow', 'Keras', 'RNN', 'LSTM', 'NLP'],
-    path: '/projects/fake-news',
+    path: '/projects/language-model',
     github: 'https://github.com/Pratyushpad27/char-level-language-model',
     outcome: 'LSTM outperformed SimpleRNN on coherent text generation',
   },
