@@ -1,29 +1,55 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import PageTransition from '../components/animations/PageTransition'
-import FadeUp from '../components/animations/FadeUp'
-import GlowCard from '../components/animations/GlowCard'
+
+function RevealSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-80px' })
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  )
+}
 
 const projects = [
   {
     number: '01',
     title: 'FER2013 Emotion Detection',
+    subtitle: 'Deep Learning · Computer Vision',
     description: 'A systematic comparison of 4 deep learning architectures on 35,000+ facial images across 7 emotion classes. Evaluated MLP (raw pixels), MLP (geometric landmarks), CNN, and VGG16 transfer learning — demonstrating how model complexity translates to accuracy in a genuinely hard problem where human accuracy is only ~65%.',
     tech: ['Python', 'TensorFlow', 'Keras', 'CNN', 'VGG16', 'OpenCV'],
     path: '/projects/emotion-detection',
     github: 'https://github.com/Pratyushpad27/fer2013-emotion-detection',
     demo: 'https://emotion-detec.netlify.app/',
     outcome: 'VGG16 transfer learning outperformed all baselines',
+    stats: [
+      { label: 'Images', value: '35K+' },
+      { label: 'Models', value: '4' },
+      { label: 'Classes', value: '7' },
+    ],
   },
   {
     number: '02',
     title: 'Character-Level Language Model',
+    subtitle: 'NLP · Text Generation',
     description: 'An RNN and LSTM trained character-by-character on 200,000 characters of text — building a generative language model from scratch. Uses a 70-character vocabulary, sliding window of 40 characters creating 66,000+ training pairs, and temperature sampling to control how creative vs coherent the output is.',
     tech: ['Python', 'TensorFlow', 'Keras', 'RNN', 'LSTM', 'NLP'],
     path: '/projects/language-model',
     github: 'https://github.com/Pratyushpad27/char-level-language-model',
     outcome: 'LSTM outperformed SimpleRNN on coherent text generation',
+    stats: [
+      { label: 'Characters', value: '200K' },
+      { label: 'Vocab', value: '70' },
+      { label: 'Pairs', value: '66K+' },
+    ],
   },
 ]
 
@@ -32,81 +58,111 @@ export default function Projects() {
 
   return (
     <PageTransition>
-      <main id="main-content" className="max-w-4xl mx-auto px-6 pt-28 md:pt-36 pb-28 md:pb-20">
+      <main id="main-content" className="relative z-10 max-w-5xl mx-auto px-6 pt-28 md:pt-36 pb-28 md:pb-20">
 
-        <FadeUp>
-          <p className="font-mono text-xs mb-2" style={{ color: '#3b82f6' }}>MY WORK</p>
-          <h1 className="text-4xl font-bold text-white mb-4">Projects</h1>
-          <p className="text-gray-500 mb-12">Deep learning and ML models built from scratch.</p>
-        </FadeUp>
+        {/* ═══ HEADER ═══ */}
+        <RevealSection>
+          <div className="flex items-center gap-4 mb-16">
+            <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#3b82f6' }}>00</span>
+            <span style={{ width: 40, height: 1, background: 'rgba(59,130,246,0.4)' }} />
+            <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#475569' }}>Projects</span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-light text-white mb-3" style={{ letterSpacing: '-0.02em' }}>
+            Selected <span className="font-semibold">work</span>.
+          </h1>
+          <p className="text-sm mb-16" style={{ color: '#475569' }}>Deep learning and ML models built from scratch.</p>
+        </RevealSection>
 
-        <div className="flex flex-col gap-6">
-          {projects.map((project, i) => (
-            <FadeUp key={project.title} delay={i * 0.1}>
-              <GlowCard className="p-8">
-                <div className="mb-4">
-                  <p className="font-mono text-xs mb-1" style={{ color: '#3b82f6' }}>
-                    Project {project.number}
-                  </p>
-                  <h2 className="text-2xl font-bold text-white mb-3">{project.title}</h2>
-                  {/* Outcome badge */}
-                  <span
-                    className="text-xs px-3 py-1.5 rounded-full font-mono hidden md:inline-block"
-                    style={{ backgroundColor: 'rgba(34,197,94,0.1)', color: '#4ade80', border: '1px solid rgba(34,197,94,0.2)' }}
-                  >
-                    ✓ {project.outcome}
-                  </span>
+        {/* ═══ PROJECT LIST ═══ */}
+        {projects.map((project) => (
+          <RevealSection key={project.title}>
+            <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+              <div className="py-12">
+                {/* Meta row */}
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="font-mono text-xs" style={{ color: '#3b82f6' }}>{project.number}</span>
+                  <span style={{ width: 24, height: 1, background: 'rgba(59,130,246,0.4)' }} />
+                  <span className="font-mono text-xs" style={{ color: '#475569' }}>{project.subtitle}</span>
                 </div>
 
-                <p className="text-gray-400 leading-relaxed mb-6">{project.description}</p>
+                {/* Title & description */}
+                <Link to={project.path} className="group block mb-8">
+                  <h2
+                    className="text-3xl font-semibold text-white mb-4 group-hover:text-blue-400 transition-colors duration-200"
+                    style={{ letterSpacing: '-0.01em' }}
+                  >
+                    {project.title}
+                  </h2>
+                  <p className="text-sm leading-relaxed max-w-3xl" style={{ color: '#94a3b8' }}>
+                    {project.description}
+                  </p>
+                </Link>
 
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {project.tech.map((t) => (
-                    <motion.span
-                      key={t}
-                      className="text-xs px-3 py-1 rounded font-mono cursor-default"
-                      style={{ backgroundColor: 'rgba(29,78,216,0.15)', color: '#60a5fa', border: '1px solid rgba(29,78,216,0.4)' }}
-                      whileHover={{ scale: 1.05, backgroundColor: 'rgba(29,78,216,0.25)' }}
-                      transition={{ duration: 0.15 }}
-                    >
-                      {t}
-                    </motion.span>
+                {/* Stats */}
+                <div className="flex gap-10 mb-8 pb-8" style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
+                  {project.stats.map((stat) => (
+                    <div key={stat.label}>
+                      <p className="text-xl font-semibold text-white">{stat.value}</p>
+                      <p className="text-xs font-mono mt-1" style={{ color: '#475569' }}>{stat.label}</p>
+                    </div>
                   ))}
                 </div>
 
-                <div className="flex flex-wrap gap-3">
-                  <Link
-                    to={project.path}
-                    className="px-5 py-2 rounded-lg font-medium text-white text-sm transition-all duration-200 hover:opacity-90 hover:scale-[1.02]"
-                    style={{ background: 'linear-gradient(135deg, #3b82f6, #6366f1)' }}
-                  >
-                    Explore Project →
-                  </Link>
-                  {'demo' in project && project.demo && (
+                {/* Outcome */}
+                <p className="text-xs font-mono mb-6" style={{ color: '#94a3b8' }}>
+                  <span style={{ color: '#3b82f6' }}>Result:</span> {project.outcome}
+                </p>
+
+                {/* Tech + links */}
+                <div className="flex flex-wrap items-center justify-between gap-6">
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((t) => (
+                      <motion.span
+                        key={t}
+                        className="text-xs px-3 py-1.5 font-mono cursor-default"
+                        style={{ color: '#64748b', border: '1px solid rgba(255,255,255,0.08)' }}
+                        whileHover={{ color: '#fff', borderColor: 'rgba(59,130,246,0.4)' }}
+                      >
+                        {t}
+                      </motion.span>
+                    ))}
+                  </div>
+
+                  <div className="flex gap-4 items-center">
+                    {'demo' in project && project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs font-mono transition-colors hover:text-white"
+                        style={{ color: '#4ade80' }}
+                      >
+                        Live demo ↗
+                      </a>
+                    )}
+                    <Link
+                      to={project.path}
+                      className="px-6 py-2.5 text-sm font-medium text-white transition-all duration-200 hover:bg-blue-500/20"
+                      style={{ border: '1px solid rgba(59,130,246,0.5)', background: 'rgba(59,130,246,0.08)' }}
+                    >
+                      Explore →
+                    </Link>
                     <a
-                      href={project.demo}
+                      href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-5 py-2 rounded-lg font-medium text-sm transition-all duration-200 hover:opacity-90 hover:scale-[1.02] text-white"
-                      style={{ background: 'linear-gradient(135deg, #10b981, #059669)' }}
+                      className="text-xs font-mono transition-colors hover:text-white"
+                      style={{ color: '#475569' }}
                     >
-                      Live Demo ↗
+                      source ↗
                     </a>
-                  )}
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-5 py-2 rounded-lg font-medium text-sm transition-all duration-200 hover:text-white"
-                    style={{ border: '1px solid rgba(255,255,255,0.08)', color: '#9ca3af' }}
-                  >
-                    GitHub ↗
-                  </a>
+                  </div>
                 </div>
-              </GlowCard>
-            </FadeUp>
-          ))}
-        </div>
+              </div>
+            </div>
+          </RevealSection>
+        ))}
+        <div style={{ height: 1, background: 'rgba(255,255,255,0.06)' }} />
 
       </main>
     </PageTransition>

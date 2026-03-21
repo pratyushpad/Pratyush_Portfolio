@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 import CommandPalette from './components/CommandPalette'
 import ScrollToTop from './components/ScrollToTop'
 import ErrorBoundary from './components/ErrorBoundary'
+import GridBackground from './components/animations/GridBackground'
 
 // Lazy-load pages so each route is its own JS chunk
 const Home = lazy(() => import('./pages/Home'))
@@ -46,6 +47,7 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen" style={{ backgroundColor: '#0a0a0f' }}>
+        <GridBackground />
         <ScrollToTop />
         <CommandPalette />
         <Navbar />
