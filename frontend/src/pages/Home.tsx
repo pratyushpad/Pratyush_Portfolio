@@ -29,7 +29,7 @@ const projects = [
     github: 'https://github.com/Pratyushpad27/fer2013-emotion-detection',
     demo: 'https://face-pulse.netlify.app/',
     number: '01',
-    thumbnail: '/emotion/cnn_confusion_matrix.png',
+    thumbnail: '/emotion/face_pulse_preview.png',
   },
   {
     title: 'Character-Level Language Model',
@@ -330,14 +330,6 @@ export default function Home() {
 
               {/* Left — main text */}
               <motion.div variants={stagger.container} initial="hidden" animate="show">
-
-                {/* Available badge */}
-                <motion.div variants={stagger.item} className="inline-flex items-center gap-2 px-3 py-1.5 mb-10"
-                  style={{ background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.2)', borderRadius: 20 }}
-                >
-                  <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#10b981', boxShadow: '0 0 6px #10b981' }} />
-                  <span className="font-mono text-xs" style={{ color: '#10b981' }}>Open to ML &amp; Software Internships</span>
-                </motion.div>
 
                 {/* Name — single h1, inline gradient on last name */}
                 <motion.h1
@@ -753,7 +745,7 @@ export default function Home() {
                 className="px-8 py-3.5 text-sm font-medium text-white transition-all duration-200 hover:bg-blue-500/25 active:scale-95"
                 style={{ border: '1px solid rgba(59,130,246,0.5)', background: 'rgba(59,130,246,0.1)', borderRadius: 6 }}
               >
-                ppadhy@uci.edu ↗
+                Email ↗
               </a>
               <a
                 href="https://www.linkedin.com/in/pratyush-padhy-b7017a269/"

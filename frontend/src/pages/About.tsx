@@ -126,10 +126,6 @@ export default function About() {
                   <h1 className="text-3xl font-light text-white" style={{ letterSpacing: '-0.02em' }}>
                     Pratyush <span className="font-semibold">Padhy</span>
                   </h1>
-                  <div className="flex items-center gap-2 mt-1">
-                    <span className="w-1.5 h-1.5 bg-green-400 animate-pulse" style={{ borderRadius: '1px' }} />
-                    <span className="text-xs font-mono" style={{ color: '#475569' }}>Open to ML &amp; Software Internships</span>
-                  </div>
                 </div>
               </div>
               <p className="text-sm leading-relaxed mb-6" style={{ color: '#94a3b8' }}>
