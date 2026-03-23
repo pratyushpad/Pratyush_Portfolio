@@ -23,7 +23,7 @@ const EmailIcon = () => (
 const links = [
   { label: 'GitHub', href: 'https://github.com/Pratyushpad27', icon: <GitHubIcon />, external: true },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/pratyush-padhy-b7017a269/', icon: <LinkedInIcon />, external: true },
-  { label: 'Email', href: 'mailto:pratyushpadhy007@gmail.com', icon: <EmailIcon />, external: false },
+  { label: 'Email', href: 'mailto:ppadhy@uci.edu', icon: <EmailIcon />, external: false },
 ]
 
 export default function Footer() {

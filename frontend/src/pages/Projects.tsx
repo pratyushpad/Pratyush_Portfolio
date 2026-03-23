@@ -1,34 +1,19 @@
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 import PageTransition from '../components/animations/PageTransition'
-
-function RevealSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-80px' })
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  )
-}
+import RevealSection from '../components/animations/RevealSection'
 
 const projects = [
   {
     number: '01',
-    title: 'FER2013 Emotion Detection',
+    title: 'Face Pulse',
     subtitle: 'Deep Learning · Computer Vision',
     description: 'A systematic comparison of 4 deep learning architectures on 35,000+ facial images across 7 emotion classes. Evaluated MLP (raw pixels), MLP (geometric landmarks), CNN, and VGG16 transfer learning — demonstrating how model complexity translates to accuracy in a genuinely hard problem where human accuracy is only ~65%.',
     tech: ['Python', 'TensorFlow', 'Keras', 'CNN', 'VGG16', 'OpenCV'],
     path: '/projects/emotion-detection',
     github: 'https://github.com/Pratyushpad27/fer2013-emotion-detection',
-    demo: 'https://emotion-detec.netlify.app/',
+    demo: 'https://face-pulse.netlify.app/',
     outcome: 'VGG16 transfer learning outperformed all baselines',
     stats: [
       { label: 'Images', value: '35K+' },
@@ -65,12 +50,12 @@ export default function Projects() {
           <div className="flex items-center gap-4 mb-16">
             <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#3b82f6' }}>00</span>
             <span style={{ width: 40, height: 1, background: 'rgba(59,130,246,0.4)' }} />
-            <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#475569' }}>Projects</span>
+            <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#6b7280' }}>Projects</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-light text-white mb-3" style={{ letterSpacing: '-0.02em' }}>
+          <h1 className="text-4xl md:text-5xl font-light text-white mb-3" style={{ fontFamily: 'Sora, sans-serif', letterSpacing: '-0.02em' }}>
             Selected <span className="font-semibold">work</span>.
           </h1>
-          <p className="text-sm mb-16" style={{ color: '#475569' }}>Deep learning and ML models built from scratch.</p>
+          <p className="text-sm mb-16" style={{ color: '#6b7280' }}>Deep learning and ML models built from scratch.</p>
         </RevealSection>
 
         {/* ═══ PROJECT LIST ═══ */}
@@ -82,7 +67,7 @@ export default function Projects() {
                 <div className="flex items-center gap-4 mb-6">
                   <span className="font-mono text-xs" style={{ color: '#3b82f6' }}>{project.number}</span>
                   <span style={{ width: 24, height: 1, background: 'rgba(59,130,246,0.4)' }} />
-                  <span className="font-mono text-xs" style={{ color: '#475569' }}>{project.subtitle}</span>
+                  <span className="font-mono text-xs" style={{ color: '#6b7280' }}>{project.subtitle}</span>
                 </div>
 
                 {/* Title & description */}
@@ -103,7 +88,7 @@ export default function Projects() {
                   {project.stats.map((stat) => (
                     <div key={stat.label}>
                       <p className="text-xl font-semibold text-white">{stat.value}</p>
-                      <p className="text-xs font-mono mt-1" style={{ color: '#475569' }}>{stat.label}</p>
+                      <p className="text-xs font-mono mt-1" style={{ color: '#6b7280' }}>{stat.label}</p>
                     </div>
                   ))}
                 </div>
@@ -152,7 +137,7 @@ export default function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-xs font-mono transition-colors hover:text-white"
-                      style={{ color: '#475569' }}
+                      style={{ color: '#6b7280' }}
                     >
                       source ↗
                     </a>

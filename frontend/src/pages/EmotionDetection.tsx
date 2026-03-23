@@ -56,7 +56,7 @@ export default function EmotionDetection() {
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
   const [showBack, setShowBack] = useState(false)
 
-  useEffect(() => { document.title = 'Emotion Detection | Pratyush Padhy' }, [])
+  useEffect(() => { document.title = 'Face Pulse | Pratyush Padhy' }, [])
 
   useEffect(() => {
     const handleScroll = () => setShowBack(window.scrollY > 200)
@@ -80,12 +80,12 @@ export default function EmotionDetection() {
             {/* Breadcrumb */}
             <FadeUp>
               <nav aria-label="Breadcrumb" className="mb-8">
-                <ol className="flex items-center gap-2 text-xs font-mono" style={{ color: '#475569' }}>
+                <ol className="flex items-center gap-2 text-xs font-mono" style={{ color: '#6b7280' }}>
                   <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
                   <li aria-hidden="true">/</li>
                   <li><Link to="/projects" className="hover:text-white transition-colors">Projects</Link></li>
                   <li aria-hidden="true">/</li>
-                  <li style={{ color: '#94a3b8' }}>FER2013 Emotion Detection</li>
+                  <li style={{ color: '#94a3b8' }}>Face Pulse</li>
                 </ol>
               </nav>
             </FadeUp>
@@ -103,14 +103,14 @@ export default function EmotionDetection() {
 
               <h1
                 className="text-4xl md:text-5xl font-bold text-white mb-5"
-                style={{ letterSpacing: '-0.025em', lineHeight: 1.1 }}
+                style={{ fontFamily: 'Sora, sans-serif', letterSpacing: '-0.025em', lineHeight: 1.1 }}
               >
-                FER2013 Emotion<br className="hidden md:block" /> Detection
+                Face Pulse
               </h1>
 
               <p className="text-base leading-relaxed max-w-2xl mb-8" style={{ color: '#94a3b8', lineHeight: 1.85 }}>
-                A comparative study of 4 deep learning architectures for detecting human emotions
-                from facial images — from a simple MLP all the way to VGG16 transfer learning on 35,000+ images.
+                A real-time emotion recognition system and comparative study of 4 deep learning architectures
+                for detecting human emotions from facial images — from a simple MLP all the way to VGG16 transfer learning on 35,000+ images.
               </p>
 
               {/* Stats */}
@@ -122,7 +122,7 @@ export default function EmotionDetection() {
                 ].map((s) => (
                   <div key={s.label}>
                     <p className="text-2xl font-bold text-white">{s.val}</p>
-                    <p className="font-mono text-xs mt-1 uppercase tracking-wider" style={{ color: '#475569' }}>{s.label}</p>
+                    <p className="font-mono text-xs mt-1 uppercase tracking-wider" style={{ color: '#6b7280' }}>{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -143,7 +143,7 @@ export default function EmotionDetection() {
               {/* CTAs */}
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="https://emotion-detec.netlify.app/"
+                  href="https://face-pulse.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-2.5 text-sm font-medium text-white transition-all duration-200 hover:opacity-90 active:scale-95"
@@ -257,7 +257,7 @@ export default function EmotionDetection() {
                       className="flex items-center justify-between px-4 py-2.5"
                       style={{ background: 'rgba(14,14,22,0.6)', borderTop: '1px solid rgba(255,255,255,0.05)' }}
                     >
-                      <p className="font-mono text-xs" style={{ color: '#475569' }}>{img.alt}</p>
+                      <p className="font-mono text-xs" style={{ color: '#6b7280' }}>{img.alt}</p>
                       <span className="text-xs opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: '#3b82f6' }}>expand ↗</span>
                     </div>
                   </motion.div>
@@ -306,7 +306,7 @@ export default function EmotionDetection() {
                 transition={{ duration: 0.2 }}
               >
                 <div>
-                  <p className="font-mono text-xs uppercase tracking-wider mb-1" style={{ color: '#475569' }}>Next Project</p>
+                  <p className="font-mono text-xs uppercase tracking-wider mb-1" style={{ color: '#6b7280' }}>Next Project</p>
                   <p className="text-white font-semibold group-hover:text-blue-400 transition-colors">
                     Character-Level Language Model
                   </p>
@@ -369,7 +369,7 @@ function SectionHeading({ number, label, title }: { number: string; label: strin
       <div className="flex items-center gap-3 mb-2">
         <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#3b82f6' }}>{number}</span>
         <span style={{ width: 24, height: 1, background: 'rgba(59,130,246,0.3)', display: 'block' }} />
-        <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#475569' }}>{label}</span>
+        <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#6b7280' }}>{label}</span>
       </div>
       <h2 className="text-2xl font-bold text-white" style={{ letterSpacing: '-0.015em' }}>{title}</h2>
     </div>

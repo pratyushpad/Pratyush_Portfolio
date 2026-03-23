@@ -2,16 +2,18 @@ import { Link } from 'react-router-dom'
 import { useState, useEffect, useRef } from 'react'
 import { motion, useReducedMotion, useInView, useScroll, useTransform, animate } from 'framer-motion'
 import PageTransition from '../components/animations/PageTransition'
+import MagneticButton from '../components/animations/MagneticButton'
+import RevealSection from '../components/animations/RevealSection'
 
 const projects = [
   {
-    title: 'FER2013 Emotion Detection',
+    title: 'Face Pulse',
     subtitle: 'Deep Learning · Computer Vision',
     description: 'Compared 4 architectures on 35,000+ facial images. VGG16 transfer learning outperformed all baselines on 7 emotion classes.',
     tech: ['Python', 'TensorFlow', 'CNN', 'VGG16'],
     path: '/projects/emotion-detection',
     github: 'https://github.com/Pratyushpad27/fer2013-emotion-detection',
-    demo: 'https://emotion-detec.netlify.app/',
+    demo: 'https://face-pulse.netlify.app/',
     number: '01',
     thumbnail: '/emotion/cnn_confusion_matrix.png',
   },
@@ -28,7 +30,7 @@ const projects = [
 ]
 
 const skillCategories = [
-  { label: 'ML / AI', color: '#3b82f6', skills: ['TensorFlow', 'Keras', 'scikit-learn', 'numpy', 'Pandas'] },
+  { label: 'ML / AI', color: '#3b82f6', skills: ['TensorFlow', 'Keras', 'scikit-learn', 'OpenCV', 'Dlib'] },
   { label: 'Languages', color: '#8b5cf6', skills: ['Python', 'Java', 'C++', 'R', 'TypeScript'] },
   { label: 'Web & Tools', color: '#10b981', skills: ['React', 'Git', 'Vite', 'Tailwind'] },
 ]
@@ -86,28 +88,12 @@ function useCountUp(target: number, decimals = 0) {
   return ref
 }
 
-function RevealSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-80px' })
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 48 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  )
-}
-
 function SectionLabel({ number, label }: { number: string; label: string }) {
   return (
     <div className="flex items-center gap-4 mb-16">
       <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#3b82f6' }}>{number}</span>
       <span style={{ width: 40, height: 1, background: 'rgba(59,130,246,0.35)', display: 'block' }} />
-      <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#475569' }}>{label}</span>
+      <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#6b7280' }}>{label}</span>
     </div>
   )
 }
@@ -158,7 +144,7 @@ function NextSection({ target, label }: { target: string; label: string }) {
       animate={{ opacity: 1 }}
       transition={{ delay: 1.2 }}
     >
-      <span className="text-xs font-mono uppercase tracking-widest group-hover:text-white transition-colors" style={{ color: '#475569' }}>
+      <span className="text-xs font-mono uppercase tracking-widest group-hover:text-white transition-colors" style={{ color: '#6b7280' }}>
         {label}
       </span>
       <motion.div
@@ -178,7 +164,7 @@ function TerminalCard() {
     { prompt: true, text: 'whoami' },
     { prompt: false, text: 'pratyush padhy' },
     { prompt: true, text: 'status' },
-    { prompt: false, text: '✦ open to internships' },
+    { prompt: false, text: '✦ open to ML & software internships' },
     { prompt: true, text: 'current --list' },
     { prompt: false, text: '├── Data@UCI Mentor' },
     { prompt: false, text: '├── UC Irvine CS, Y1' },
@@ -205,7 +191,7 @@ function TerminalCard() {
         <span className="w-3 h-3 rounded-full" style={{ background: '#ff5f57' }} />
         <span className="w-3 h-3 rounded-full" style={{ background: '#febc2e' }} />
         <span className="w-3 h-3 rounded-full" style={{ background: '#28c840' }} />
-        <span className="ml-2 font-mono text-xs" style={{ color: '#475569' }}>pratyush@portfolio ~ %</span>
+        <span className="ml-2 font-mono text-xs" style={{ color: '#6b7280' }}>pratyush@portfolio ~ %</span>
       </div>
 
       {/* Terminal body */}
@@ -251,12 +237,12 @@ function TerminalCard() {
 function StatCounter({ val, suffix, label, decimals = 0 }: { val: number; suffix: string; label: string; decimals?: number }) {
   const ref = useCountUp(val, decimals)
   return (
-    <div className="text-center md:text-left">
-      <p className="text-3xl font-bold text-white tabular-nums">
+    <div className="text-center md:text-left" aria-label={`${val}${suffix} ${label}`}>
+      <p className="text-3xl font-bold text-white tabular-nums" aria-hidden="true">
         <span ref={ref}>0</span>
         <span>{suffix}</span>
       </p>
-      <p className="text-xs font-mono mt-1.5 uppercase tracking-wider" style={{ color: '#475569' }}>{label}</p>
+      <p className="text-xs font-mono mt-1.5 uppercase tracking-wider" style={{ color: '#6b7280' }}>{label}</p>
     </div>
   )
 }
@@ -306,7 +292,7 @@ export default function Home() {
       <main id="main-content" className="relative z-10" ref={containerRef}>
 
         {/* ═══ HERO ═══ */}
-        <section id="s0" className="min-h-screen flex items-center px-6 pt-28 pb-20 relative overflow-hidden">
+        <section id="s0" className="min-h-dvh flex items-center px-6 pt-28 pb-20 relative overflow-hidden">
 
           {/* Ambient background glow */}
           <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
@@ -336,14 +322,14 @@ export default function Home() {
                   style={{ background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.2)', borderRadius: 20 }}
                 >
                   <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#10b981', boxShadow: '0 0 6px #10b981' }} />
-                  <span className="font-mono text-xs" style={{ color: '#10b981' }}>Available for opportunities</span>
+                  <span className="font-mono text-xs" style={{ color: '#10b981' }}>Open to ML &amp; Software Internships</span>
                 </motion.div>
 
                 {/* Name — single h1, inline gradient on last name */}
                 <motion.h1
                   variants={stagger.item}
                   className="font-bold text-white mb-5"
-                  style={{ fontSize: 'clamp(3rem, 7.5vw, 6rem)', letterSpacing: '-0.035em', lineHeight: 1.0 }}
+                  style={{ fontFamily: 'Sora, sans-serif', fontSize: 'clamp(3rem, 7.5vw, 6rem)', letterSpacing: '-0.035em', lineHeight: 1.0 }}
                 >
                   Pratyush{' '}
                   <span style={{
@@ -369,7 +355,7 @@ export default function Home() {
 
                 {/* Typewriter */}
                 <motion.div variants={stagger.item} className="flex items-center gap-2 mb-10 h-6">
-                  <span className="font-mono text-xs" style={{ color: '#475569' }}>~$</span>
+                  <span className="font-mono text-xs" style={{ color: '#6b7280' }}>~$</span>
                   <span className="font-mono text-sm" style={{ color: '#60a5fa' }}>
                     {typeText}
                     <span className="inline-block w-px h-3.5 ml-0.5 align-middle animate-pulse" style={{ backgroundColor: '#3b82f6' }} aria-hidden="true" />
@@ -378,14 +364,20 @@ export default function Home() {
 
                 {/* CTAs — primary filled + secondary ghost */}
                 <motion.div variants={stagger.item} className="flex gap-3 flex-wrap mb-12">
-                  <a
+                  <MagneticButton
                     href="#s2"
                     onClick={(e) => { e.preventDefault(); document.getElementById('s2')?.scrollIntoView({ behavior: 'smooth' }) }}
-                    className="px-7 py-3 text-sm font-semibold text-white transition-all duration-200 hover:opacity-90 active:scale-95"
+                    className="px-7 py-3 text-sm font-semibold text-white relative overflow-hidden"
                     style={{ background: 'linear-gradient(135deg, #3b82f6, #6366f1)', borderRadius: 8 }}
                   >
-                    View my work
-                  </a>
+                    <span className="relative z-10">View my work</span>
+                    <motion.span
+                      className="absolute inset-0 z-0"
+                      style={{ background: 'linear-gradient(135deg, #6366f1, #3b82f6)', opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </MagneticButton>
                   <a
                     href="/Pratyush_Padhy_Resume.pdf"
                     target="_blank"
@@ -393,7 +385,7 @@ export default function Home() {
                     className="px-7 py-3 text-sm font-medium transition-all duration-200 hover:text-white hover:border-white/20 active:scale-95"
                     style={{ color: '#94a3b8', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8 }}
                   >
-                    Resume ↗
+                    Resume <span aria-hidden="true">↗</span>
                   </a>
                   <a
                     href="https://github.com/Pratyushpad27"
@@ -402,7 +394,7 @@ export default function Home() {
                     className="px-7 py-3 text-sm font-medium transition-all duration-200 hover:text-white hover:border-white/20 active:scale-95"
                     style={{ color: '#94a3b8', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8 }}
                   >
-                    GitHub ↗
+                    GitHub <span aria-hidden="true">↗</span>
                   </a>
                 </motion.div>
 
@@ -446,7 +438,7 @@ export default function Home() {
               <RevealSection>
                 <h2
                   className="text-4xl font-light text-white mb-8"
-                  style={{ lineHeight: 1.2, letterSpacing: '-0.02em' }}
+                  style={{ fontFamily: 'Sora, sans-serif', lineHeight: 1.2, letterSpacing: '-0.02em' }}
                 >
                   CS student at <span className="font-semibold">UC Irvine</span>{' '}
                   focused on deep learning and NLP.
@@ -472,7 +464,7 @@ export default function Home() {
                     {[
                       'Mentoring students as Data@UCI Instructor',
                       'Exploring transformer architectures',
-                      'Seeking Summer 2025 ML internships',
+                      'Open to ML & software internship opportunities',
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-2 text-sm" style={{ color: '#94a3b8' }}>
                         <span style={{ color: '#3b82f6', marginTop: 2 }}>›</span>
@@ -484,13 +476,13 @@ export default function Home() {
 
                 <div className="flex gap-6">
                   <a href="/Pratyush_Padhy_Resume.pdf" target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:text-white" style={{ color: '#3b82f6' }}>Resume ↗</a>
-                  <a href="https://www.linkedin.com/in/pratyush-padhy-b7017a269/" target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:text-white" style={{ color: '#475569' }}>LinkedIn ↗</a>
-                  <a href="mailto:pratyushpadhy007@gmail.com" className="text-sm font-medium transition-colors hover:text-white" style={{ color: '#475569' }}>Email ↗</a>
+                  <a href="https://www.linkedin.com/in/pratyush-padhy-b7017a269/" target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:text-white" style={{ color: '#6b7280' }}>LinkedIn ↗</a>
+                  <a href="mailto:ppadhy@uci.edu" className="text-sm font-medium transition-colors hover:text-white" style={{ color: '#6b7280' }}>Email <span aria-hidden="true">↗</span></a>
                 </div>
               </RevealSection>
 
               <RevealSection>
-                <p className="font-mono text-xs uppercase tracking-[0.3em] mb-6" style={{ color: '#475569' }}>
+                <p className="font-mono text-xs uppercase tracking-[0.3em] mb-6" style={{ color: '#6b7280' }}>
                   Technologies
                 </p>
                 <div className="space-y-6">
@@ -507,7 +499,7 @@ export default function Home() {
                         {cat.label}
                       </p>
                       <div className="flex flex-wrap gap-2">
-                        {cat.skills.map((s) => (
+                        {cat.skills.map((s, si) => (
                           <motion.span
                             key={s}
                             className="px-3 py-1.5 text-xs font-mono cursor-default transition-all duration-150"
@@ -516,6 +508,10 @@ export default function Home() {
                               border: '1px solid rgba(255,255,255,0.07)',
                               borderRadius: 4,
                             }}
+                            initial={{ opacity: 0, y: 6 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.25, delay: si * 0.05 }}
                             whileHover={{
                               color: '#fff',
                               borderColor: cat.color + '60',
@@ -544,14 +540,14 @@ export default function Home() {
               <div className="flex items-end justify-between mb-12">
                 <h2
                   className="text-4xl font-light text-white"
-                  style={{ lineHeight: 1.2, letterSpacing: '-0.02em' }}
+                  style={{ fontFamily: 'Sora, sans-serif', lineHeight: 1.2, letterSpacing: '-0.02em' }}
                 >
                   Selected <span className="font-semibold">work</span>.
                 </h2>
                 <Link
                   to="/projects"
                   className="hidden md:flex items-center gap-2 text-sm font-medium transition-colors hover:text-white"
-                  style={{ color: '#475569' }}
+                  style={{ color: '#6b7280' }}
                 >
                   All projects →
                 </Link>
@@ -561,6 +557,7 @@ export default function Home() {
             <div className="space-y-0">
               {projects.map((project, idx) => (
                 <RevealSection key={project.title}>
+                  <motion.div whileHover={{ scale: 1.005 }} transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}>
                   <Link to={project.path} className="group block relative overflow-hidden">
                     {/* Ghost project number */}
                     <span
@@ -634,7 +631,7 @@ export default function Home() {
                         <div className="p-10 md:p-12 flex flex-col justify-between" style={{ direction: 'ltr' }}>
                           <div>
                             <div className="flex items-center gap-4 mb-4">
-                              <span className="font-mono text-xs" style={{ color: '#475569' }}>{project.number}</span>
+                              <span className="font-mono text-xs" style={{ color: '#6b7280' }}>{project.number}</span>
                               <span
                                 className="font-mono text-xs px-2 py-0.5"
                                 style={{ color: '#3b82f6', border: '1px solid rgba(59,130,246,0.25)', borderRadius: 3 }}
@@ -680,7 +677,7 @@ export default function Home() {
                               target="_blank"
                               rel="noopener noreferrer"
                               className="text-xs font-mono transition-colors hover:text-white"
-                              style={{ color: '#475569' }}
+                              style={{ color: '#6b7280' }}
                               onClick={(e) => e.stopPropagation()}
                             >
                               source ↗
@@ -690,13 +687,14 @@ export default function Home() {
                       </div>
                     </div>
                   </Link>
+                  </motion.div>
                 </RevealSection>
               ))}
               <div style={{ height: 1, background: 'rgba(255,255,255,0.06)' }} />
             </div>
 
             <div className="mt-8 text-center md:hidden">
-              <Link to="/projects" className="text-sm font-medium hover:text-white transition-colors" style={{ color: '#475569' }}>
+              <Link to="/projects" className="text-sm font-medium hover:text-white transition-colors" style={{ color: '#6b7280' }}>
                 All projects →
               </Link>
             </div>
@@ -729,7 +727,7 @@ export default function Home() {
             <SectionLabel number="03" label="Contact" />
             <h2
               className="text-5xl md:text-6xl font-bold text-white mb-6"
-              style={{ lineHeight: 1.05, letterSpacing: '-0.03em' }}
+              style={{ fontFamily: 'Sora, sans-serif', lineHeight: 1.05, letterSpacing: '-0.03em' }}
             >
               Let's build{' '}
               <span
@@ -744,16 +742,16 @@ export default function Home() {
               </span>
             </h2>
             <p className="text-sm leading-relaxed mb-12 max-w-md mx-auto" style={{ color: '#94a3b8', lineHeight: 1.85 }}>
-              Open to ML research opportunities, internships, and collaborations.
+              Open to machine learning and software internships, research, and collaborations.
               I respond to every message.
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <a
-                href="mailto:pratyushpadhy007@gmail.com"
+                href="mailto:ppadhy@uci.edu"
                 className="px-8 py-3.5 text-sm font-medium text-white transition-all duration-200 hover:bg-blue-500/25 active:scale-95"
                 style={{ border: '1px solid rgba(59,130,246,0.5)', background: 'rgba(59,130,246,0.1)', borderRadius: 6 }}
               >
-                pratyushpadhy007@gmail.com ↗
+                ppadhy@uci.edu <span aria-hidden="true">↗</span>
               </a>
               <a
                 href="https://www.linkedin.com/in/pratyush-padhy-b7017a269/"

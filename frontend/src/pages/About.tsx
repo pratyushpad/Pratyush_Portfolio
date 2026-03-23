@@ -1,22 +1,8 @@
 import { useEffect, useRef } from 'react'
 import { motion, useInView, useMotionValue, useTransform, animate } from 'framer-motion'
 import PageTransition from '../components/animations/PageTransition'
-
-function RevealSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-80px' })
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  )
-}
+import RevealSection from '../components/animations/RevealSection'
+import BackToTop from '../components/BackToTop'
 
 function AnimatedCounter({ value, suffix = '', label }: { value: number; suffix?: string; label: string }) {
   const ref = useRef(null)
@@ -31,11 +17,11 @@ function AnimatedCounter({ value, suffix = '', label }: { value: number; suffix?
   }, [isInView, count, value])
 
   return (
-    <div ref={ref}>
-      <p className="text-3xl font-semibold text-white">
+    <div ref={ref} aria-label={`${value}${suffix} ${label}`}>
+      <p className="text-3xl font-semibold text-white" aria-hidden="true">
         <motion.span>{rounded}</motion.span>{suffix}
       </p>
-      <p className="text-xs font-mono mt-1" style={{ color: '#475569' }}>{label}</p>
+      <p className="text-xs font-mono mt-1" style={{ color: '#6b7280' }}>{label}</p>
     </div>
   )
 }
@@ -44,9 +30,8 @@ const experiences = [
   {
     role: 'Undergraduate Mentor',
     org: 'Data@UCI',
-    period: 'Jan 2026 – Present',
-    desc: 'Mentoring 50+ students on data-focused projects using Python, HTML, and JavaScript. Guiding mentees through data collection, variable selection, exploratory analysis with Kaggle datasets, and predictive model development using Google Colab.',
-    current: true,
+    period: 'Jan – Mar 2026',
+    desc: 'Mentored 50+ students on data-focused projects using Python, HTML, and JavaScript. Guided mentees through data collection, variable selection, exploratory analysis with Kaggle datasets, and predictive model development using Google Colab.',
   },
   {
     role: 'Software Intern',
@@ -76,10 +61,10 @@ const experiences = [
 
 const skillGroups: Record<string, string[]> = {
   'Languages': ['Python', 'Java', 'R', 'C++', 'TypeScript', 'JavaScript', 'HTML', 'CSS'],
-  'ML / AI': ['TensorFlow', 'Keras', 'CNNs', 'LSTMs', 'scikit-learn', 'Machine Learning'],
-  'Libraries': ['numpy', 'Pandas', 'Matplotlib', 'OS', 'JSON'],
-  'Web': ['React', 'Tailwind CSS', 'HTML', 'CSS'],
-  'Tools': ['Git', 'VS Code', 'PyCharm', 'Google Colab', 'Vite'],
+  'ML / AI': ['TensorFlow', 'Keras', 'CNNs', 'LSTMs', 'scikit-learn', 'OpenCV', 'Dlib'],
+  'Libraries': ['NumPy', 'Pandas', 'Matplotlib', 'Seaborn', 'Chart.js'],
+  'Web': ['React', 'Tailwind CSS', 'Vite', 'Express.js'],
+  'Tools': ['Git', 'VS Code', 'PyCharm', 'Google Colab'],
 }
 
 const awards = [
@@ -109,7 +94,7 @@ export default function About() {
           <div className="flex items-center gap-4 mb-16">
             <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#3b82f6' }}>00</span>
             <span style={{ width: 40, height: 1, background: 'rgba(59,130,246,0.4)' }} />
-            <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#475569' }}>About</span>
+            <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#6b7280' }}>About</span>
           </div>
         </RevealSection>
 
@@ -124,19 +109,19 @@ export default function About() {
                   style={{ border: '1px solid rgba(59,130,246,0.3)' }}
                 />
                 <div>
-                  <h1 className="text-3xl font-light text-white" style={{ letterSpacing: '-0.02em' }}>
+                  <h1 className="text-3xl font-light text-white" style={{ fontFamily: 'Sora, sans-serif', letterSpacing: '-0.02em' }}>
                     Pratyush <span className="font-semibold">Padhy</span>
                   </h1>
                   <div className="flex items-center gap-2 mt-1">
                     <span className="w-1.5 h-1.5 bg-green-400 animate-pulse" style={{ borderRadius: '1px' }} />
-                    <span className="text-xs font-mono" style={{ color: '#475569' }}>Available for opportunities</span>
+                    <span className="text-xs font-mono" style={{ color: '#6b7280' }}>Open to ML &amp; Software Internships</span>
                   </div>
                 </div>
               </div>
               <p className="text-sm leading-relaxed mb-6" style={{ color: '#94a3b8' }}>
-                First-year Computer Science student at UC Irvine with a passion
+                Computer Science student at UC Irvine (Dean's Honor List) with a passion
                 for machine learning and AI. I build deep learning models from scratch, explore NLP, and
-                mentor 50+ students at Data@UCI. Previously placed top 10 at Berkeley ROAR
+                mentored 50+ students at Data@UCI. Previously placed top 10 at Berkeley ROAR
                 and conducted RNA-seq research at Stanford iLab.
               </p>
               <div className="flex flex-wrap gap-2 mb-6">
@@ -155,12 +140,13 @@ export default function About() {
 
             <div className="md:col-span-2">
               <div className="p-6" style={{ border: '1px solid rgba(255,255,255,0.06)' }}>
-                <p className="font-mono text-xs uppercase tracking-[0.3em] mb-4" style={{ color: '#475569' }}>Education</p>
+                <p className="font-mono text-xs uppercase tracking-[0.3em] mb-4" style={{ color: '#6b7280' }}>Education</p>
                 <h3 className="text-white font-semibold text-lg">UC Irvine</h3>
                 <p className="text-sm mb-4" style={{ color: '#94a3b8' }}>B.S. Computer Science</p>
                 <div className="pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
                   <p className="text-3xl font-semibold text-white">3.69</p>
-                  <p className="text-xs font-mono mt-1" style={{ color: '#475569' }}>GPA · Class of 2028</p>
+                  <p className="text-xs font-mono mt-1" style={{ color: '#6b7280' }}>GPA · Class of 2028</p>
+                  <p className="text-xs font-mono mt-2" style={{ color: '#4ade80' }}>Dean's Honor List: Fall '25, Winter '26</p>
                 </div>
               </div>
             </div>
@@ -175,7 +161,7 @@ export default function About() {
             <AnimatedCounter value={50} suffix="+" label="Students mentored" />
             <div>
               <p className="text-3xl font-semibold text-white">Top 10</p>
-              <p className="text-xs font-mono mt-1" style={{ color: '#475569' }}>Berkeley ROAR</p>
+              <p className="text-xs font-mono mt-1" style={{ color: '#6b7280' }}>Berkeley ROAR</p>
             </div>
           </div>
         </RevealSection>
@@ -185,7 +171,7 @@ export default function About() {
           <div className="flex items-center gap-4 mb-12">
             <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#3b82f6' }}>01</span>
             <span style={{ width: 40, height: 1, background: 'rgba(59,130,246,0.4)' }} />
-            <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#475569' }}>Experience</span>
+            <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#6b7280' }}>Experience</span>
           </div>
         </RevealSection>
 
@@ -201,12 +187,7 @@ export default function About() {
                   style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
                 >
                   <div className="md:col-span-3 flex items-start gap-3">
-                    <p className="text-xs font-mono" style={{ color: '#475569' }}>{exp.period}</p>
-                    {exp.current && (
-                      <span className="text-xs font-mono px-2 py-0.5" style={{ color: '#4ade80', border: '1px solid rgba(34,197,94,0.3)' }}>
-                        Now
-                      </span>
-                    )}
+                    <p className="text-xs font-mono" style={{ color: '#6b7280' }}>{exp.period}</p>
                   </div>
                   <div className="md:col-span-9">
                     <div className="flex items-baseline gap-3 mb-2">
@@ -226,7 +207,7 @@ export default function About() {
           <div className="flex items-center gap-4 mb-12">
             <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#3b82f6' }}>02</span>
             <span style={{ width: 40, height: 1, background: 'rgba(59,130,246,0.4)' }} />
-            <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#475569' }}>Skills</span>
+            <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#6b7280' }}>Skills</span>
           </div>
         </RevealSection>
 
@@ -241,14 +222,18 @@ export default function About() {
                 }}
               >
                 <div className="md:col-span-3">
-                  <p className="text-xs font-mono uppercase tracking-wider" style={{ color: '#475569' }}>{category}</p>
+                  <p className="text-xs font-mono uppercase tracking-wider" style={{ color: '#6b7280' }}>{category}</p>
                 </div>
                 <div className="md:col-span-9 flex flex-wrap gap-2">
-                  {skills.map((skill) => (
+                  {skills.map((skill, skillIdx) => (
                     <motion.span
                       key={skill}
                       className="px-4 py-2 text-xs font-mono cursor-default"
                       style={{ color: '#94a3b8', border: '1px solid rgba(255,255,255,0.08)' }}
+                      initial={{ opacity: 0, y: 8 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: skillIdx * 0.04 }}
                       whileHover={{ color: '#fff', borderColor: 'rgba(59,130,246,0.4)', background: 'rgba(59,130,246,0.06)' }}
                     >
                       {skill}
@@ -265,13 +250,13 @@ export default function About() {
           <div className="flex items-center gap-4 mb-12">
             <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#3b82f6' }}>03</span>
             <span style={{ width: 40, height: 1, background: 'rgba(59,130,246,0.4)' }} />
-            <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#475569' }}>Recognition</span>
+            <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#6b7280' }}>Recognition</span>
           </div>
         </RevealSection>
 
         <div className="grid md:grid-cols-2 gap-12 mb-20">
           <RevealSection>
-            <p className="text-xs font-mono uppercase tracking-wider mb-6" style={{ color: '#475569' }}>Awards</p>
+            <p className="text-xs font-mono uppercase tracking-wider mb-6" style={{ color: '#6b7280' }}>Awards</p>
             <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
               {awards.map((award, i) => (
                 <div
@@ -287,7 +272,7 @@ export default function About() {
           </RevealSection>
 
           <RevealSection>
-            <p className="text-xs font-mono uppercase tracking-wider mb-6" style={{ color: '#475569' }}>Certifications</p>
+            <p className="text-xs font-mono uppercase tracking-wider mb-6" style={{ color: '#6b7280' }}>Certifications</p>
             <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
               {certifications.map((cert, i) => (
                 <div
@@ -306,10 +291,10 @@ export default function About() {
         {/* ═══ CTA ═══ */}
         <RevealSection>
           <div className="py-16 text-center" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-            <h3 className="text-3xl font-light text-white mb-3" style={{ letterSpacing: '-0.02em' }}>
+            <h3 className="text-3xl font-light text-white mb-3" style={{ fontFamily: 'Sora, sans-serif', letterSpacing: '-0.02em' }}>
               Want to <span className="font-semibold">work together</span>?
             </h3>
-            <p className="text-sm mb-10" style={{ color: '#475569' }}>Open to research, internships, and collaborations.</p>
+            <p className="text-sm mb-10" style={{ color: '#6b7280' }}>Open to ML &amp; software internships and collaborations.</p>
             <div className="flex gap-4 justify-center flex-wrap">
               <a
                 href="/Pratyush_Padhy_Resume.pdf"
@@ -343,6 +328,7 @@ export default function About() {
         </RevealSection>
 
       </main>
+      <BackToTop />
     </PageTransition>
   )
 }
