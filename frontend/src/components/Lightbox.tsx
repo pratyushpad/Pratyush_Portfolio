@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 interface LightboxProps {
@@ -8,38 +8,16 @@ interface LightboxProps {
 }
 
 export default function Lightbox({ src, alt, onClose }: LightboxProps) {
-  const closeBtnRef = useRef<HTMLButtonElement>(null)
-  const previousFocusRef = useRef<Element | null>(null)
-
+  // Lock scroll and handle Escape key while open
   useEffect(() => {
-    // Save currently focused element to restore on close
-    previousFocusRef.current = document.activeElement
-
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        onClose()
-        return
-      }
-      // Trap focus inside dialog
-      if (e.key === 'Tab') {
-        // Only focusable element is the close button
-        e.preventDefault()
-        closeBtnRef.current?.focus()
-      }
+      if (e.key === 'Escape') onClose()
     }
     document.addEventListener('keydown', handleKey)
     document.body.style.overflow = 'hidden'
-
-    // Move focus into dialog
-    closeBtnRef.current?.focus()
-
     return () => {
       document.removeEventListener('keydown', handleKey)
       document.body.style.overflow = ''
-      // Restore focus to trigger element
-      if (previousFocusRef.current instanceof HTMLElement) {
-        previousFocusRef.current.focus()
-      }
     }
   }, [onClose])
 
@@ -68,7 +46,6 @@ export default function Lightbox({ src, alt, onClose }: LightboxProps) {
       />
 
       <button
-        ref={closeBtnRef}
         onClick={onClose}
         className="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center text-gray-300 hover:text-white transition-colors text-xl font-light"
         style={{ backgroundColor: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.15)' }}

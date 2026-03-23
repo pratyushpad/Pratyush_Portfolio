@@ -81,7 +81,7 @@ export default function FakeNews() {
             {/* Breadcrumb */}
             <FadeUp>
               <nav aria-label="Breadcrumb" className="mb-8">
-                <ol className="flex items-center gap-2 text-xs font-mono" style={{ color: '#6b7280' }}>
+                <ol className="flex items-center gap-2 text-xs font-mono" style={{ color: '#475569' }}>
                   <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
                   <li aria-hidden="true">/</li>
                   <li><Link to="/projects" className="hover:text-white transition-colors">Projects</Link></li>
@@ -124,7 +124,7 @@ export default function FakeNews() {
                 ].map((s) => (
                   <div key={s.label}>
                     <p className="text-2xl font-bold text-white">{s.val}</p>
-                    <p className="font-mono text-xs mt-1 uppercase tracking-wider" style={{ color: '#6b7280' }}>{s.label}</p>
+                    <p className="font-mono text-xs mt-1 uppercase tracking-wider" style={{ color: '#475569' }}>{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -257,7 +257,7 @@ export default function FakeNews() {
                       className="flex items-center justify-between px-4 py-2.5"
                       style={{ background: 'rgba(14,14,22,0.6)', borderTop: '1px solid rgba(255,255,255,0.05)' }}
                     >
-                      <p className="font-mono text-xs" style={{ color: '#6b7280' }}>{img.alt}</p>
+                      <p className="font-mono text-xs" style={{ color: '#475569' }}>{img.alt}</p>
                       <span className="text-xs opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: '#8b5cf6' }}>expand ↗</span>
                     </div>
                   </motion.div>
@@ -306,7 +306,7 @@ export default function FakeNews() {
                 transition={{ duration: 0.2 }}
               >
                 <div>
-                  <p className="font-mono text-xs uppercase tracking-wider mb-1" style={{ color: '#6b7280' }}>Next Project</p>
+                  <p className="font-mono text-xs uppercase tracking-wider mb-1" style={{ color: '#475569' }}>Next Project</p>
                   <p className="text-white font-semibold group-hover:text-purple-400 transition-colors">
                     Face Pulse
                   </p>
@@ -369,7 +369,7 @@ function SectionHeading({ number, label, title }: { number: string; label: strin
       <div className="flex items-center gap-3 mb-2">
         <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#8b5cf6' }}>{number}</span>
         <span style={{ width: 24, height: 1, background: 'rgba(139,92,246,0.3)', display: 'block' }} />
-        <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#6b7280' }}>{label}</span>
+        <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#475569' }}>{label}</span>
       </div>
       <h2 className="text-2xl font-bold text-white" style={{ letterSpacing: '-0.015em' }}>{title}</h2>
     </div>

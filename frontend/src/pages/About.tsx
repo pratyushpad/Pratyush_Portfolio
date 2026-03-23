@@ -1,8 +1,22 @@
 import { useEffect, useRef } from 'react'
 import { motion, useInView, useMotionValue, useTransform, animate } from 'framer-motion'
 import PageTransition from '../components/animations/PageTransition'
-import RevealSection from '../components/animations/RevealSection'
-import BackToTop from '../components/BackToTop'
+
+function RevealSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-80px' })
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  )
+}
 
 function AnimatedCounter({ value, suffix = '', label }: { value: number; suffix?: string; label: string }) {
   const ref = useRef(null)
@@ -17,11 +31,11 @@ function AnimatedCounter({ value, suffix = '', label }: { value: number; suffix?
   }, [isInView, count, value])
 
   return (
-    <div ref={ref} aria-label={`${value}${suffix} ${label}`}>
-      <p className="text-3xl font-semibold text-white" aria-hidden="true">
+    <div ref={ref}>
+      <p className="text-3xl font-semibold text-white">
         <motion.span>{rounded}</motion.span>{suffix}
       </p>
-      <p className="text-xs font-mono mt-1" style={{ color: '#6b7280' }}>{label}</p>
+      <p className="text-xs font-mono mt-1" style={{ color: '#475569' }}>{label}</p>
     </div>
   )
 }
@@ -94,7 +108,7 @@ export default function About() {
           <div className="flex items-center gap-4 mb-16">
             <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#3b82f6' }}>00</span>
             <span style={{ width: 40, height: 1, background: 'rgba(59,130,246,0.4)' }} />
-            <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#6b7280' }}>About</span>
+            <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#475569' }}>About</span>
           </div>
         </RevealSection>
 
@@ -114,7 +128,7 @@ export default function About() {
                   </h1>
                   <div className="flex items-center gap-2 mt-1">
                     <span className="w-1.5 h-1.5 bg-green-400 animate-pulse" style={{ borderRadius: '1px' }} />
-                    <span className="text-xs font-mono" style={{ color: '#6b7280' }}>Open to ML &amp; Software Internships</span>
+                    <span className="text-xs font-mono" style={{ color: '#475569' }}>Open to ML &amp; Software Internships</span>
                   </div>
                 </div>
               </div>
@@ -140,12 +154,12 @@ export default function About() {
 
             <div className="md:col-span-2">
               <div className="p-6" style={{ border: '1px solid rgba(255,255,255,0.06)' }}>
-                <p className="font-mono text-xs uppercase tracking-[0.3em] mb-4" style={{ color: '#6b7280' }}>Education</p>
+                <p className="font-mono text-xs uppercase tracking-[0.3em] mb-4" style={{ color: '#475569' }}>Education</p>
                 <h3 className="text-white font-semibold text-lg">UC Irvine</h3>
                 <p className="text-sm mb-4" style={{ color: '#94a3b8' }}>B.S. Computer Science</p>
                 <div className="pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
                   <p className="text-3xl font-semibold text-white">3.69</p>
-                  <p className="text-xs font-mono mt-1" style={{ color: '#6b7280' }}>GPA · Class of 2028</p>
+                  <p className="text-xs font-mono mt-1" style={{ color: '#475569' }}>GPA · Class of 2028</p>
                   <p className="text-xs font-mono mt-2" style={{ color: '#4ade80' }}>Dean's Honor List: Fall '25, Winter '26</p>
                 </div>
               </div>
@@ -161,7 +175,7 @@ export default function About() {
             <AnimatedCounter value={50} suffix="+" label="Students mentored" />
             <div>
               <p className="text-3xl font-semibold text-white">Top 10</p>
-              <p className="text-xs font-mono mt-1" style={{ color: '#6b7280' }}>Berkeley ROAR</p>
+              <p className="text-xs font-mono mt-1" style={{ color: '#475569' }}>Berkeley ROAR</p>
             </div>
           </div>
         </RevealSection>
@@ -171,7 +185,7 @@ export default function About() {
           <div className="flex items-center gap-4 mb-12">
             <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#3b82f6' }}>01</span>
             <span style={{ width: 40, height: 1, background: 'rgba(59,130,246,0.4)' }} />
-            <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#6b7280' }}>Experience</span>
+            <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#475569' }}>Experience</span>
           </div>
         </RevealSection>
 
@@ -187,7 +201,7 @@ export default function About() {
                   style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
                 >
                   <div className="md:col-span-3 flex items-start gap-3">
-                    <p className="text-xs font-mono" style={{ color: '#6b7280' }}>{exp.period}</p>
+                    <p className="text-xs font-mono" style={{ color: '#475569' }}>{exp.period}</p>
                   </div>
                   <div className="md:col-span-9">
                     <div className="flex items-baseline gap-3 mb-2">
@@ -207,7 +221,7 @@ export default function About() {
           <div className="flex items-center gap-4 mb-12">
             <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#3b82f6' }}>02</span>
             <span style={{ width: 40, height: 1, background: 'rgba(59,130,246,0.4)' }} />
-            <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#6b7280' }}>Skills</span>
+            <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#475569' }}>Skills</span>
           </div>
         </RevealSection>
 
@@ -222,18 +236,14 @@ export default function About() {
                 }}
               >
                 <div className="md:col-span-3">
-                  <p className="text-xs font-mono uppercase tracking-wider" style={{ color: '#6b7280' }}>{category}</p>
+                  <p className="text-xs font-mono uppercase tracking-wider" style={{ color: '#475569' }}>{category}</p>
                 </div>
                 <div className="md:col-span-9 flex flex-wrap gap-2">
-                  {skills.map((skill, skillIdx) => (
+                  {skills.map((skill) => (
                     <motion.span
                       key={skill}
                       className="px-4 py-2 text-xs font-mono cursor-default"
                       style={{ color: '#94a3b8', border: '1px solid rgba(255,255,255,0.08)' }}
-                      initial={{ opacity: 0, y: 8 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: skillIdx * 0.04 }}
                       whileHover={{ color: '#fff', borderColor: 'rgba(59,130,246,0.4)', background: 'rgba(59,130,246,0.06)' }}
                     >
                       {skill}
@@ -250,13 +260,13 @@ export default function About() {
           <div className="flex items-center gap-4 mb-12">
             <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#3b82f6' }}>03</span>
             <span style={{ width: 40, height: 1, background: 'rgba(59,130,246,0.4)' }} />
-            <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#6b7280' }}>Recognition</span>
+            <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#475569' }}>Recognition</span>
           </div>
         </RevealSection>
 
         <div className="grid md:grid-cols-2 gap-12 mb-20">
           <RevealSection>
-            <p className="text-xs font-mono uppercase tracking-wider mb-6" style={{ color: '#6b7280' }}>Awards</p>
+            <p className="text-xs font-mono uppercase tracking-wider mb-6" style={{ color: '#475569' }}>Awards</p>
             <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
               {awards.map((award, i) => (
                 <div
@@ -272,7 +282,7 @@ export default function About() {
           </RevealSection>
 
           <RevealSection>
-            <p className="text-xs font-mono uppercase tracking-wider mb-6" style={{ color: '#6b7280' }}>Certifications</p>
+            <p className="text-xs font-mono uppercase tracking-wider mb-6" style={{ color: '#475569' }}>Certifications</p>
             <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
               {certifications.map((cert, i) => (
                 <div
@@ -294,7 +304,7 @@ export default function About() {
             <h3 className="text-3xl font-light text-white mb-3" style={{ letterSpacing: '-0.02em' }}>
               Want to <span className="font-semibold">work together</span>?
             </h3>
-            <p className="text-sm mb-10" style={{ color: '#6b7280' }}>Open to ML &amp; software internships and collaborations.</p>
+            <p className="text-sm mb-10" style={{ color: '#475569' }}>Open to ML &amp; software internships and collaborations.</p>
             <div className="flex gap-4 justify-center flex-wrap">
               <a
                 href="/Pratyush_Padhy_Resume.pdf"
@@ -328,7 +338,6 @@ export default function About() {
         </RevealSection>
 
       </main>
-      <BackToTop />
     </PageTransition>
   )
 }
