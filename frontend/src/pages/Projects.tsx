@@ -52,7 +52,7 @@ export default function Projects() {
             <span style={{ width: 40, height: 1, background: 'rgba(59,130,246,0.4)' }} />
             <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#6b7280' }}>Projects</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-light text-white mb-3" style={{ fontFamily: 'Sora, sans-serif', letterSpacing: '-0.02em' }}>
+          <h1 className="text-4xl md:text-5xl font-light text-white mb-3" style={{ letterSpacing: '-0.02em' }}>
             Selected <span className="font-semibold">work</span>.
           </h1>
           <p className="text-sm mb-16" style={{ color: '#6b7280' }}>Deep learning and ML models built from scratch.</p>

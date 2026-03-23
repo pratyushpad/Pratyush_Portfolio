@@ -109,7 +109,7 @@ export default function About() {
                   style={{ border: '1px solid rgba(59,130,246,0.3)' }}
                 />
                 <div>
-                  <h1 className="text-3xl font-light text-white" style={{ fontFamily: 'Sora, sans-serif', letterSpacing: '-0.02em' }}>
+                  <h1 className="text-3xl font-light text-white" style={{ letterSpacing: '-0.02em' }}>
                     Pratyush <span className="font-semibold">Padhy</span>
                   </h1>
                   <div className="flex items-center gap-2 mt-1">
@@ -291,7 +291,7 @@ export default function About() {
         {/* ═══ CTA ═══ */}
         <RevealSection>
           <div className="py-16 text-center" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-            <h3 className="text-3xl font-light text-white mb-3" style={{ fontFamily: 'Sora, sans-serif', letterSpacing: '-0.02em' }}>
+            <h3 className="text-3xl font-light text-white mb-3" style={{ letterSpacing: '-0.02em' }}>
               Want to <span className="font-semibold">work together</span>?
             </h3>
             <p className="text-sm mb-10" style={{ color: '#6b7280' }}>Open to ML &amp; software internships and collaborations.</p>

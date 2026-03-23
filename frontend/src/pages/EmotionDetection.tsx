@@ -103,7 +103,7 @@ export default function EmotionDetection() {
 
               <h1
                 className="text-4xl md:text-5xl font-bold text-white mb-5"
-                style={{ fontFamily: 'Sora, sans-serif', letterSpacing: '-0.025em', lineHeight: 1.1 }}
+                style={{ letterSpacing: '-0.025em', lineHeight: 1.1 }}
               >
                 Face Pulse
               </h1>

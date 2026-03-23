@@ -37,7 +37,7 @@ function AnimatedRoutes() {
               <span className="font-mono text-xs" style={{ color: '#f87171' }}>error: command not found</span>
             </div>
             <p className="font-mono text-xs mb-4" style={{ color: '#3b82f6' }}>404</p>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: 'Sora, sans-serif', letterSpacing: '-0.025em' }}>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ letterSpacing: '-0.025em' }}>
               Page not found.
             </h1>
             <p className="mb-10" style={{ color: '#6b7280' }}>

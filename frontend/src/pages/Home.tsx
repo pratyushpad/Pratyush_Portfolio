@@ -329,7 +329,7 @@ export default function Home() {
                 <motion.h1
                   variants={stagger.item}
                   className="font-bold text-white mb-5"
-                  style={{ fontFamily: 'Sora, sans-serif', fontSize: 'clamp(3rem, 7.5vw, 6rem)', letterSpacing: '-0.035em', lineHeight: 1.0 }}
+                  style={{ fontSize: 'clamp(3rem, 7.5vw, 6rem)', letterSpacing: '-0.035em', lineHeight: 1.0 }}
                 >
                   Pratyush{' '}
                   <span style={{
@@ -385,7 +385,7 @@ export default function Home() {
                     className="px-7 py-3 text-sm font-medium transition-all duration-200 hover:text-white hover:border-white/20 active:scale-95"
                     style={{ color: '#94a3b8', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8 }}
                   >
-                    Resume <span aria-hidden="true">↗</span>
+                    Resume ↗
                   </a>
                   <a
                     href="https://github.com/Pratyushpad27"
@@ -394,7 +394,7 @@ export default function Home() {
                     className="px-7 py-3 text-sm font-medium transition-all duration-200 hover:text-white hover:border-white/20 active:scale-95"
                     style={{ color: '#94a3b8', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8 }}
                   >
-                    GitHub <span aria-hidden="true">↗</span>
+                    GitHub ↗
                   </a>
                 </motion.div>
 
@@ -438,7 +438,7 @@ export default function Home() {
               <RevealSection>
                 <h2
                   className="text-4xl font-light text-white mb-8"
-                  style={{ fontFamily: 'Sora, sans-serif', lineHeight: 1.2, letterSpacing: '-0.02em' }}
+                  style={{ lineHeight: 1.2, letterSpacing: '-0.02em' }}
                 >
                   CS student at <span className="font-semibold">UC Irvine</span>{' '}
                   focused on deep learning and NLP.
@@ -477,7 +477,7 @@ export default function Home() {
                 <div className="flex gap-6">
                   <a href="/Pratyush_Padhy_Resume.pdf" target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:text-white" style={{ color: '#3b82f6' }}>Resume ↗</a>
                   <a href="https://www.linkedin.com/in/pratyush-padhy-b7017a269/" target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:text-white" style={{ color: '#6b7280' }}>LinkedIn ↗</a>
-                  <a href="mailto:ppadhy@uci.edu" className="text-sm font-medium transition-colors hover:text-white" style={{ color: '#6b7280' }}>Email <span aria-hidden="true">↗</span></a>
+                  <a href="mailto:ppadhy@uci.edu" className="text-sm font-medium transition-colors hover:text-white" style={{ color: '#6b7280' }}>Email ↗</a>
                 </div>
               </RevealSection>
 
@@ -540,7 +540,7 @@ export default function Home() {
               <div className="flex items-end justify-between mb-12">
                 <h2
                   className="text-4xl font-light text-white"
-                  style={{ fontFamily: 'Sora, sans-serif', lineHeight: 1.2, letterSpacing: '-0.02em' }}
+                  style={{ lineHeight: 1.2, letterSpacing: '-0.02em' }}
                 >
                   Selected <span className="font-semibold">work</span>.
                 </h2>
@@ -727,7 +727,7 @@ export default function Home() {
             <SectionLabel number="03" label="Contact" />
             <h2
               className="text-5xl md:text-6xl font-bold text-white mb-6"
-              style={{ fontFamily: 'Sora, sans-serif', lineHeight: 1.05, letterSpacing: '-0.03em' }}
+              style={{ lineHeight: 1.05, letterSpacing: '-0.03em' }}
             >
               Let's build{' '}
               <span
@@ -751,7 +751,7 @@ export default function Home() {
                 className="px-8 py-3.5 text-sm font-medium text-white transition-all duration-200 hover:bg-blue-500/25 active:scale-95"
                 style={{ border: '1px solid rgba(59,130,246,0.5)', background: 'rgba(59,130,246,0.1)', borderRadius: 6 }}
               >
-                ppadhy@uci.edu <span aria-hidden="true">↗</span>
+                ppadhy@uci.edu ↗
               </a>
               <a
                 href="https://www.linkedin.com/in/pratyush-padhy-b7017a269/"
