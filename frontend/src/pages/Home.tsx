@@ -59,7 +59,7 @@ const roles = [
 const sections = ['Hero', 'About', 'Projects', 'Contact']
 
 const stats = [
-  { val: 3.69, display: '3.69', suffix: '', label: 'GPA' },
+  { val: 3.86, display: '3.86', suffix: '', label: 'GPA' },
   { val: 50, display: '50', suffix: '+', label: 'Students Mentored' },
   { val: 35, display: '35', suffix: 'K+', label: 'Training Images' },
 ]
