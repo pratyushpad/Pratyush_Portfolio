@@ -294,7 +294,7 @@ export default function EmotionDetection() {
 
           {/* Next project */}
           <FadeUp delay={0.05}>
-            <Link to="/projects/language-model" className="block group">
+            <Link to="/projects/argus-ai" className="block group">
               <motion.div
                 className="flex items-center justify-between p-6"
                 style={{
@@ -308,7 +308,7 @@ export default function EmotionDetection() {
                 <div>
                   <p className="font-mono text-xs uppercase tracking-wider mb-1" style={{ color: '#475569' }}>Next Project</p>
                   <p className="text-white font-semibold group-hover:text-blue-400 transition-colors">
-                    Character-Level Language Model
+                    Argus AI
                   </p>
                 </div>
                 <motion.span

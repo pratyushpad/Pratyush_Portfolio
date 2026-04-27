@@ -42,6 +42,12 @@ function AnimatedCounter({ value, suffix = '', label }: { value: number; suffix?
 
 const experiences = [
   {
+    role: 'Software Developer',
+    org: 'Ready Tutor',
+    period: 'Mar 2026 – Present',
+    desc: 'Building Courseeater.com — a full-stack course planner for UC Irvine students. The app lets students browse, plan, and track UCI courses with intelligent scheduling and prerequisite mapping. Engineered the React + TypeScript frontend and Node.js backend, integrated the UCI course catalog API, and implemented search, filtering, and a drag-and-drop multi-quarter planner to help students plan their entire degree in one place.',
+  },
+  {
     role: 'Undergraduate Mentor',
     org: 'Data@UCI',
     period: 'Jan – Mar 2026',

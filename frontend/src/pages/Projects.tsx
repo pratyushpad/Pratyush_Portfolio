@@ -38,21 +38,6 @@ const projects = [
   },
   {
     number: '02',
-    title: 'Character-Level Language Model',
-    subtitle: 'NLP · Text Generation',
-    description: 'An RNN and LSTM trained character-by-character on 200,000 characters of text — building a generative language model from scratch. Uses a 70-character vocabulary, sliding window of 40 characters creating 66,000+ training pairs, and temperature sampling to control how creative vs coherent the output is.',
-    tech: ['Python', 'TensorFlow', 'Keras', 'RNN', 'LSTM', 'NLP'],
-    path: '/projects/language-model',
-    github: 'https://github.com/Pratyushpad27/char-level-language-model',
-    outcome: 'LSTM outperformed SimpleRNN on coherent text generation',
-    stats: [
-      { label: 'Characters', value: '200K' },
-      { label: 'Vocab', value: '70' },
-      { label: 'Pairs', value: '66K+' },
-    ],
-  },
-  {
-    number: '03',
     title: 'Argus AI',
     subtitle: 'Computer Vision · Object Detection',
     description: 'A full-stack traffic violation detection system — upload a dashcam frame, run YOLOv8 inference across 23 object classes, and get a structured violation report back in under 35ms. A spatial rule engine cross-checks detections to flag violations like red light running or no-entry breaches, producing output that reads like an operational review, not raw model output.',
@@ -65,6 +50,21 @@ const projects = [
       { label: 'Object Classes', value: '23' },
       { label: 'Training Images', value: '5.2K' },
       { label: 'Inference', value: '<35ms' },
+    ],
+  },
+  {
+    number: '03',
+    title: 'Character-Level Language Model',
+    subtitle: 'NLP · Text Generation',
+    description: 'An RNN and LSTM trained character-by-character on 200,000 characters of text — building a generative language model from scratch. Uses a 70-character vocabulary, sliding window of 40 characters creating 66,000+ training pairs, and temperature sampling to control how creative vs coherent the output is.',
+    tech: ['Python', 'TensorFlow', 'Keras', 'RNN', 'LSTM', 'NLP'],
+    path: '/projects/language-model',
+    github: 'https://github.com/Pratyushpad27/char-level-language-model',
+    outcome: 'LSTM outperformed SimpleRNN on coherent text generation',
+    stats: [
+      { label: 'Characters', value: '200K' },
+      { label: 'Vocab', value: '70' },
+      { label: 'Pairs', value: '66K+' },
     ],
   },
 ]

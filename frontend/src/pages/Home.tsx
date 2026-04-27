@@ -32,13 +32,24 @@ const projects = [
     thumbnail: '/emotion/face_pulse_preview.png',
   },
   {
+    title: 'Argus AI',
+    subtitle: 'Computer Vision · Object Detection',
+    description: 'Upload a dashcam frame, run YOLOv8 inference across 23 classes, get a structured violation report back in <35ms. Rule engine flags red light running, no-entry breaches, and pedestrian proximity risk.',
+    tech: ['Python', 'YOLOv8', 'FastAPI', 'Next.js'],
+    path: '/projects/argus-ai',
+    github: 'https://github.com/Pratyushpad27/Argus-AI',
+    demo: 'https://ai-argus.netlify.app/',
+    number: '02',
+    thumbnail: '/argus/ArgusAI.png',
+  },
+  {
     title: 'Character-Level Language Model',
     subtitle: 'NLP · Text Generation',
     description: 'RNN and LSTM trained on 200K characters with temperature sampling controlling creativity vs coherence.',
     tech: ['Python', 'TensorFlow', 'RNN', 'LSTM'],
     path: '/projects/language-model',
     github: 'https://github.com/Pratyushpad27/char-level-language-model',
-    number: '02',
+    number: '03',
     thumbnail: '/fakenews/training_loss.png',
   },
 ]
@@ -338,14 +349,7 @@ export default function Home() {
                   style={{ fontSize: 'clamp(3rem, 7.5vw, 6rem)', letterSpacing: '-0.035em', lineHeight: 1.0 }}
                 >
                   Pratyush{' '}
-                  <span style={{
-                    background: 'linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                  }}>
-                    Padhy
-                  </span>
+                  <span className="text-white">Padhy</span>
                   <span style={{ color: 'rgba(255,255,255,0.25)' }}>.</span>
                 </motion.h1>
 
@@ -723,17 +727,7 @@ export default function Home() {
               className="text-5xl md:text-6xl font-bold text-white mb-6"
               style={{ lineHeight: 1.05, letterSpacing: '-0.03em' }}
             >
-              Let's build{' '}
-              <span
-                style={{
-                  background: 'linear-gradient(135deg, #60a5fa, #a78bfa)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}
-              >
-                something.
-              </span>
+              Let's build something.
             </h2>
             <p className="text-sm leading-relaxed mb-12 max-w-md mx-auto" style={{ color: '#94a3b8', lineHeight: 1.85 }}>
               Open to machine learning and software internships, research, and collaborations.

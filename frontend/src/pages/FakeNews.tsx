@@ -294,7 +294,7 @@ export default function FakeNews() {
 
           {/* Next project */}
           <FadeUp delay={0.05}>
-            <Link to="/projects/argus-ai" className="block group">
+            <Link to="/projects/emotion-detection" className="block group">
               <motion.div
                 className="flex items-center justify-between p-6"
                 style={{
@@ -308,7 +308,7 @@ export default function FakeNews() {
                 <div>
                   <p className="font-mono text-xs uppercase tracking-wider mb-1" style={{ color: '#475569' }}>Next Project</p>
                   <p className="text-white font-semibold group-hover:text-purple-400 transition-colors">
-                    Argus AI
+                    Face Pulse
                   </p>
                 </div>
                 <motion.span
