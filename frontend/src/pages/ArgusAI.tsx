@@ -5,59 +5,51 @@ import PageTransition from '../components/animations/PageTransition'
 import FadeUp from '../components/animations/FadeUp'
 import Lightbox from '../components/Lightbox'
 
-const temperatures = [
+const pipeline = [
   {
-    temp: '0.2',
-    label: 'Conservative',
-    color: '#10b981',
-    bg: 'rgba(16,185,129,0.06)',
-    border: 'rgba(16,185,129,0.2)',
-    output: 'the president announced today that the state of the country was a strong and the party of the election was a former president of the united states...',
+    name: 'Upload',
+    description: 'Drop a dashcam frame (JPG, PNG, WebP) into the detection workspace.',
+    icon: '01',
+    accent: '#3b82f6',
   },
   {
-    temp: '0.5',
-    label: 'Balanced',
-    color: '#f59e0b',
-    bg: 'rgba(245,158,11,0.06)',
-    border: 'rgba(245,158,11,0.2)',
-    output: 'the president announced comple vate in the has election an was be neworng do the ussistance that the clinton interely is a commenter of the state...',
+    name: 'YOLOv8 Inference',
+    description: 'YOLOv8s runs object detection across 23 classes — vehicles, signs, lights, pedestrians.',
+    icon: '02',
+    accent: '#6366f1',
   },
   {
-    temp: '0.7',
-    label: 'Creative',
-    color: '#f87171',
-    bg: 'rgba(248,113,113,0.06)',
-    border: 'rgba(248,113,113,0.2)',
-    output: 'the president announced evemipmon to post in o hatimer to consrations. marh rin n a doment that other get a foundateoth, share shick dictrual internet...',
+    name: 'Rule Engine',
+    description: 'Spatial proximity rules cross-check detections to flag violations like red light running or no-entry breaches.',
+    icon: '03',
+    accent: '#8b5cf6',
   },
-]
-
-const steps = [
-  { step: '01', title: 'Encode', desc: 'Every character in the corpus is converted to a one-hot vector across a 70-character vocabulary.' },
-  { step: '02', title: 'Sequence', desc: 'A sliding window of 40 characters creates 66,000+ input/output training pairs.' },
-  { step: '03', title: 'Train', desc: 'The LSTM learns to predict the next character by minimizing categorical crossentropy loss.' },
-  { step: '04', title: 'Generate', desc: 'Given a seed phrase, the model generates new characters one at a time using temperature sampling.' },
+  {
+    name: 'Annotated Output',
+    description: 'Bounding boxes, confidence scores, and a violation report are returned and can be saved for audit.',
+    icon: '04',
+    accent: '#10b981',
+  },
 ]
 
 const images = [
-  { src: '/fakenews/training_loss.png', alt: 'Training Loss' },
-  { src: '/fakenews/confidence_heatmap.png', alt: 'Confidence Heatmap' },
+  { src: '/argus/ArgusAI.png', alt: 'Argus AI Detection Workspace' },
 ]
 
-const techTags = ['Python', 'TensorFlow', 'Keras', 'RNN', 'LSTM', 'NLP', 'Text Generation']
+const techTags = ['Python', 'YOLOv8', 'FastAPI', 'Next.js', 'TypeScript', 'Docker', 'Google Cloud Run']
 
 const learned = [
-  'LSTMs outperform SimpleRNNs on sequence tasks due to their gating mechanism.',
-  'Temperature sampling controls the creativity vs coherence tradeoff in generation.',
-  'Sliding window tokenization turns raw text into thousands of labeled training sequences.',
-  'Character-level models reveal how modern LLMs like GPT learn language fundamentals.',
+  'YOLOv8s achieves sub-35ms inference — fast enough for real-time dashcam review without heavy GPU hardware.',
+  'Rule-based violation logic layered on top of raw detections is far more interpretable than end-to-end classification.',
+  'Spatial proximity between detected objects (e.g. vehicle near red light) is a simple but effective proxy for violation detection.',
+  'Containerizing with Docker and deploying to Cloud Run decouples the ML backend from the frontend and makes scaling straightforward.',
 ]
 
-export default function FakeNews() {
+export default function ArgusAI() {
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
   const [showBack, setShowBack] = useState(false)
 
-  useEffect(() => { document.title = 'Language Model | Pratyush Padhy' }, [])
+  useEffect(() => { document.title = 'Argus AI | Pratyush Padhy' }, [])
 
   useEffect(() => {
     const handleScroll = () => setShowBack(window.scrollY > 200)
@@ -71,14 +63,12 @@ export default function FakeNews() {
 
         {/* ── Hero band ── */}
         <div className="relative overflow-hidden pt-28 md:pt-36 pb-16 px-6" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-          {/* Accent gradient */}
           <div
             className="pointer-events-none absolute inset-0"
-            style={{ background: 'radial-gradient(ellipse 60% 50% at 70% 50%, rgba(139,92,246,0.07) 0%, transparent 70%)' }}
+            style={{ background: 'radial-gradient(ellipse 60% 50% at 70% 50%, rgba(99,102,241,0.07) 0%, transparent 70%)' }}
             aria-hidden="true"
           />
           <div className="max-w-4xl mx-auto relative">
-            {/* Breadcrumb */}
             <FadeUp>
               <nav aria-label="Breadcrumb" className="mb-8">
                 <ol className="flex items-center gap-2 text-xs font-mono" style={{ color: '#475569' }}>
@@ -86,19 +76,19 @@ export default function FakeNews() {
                   <li aria-hidden="true">/</li>
                   <li><Link to="/projects" className="hover:text-white transition-colors">Projects</Link></li>
                   <li aria-hidden="true">/</li>
-                  <li style={{ color: '#94a3b8' }}>Character-Level Language Model</li>
+                  <li style={{ color: '#94a3b8' }}>Argus AI</li>
                 </ol>
               </nav>
             </FadeUp>
 
             <FadeUp delay={0.05}>
               <div className="flex items-center gap-3 mb-5">
-                <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#8b5cf6' }}>Project 02</span>
+                <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#6366f1' }}>Project 03</span>
                 <span
                   className="text-xs px-2.5 py-0.5 font-mono"
-                  style={{ background: 'rgba(139,92,246,0.1)', color: '#a78bfa', border: '1px solid rgba(139,92,246,0.25)', borderRadius: 4 }}
+                  style={{ background: 'rgba(16,185,129,0.1)', color: '#10b981', border: '1px solid rgba(16,185,129,0.2)', borderRadius: 4 }}
                 >
-                  LSTM outperformed SimpleRNN
+                  Rule engine flags violations in &lt;35ms
                 </span>
               </div>
 
@@ -106,21 +96,21 @@ export default function FakeNews() {
                 className="text-4xl md:text-5xl font-bold text-white mb-5"
                 style={{ letterSpacing: '-0.025em', lineHeight: 1.1 }}
               >
-                Character-Level<br className="hidden md:block" /> Language Model
+                Argus AI
               </h1>
 
               <p className="text-base leading-relaxed max-w-2xl mb-8" style={{ color: '#94a3b8', lineHeight: 1.85 }}>
-                An RNN and LSTM trained on 200,000 characters of text to generate new text from scratch,
-                one character at a time. Built to understand how language models like GPT work at their
-                most fundamental level.
+                A full-stack traffic violation detection system — upload a dashcam frame, run YOLOv8 inference
+                across 23 object classes, and get a structured violation report back in under 35ms. Built with
+                a spatial rule engine that reads like an operational review, not just a raw model output.
               </p>
 
               {/* Stats */}
               <div className="flex flex-wrap gap-8 mb-8 pb-8" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                 {[
-                  { val: '200K', label: 'Characters' },
-                  { val: '70', label: 'Vocab Size' },
-                  { val: '66K+', label: 'Training Pairs' },
+                  { val: '23', label: 'Object Classes' },
+                  { val: '5.2K', label: 'Training Images' },
+                  { val: '<35ms', label: 'Inference Time' },
                 ].map((s) => (
                   <div key={s.label}>
                     <p className="text-2xl font-bold text-white">{s.val}</p>
@@ -135,23 +125,34 @@ export default function FakeNews() {
                   <span
                     key={t}
                     className="text-xs font-mono px-3 py-1"
-                    style={{ color: '#a78bfa', background: 'rgba(139,92,246,0.08)', border: '1px solid rgba(139,92,246,0.2)', borderRadius: 4 }}
+                    style={{ color: '#a5b4fc', background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.2)', borderRadius: 4 }}
                   >
                     {t}
                   </span>
                 ))}
               </div>
 
-              {/* CTA */}
-              <a
-                href="https://github.com/Pratyushpad27/char-level-language-model"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-6 py-2.5 text-sm font-medium text-white transition-all duration-200 hover:opacity-90 active:scale-95"
-                style={{ background: 'linear-gradient(135deg, #8b5cf6, #6366f1)', borderRadius: 6 }}
-              >
-                View on GitHub ↗
-              </a>
+              {/* CTAs */}
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="https://ai-argus.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-2.5 text-sm font-medium text-white transition-all duration-200 hover:opacity-90 active:scale-95"
+                  style={{ background: 'linear-gradient(135deg, #10b981, #059669)', borderRadius: 6 }}
+                >
+                  Live Demo ↗
+                </a>
+                <a
+                  href="https://github.com/Pratyushpad27/Argus-AI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-2.5 text-sm font-medium text-white transition-all duration-200 hover:opacity-90 active:scale-95"
+                  style={{ background: 'linear-gradient(135deg, #6366f1, #8b5cf6)', borderRadius: 6 }}
+                >
+                  View on GitHub ↗
+                </a>
+              </div>
             </FadeUp>
           </div>
         </div>
@@ -159,82 +160,72 @@ export default function FakeNews() {
         {/* ── Body ── */}
         <div className="max-w-4xl mx-auto px-6 py-16 space-y-20 pb-28 md:pb-20">
 
-          {/* How it works */}
+          {/* Problem */}
           <FadeUp>
             <section>
-              <SectionHeading number="01" label="Pipeline" title="How It Works" />
+              <SectionHeading number="01" label="Context" title="The Problem" />
+              <div
+                className="p-6 text-sm leading-relaxed"
+                style={{
+                  color: '#94a3b8',
+                  background: 'rgba(255,255,255,0.02)',
+                  border: '1px solid rgba(255,255,255,0.07)',
+                  borderRadius: 8,
+                  lineHeight: 1.85,
+                }}
+              >
+                Traffic violations are a leading cause of road accidents, but manual review of dashcam footage
+                is slow and inconsistent. Most CV demos just draw bounding boxes — they don't produce structured,
+                human-readable violation reports. Argus AI bridges the gap: it runs object detection and then applies
+                rule logic so the output reads like an operational finding, not raw model output.
+              </div>
+            </section>
+          </FadeUp>
+
+          {/* Pipeline */}
+          <FadeUp delay={0.05}>
+            <section>
+              <SectionHeading number="02" label="Architecture" title="Detection Pipeline" />
               <div className="grid md:grid-cols-2 gap-3">
-                {steps.map((item) => (
+                {pipeline.map((step) => (
                   <motion.div
-                    key={item.step}
+                    key={step.name}
                     className="p-5"
                     style={{
                       background: 'rgba(255,255,255,0.02)',
                       border: '1px solid rgba(255,255,255,0.07)',
                       borderRadius: 8,
                     }}
-                    whileHover={{ borderColor: 'rgba(139,92,246,0.3)', background: 'rgba(139,92,246,0.04)' }}
+                    whileHover={{ borderColor: step.accent + '40', background: step.accent + '06' }}
                     transition={{ duration: 0.2 }}
                   >
                     <div className="flex items-center gap-3 mb-3">
                       <span
                         className="w-8 h-8 flex items-center justify-center font-mono text-xs font-bold flex-shrink-0"
-                        style={{ background: 'rgba(139,92,246,0.15)', color: '#a78bfa', border: '1px solid rgba(139,92,246,0.3)', borderRadius: 6 }}
+                        style={{ background: step.accent + '18', color: step.accent, border: `1px solid ${step.accent}30`, borderRadius: 6 }}
                       >
-                        {item.step}
+                        {step.icon}
                       </span>
-                      <h3 className="text-white font-semibold text-sm">{item.title}</h3>
+                      <h3 className="text-white font-semibold text-sm">{step.name}</h3>
                     </div>
-                    <p className="text-sm" style={{ color: '#64748b', lineHeight: 1.7 }}>{item.desc}</p>
+                    <p className="text-sm" style={{ color: '#64748b', lineHeight: 1.7 }}>{step.description}</p>
                   </motion.div>
                 ))}
               </div>
             </section>
           </FadeUp>
 
-          {/* Sample outputs */}
+          {/* Preview */}
           <FadeUp delay={0.05}>
             <section>
-              <SectionHeading number="02" label="Generation" title="Sample Outputs" />
-              <p className="text-sm mb-6" style={{ color: '#64748b' }}>
-                Seed: <span className="font-mono" style={{ color: '#a78bfa' }}>"the president announced today that"</span>
-              </p>
-              <div className="space-y-3">
-                {temperatures.map((t) => (
-                  <div
-                    key={t.temp}
-                    className="p-5"
-                    style={{ background: t.bg, border: `1px solid ${t.border}`, borderRadius: 8 }}
-                  >
-                    <div className="flex items-center gap-3 mb-3">
-                      <span
-                        className="font-mono text-xs font-bold px-2.5 py-0.5"
-                        style={{ color: t.color, background: t.bg, border: `1px solid ${t.border}`, borderRadius: 4 }}
-                      >
-                        t={t.temp}
-                      </span>
-                      <span className="text-sm font-medium" style={{ color: t.color }}>{t.label}</span>
-                    </div>
-                    <p className="font-mono text-sm leading-relaxed" style={{ color: '#9ca3af', lineHeight: 1.75 }}>
-                      {t.output}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </section>
-          </FadeUp>
-
-          {/* Results */}
-          <FadeUp delay={0.05}>
-            <section>
-              <SectionHeading number="03" label="Output" title="Results" />
-              <div className="grid md:grid-cols-2 gap-4">
+              <SectionHeading number="03" label="Output" title="Detection Workspace" />
+              <div className="space-y-4">
                 {images.map((img) => (
                   <motion.div
                     key={img.alt}
                     className="overflow-hidden cursor-pointer group"
                     style={{ border: '1px solid rgba(255,255,255,0.07)', borderRadius: 8 }}
-                    whileHover={{ borderColor: 'rgba(139,92,246,0.3)' }}
+                    whileHover={{ borderColor: 'rgba(99,102,241,0.3)' }}
                     transition={{ duration: 0.2 }}
                     onClick={() => setLightbox(img)}
                     role="button"
@@ -244,12 +235,13 @@ export default function FakeNews() {
                   >
                     <div
                       className="flex items-center justify-center p-4"
-                      style={{ background: 'rgba(14,14,22,0.8)', minHeight: 180 }}
+                      style={{ background: 'rgba(14,14,22,0.8)' }}
                     >
                       <img
                         src={img.src}
                         alt={img.alt}
-                        className="w-full h-52 object-contain transition-transform duration-500 group-hover:scale-105"
+                        className="w-full object-contain rounded transition-transform duration-500 group-hover:scale-[1.02]"
+                        style={{ maxHeight: 480 }}
                         loading="lazy"
                       />
                     </div>
@@ -258,7 +250,7 @@ export default function FakeNews() {
                       style={{ background: 'rgba(14,14,22,0.6)', borderTop: '1px solid rgba(255,255,255,0.05)' }}
                     >
                       <p className="font-mono text-xs" style={{ color: '#475569' }}>{img.alt}</p>
-                      <span className="text-xs opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: '#8b5cf6' }}>expand ↗</span>
+                      <span className="text-xs opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: '#6366f1' }}>expand ↗</span>
                     </div>
                   </motion.div>
                 ))}
@@ -278,11 +270,11 @@ export default function FakeNews() {
                     style={{
                       background: 'rgba(255,255,255,0.02)',
                       border: '1px solid rgba(255,255,255,0.06)',
-                      borderLeft: '2px solid rgba(139,92,246,0.4)',
+                      borderLeft: '2px solid rgba(99,102,241,0.4)',
                       borderRadius: '0 8px 8px 0',
                     }}
                   >
-                    <span className="font-mono text-xs font-bold flex-shrink-0 mt-0.5" style={{ color: '#8b5cf6' }}>
+                    <span className="font-mono text-xs font-bold flex-shrink-0 mt-0.5" style={{ color: '#6366f1' }}>
                       {String(i + 1).padStart(2, '0')}
                     </span>
                     <span style={{ color: '#94a3b8', lineHeight: 1.75 }}>{item}</span>
@@ -294,7 +286,7 @@ export default function FakeNews() {
 
           {/* Next project */}
           <FadeUp delay={0.05}>
-            <Link to="/projects/argus-ai" className="block group">
+            <Link to="/projects/emotion-detection" className="block group">
               <motion.div
                 className="flex items-center justify-between p-6"
                 style={{
@@ -302,17 +294,17 @@ export default function FakeNews() {
                   border: '1px solid rgba(255,255,255,0.07)',
                   borderRadius: 10,
                 }}
-                whileHover={{ borderColor: 'rgba(139,92,246,0.3)', background: 'rgba(139,92,246,0.04)' }}
+                whileHover={{ borderColor: 'rgba(99,102,241,0.3)', background: 'rgba(99,102,241,0.04)' }}
                 transition={{ duration: 0.2 }}
               >
                 <div>
                   <p className="font-mono text-xs uppercase tracking-wider mb-1" style={{ color: '#475569' }}>Next Project</p>
-                  <p className="text-white font-semibold group-hover:text-purple-400 transition-colors">
-                    Argus AI
+                  <p className="text-white font-semibold group-hover:text-indigo-400 transition-colors">
+                    Face Pulse
                   </p>
                 </div>
                 <motion.span
-                  className="text-gray-500 group-hover:text-purple-400 transition-colors"
+                  className="text-gray-500 group-hover:text-indigo-400 transition-colors"
                   whileHover={{ x: 4 }}
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -367,8 +359,8 @@ function SectionHeading({ number, label, title }: { number: string; label: strin
   return (
     <div className="mb-6">
       <div className="flex items-center gap-3 mb-2">
-        <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#8b5cf6' }}>{number}</span>
-        <span style={{ width: 24, height: 1, background: 'rgba(139,92,246,0.3)', display: 'block' }} />
+        <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#6366f1' }}>{number}</span>
+        <span style={{ width: 24, height: 1, background: 'rgba(99,102,241,0.3)', display: 'block' }} />
         <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#475569' }}>{label}</span>
       </div>
       <h2 className="text-2xl font-bold text-white" style={{ letterSpacing: '-0.015em' }}>{title}</h2>

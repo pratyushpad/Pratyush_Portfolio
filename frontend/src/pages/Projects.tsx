@@ -51,6 +51,22 @@ const projects = [
       { label: 'Pairs', value: '66K+' },
     ],
   },
+  {
+    number: '03',
+    title: 'Argus AI',
+    subtitle: 'Computer Vision · Object Detection',
+    description: 'A full-stack traffic violation detection system — upload a dashcam frame, run YOLOv8 inference across 23 object classes, and get a structured violation report back in under 35ms. A spatial rule engine cross-checks detections to flag violations like red light running or no-entry breaches, producing output that reads like an operational review, not raw model output.',
+    tech: ['Python', 'YOLOv8', 'FastAPI', 'Next.js', 'TypeScript', 'Docker', 'GCP'],
+    path: '/projects/argus-ai',
+    github: 'https://github.com/Pratyushpad27/Argus-AI',
+    demo: 'https://ai-argus.netlify.app/',
+    outcome: 'Rule engine flags violations across 23 detection classes in <35ms',
+    stats: [
+      { label: 'Object Classes', value: '23' },
+      { label: 'Training Images', value: '5.2K' },
+      { label: 'Inference', value: '<35ms' },
+    ],
+  },
 ]
 
 export default function Projects() {
