@@ -309,7 +309,7 @@ export default function About() {
             <p className="text-sm mb-10" style={{ color: '#475569' }}>Open to ML &amp; software internships and collaborations.</p>
             <div className="flex gap-4 justify-center flex-wrap">
               <a
-                href="/Pratyush_Padhy_Resume.pdf"
+                href="/Pratyush_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3 text-sm font-medium text-white transition-all duration-200 hover:bg-blue-500/20"
