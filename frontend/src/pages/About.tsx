@@ -42,6 +42,24 @@ function AnimatedCounter({ value, suffix = '', label }: { value: number; suffix?
 
 const experiences = [
   {
+    role: 'Software Engineer Intern',
+    org: 'Tata Consultancy Services',
+    period: 'May 2026 – Present',
+    desc: 'Incoming Summer 2026.',
+  },
+  {
+    role: 'Software Engineer Intern',
+    org: 'AXENTRA OS',
+    period: 'May 2026 – Present',
+    desc: 'Software Engineer – Python & FastAPI.',
+  },
+  {
+    role: 'API Developer',
+    org: 'ZotBins',
+    period: 'May 2026 – Present',
+    desc: 'On the API subteam, working on FastAPI and API development.',
+  },
+  {
     role: 'Software Developer',
     org: 'Ready Tutor',
     period: 'Mar 2026 – Present',
