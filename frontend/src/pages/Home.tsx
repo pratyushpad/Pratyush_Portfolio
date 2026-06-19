@@ -196,7 +196,7 @@ function TerminalCard() {
     { prompt: false, text: '✦ open to ML & software internships' },
     { prompt: true, text: 'current --list' },
     { prompt: false, text: '├── SWE Intern @ TCS' },
-    { prompt: false, text: '├── UC Irvine CS, Class of 2027' },
+    { prompt: false, text: '├── UC Irvine CS, Class of 2028' },
     { prompt: false, text: '└── Medical AI & Computer Vision' },
     { prompt: true, text: 'location' },
     { prompt: false, text: 'Irvine, CA' },

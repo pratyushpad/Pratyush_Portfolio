@@ -179,7 +179,7 @@ export default function About() {
                 <p className="text-sm mb-4" style={{ color: '#94a3b8' }}>B.S. Computer Science</p>
                 <div className="pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
                   <p className="text-3xl font-semibold text-white">3.86</p>
-                  <p className="text-xs font-mono mt-1" style={{ color: '#475569' }}>GPA · Class of 2027</p>
+                  <p className="text-xs font-mono mt-1" style={{ color: '#475569' }}>GPA · Class of 2028</p>
                   <p className="text-xs font-mono mt-2" style={{ color: '#4ade80' }}>Dean's Honor List: Fall '25, Winter '26, Spring '26</p>
                 </div>
               </div>
