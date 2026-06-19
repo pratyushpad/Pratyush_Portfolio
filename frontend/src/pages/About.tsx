@@ -22,7 +22,7 @@ function AnimatedCounter({ value, suffix = '', label }: { value: number; suffix?
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-40px' })
   const count = useMotionValue(0)
-  const rounded = useTransform(count, (v) => Math.round(v))
+  const rounded = useTransform(count, (v) => Math.round(v).toLocaleString('en-US'))
 
   useEffect(() => {
     if (isInView) {
@@ -44,8 +44,8 @@ const experiences = [
   {
     role: 'Software Engineer Intern',
     org: 'Tata Consultancy Services',
-    period: 'May 2026 – Present',
-    desc: 'Incoming Summer 2026.',
+    period: 'Jun 2026 – Present',
+    desc: "Building computer vision and deep learning models (TensorFlow, PyTorch, OpenCV) at TCS's Medical Robotics Center on Carnegie Mellon University's campus for early cancer prediction and detection. Developing end-to-end CNN-based segmentation, detection, and classification pipelines over DICOM/NIfTI volumetric scans — spanning preprocessing, augmentation, and validation tuned for clinical-grade accuracy and real-time inference.",
   },
   {
     role: 'Software Engineer Intern',
@@ -60,10 +60,10 @@ const experiences = [
     desc: 'On the API subteam, working on FastAPI and API development.',
   },
   {
-    role: 'Software Developer',
+    role: 'Software Developer Intern',
     org: 'Ready Tutor',
-    period: 'Mar 2026 – Present',
-    desc: 'Building Courseeater.com — a full-stack course planner for UC Irvine students. The app lets students browse, plan, and track UCI courses with intelligent scheduling and prerequisite mapping. Engineered the React + TypeScript frontend and Node.js backend, integrated the UCI course catalog API, and implemented search, filtering, and a drag-and-drop multi-quarter planner to help students plan their entire degree in one place.',
+    period: 'Mar – Jun 2026',
+    desc: 'Built CourseEater — a full-stack course planner for UC Irvine students. Engineered a scalable MongoDB/SQLite schema class with React useContext integration, replacing 10+ component-level instances across the stack. Built a Fall Quarter catalog with real-time retrieval of 1,200+ UCI courses and resolved 30+ bugs, contributing to securing $5,500 in funding. Redesigned the year-planning data model with a JSON-stringified array schema to support fully dynamic multi-year scheduling.',
   },
   {
     role: 'Undergraduate Mentor',
@@ -154,9 +154,9 @@ export default function About() {
               </div>
               <p className="text-sm leading-relaxed mb-6" style={{ color: '#94a3b8' }}>
                 Computer Science student at UC Irvine (Dean's Honor List) with a passion
-                for machine learning and AI. I build deep learning models from scratch, explore NLP, and
-                mentored 50+ students at Data@UCI. Previously placed top 10 at Berkeley ROAR
-                and conducted RNA-seq research at Stanford iLab.
+                for machine learning and AI. Currently a software engineer intern at TCS, building medical AI and
+                computer vision models for early cancer detection. Previously built full-stack course-planning tools
+                at Ready Tutor, mentored 50+ students at Data@UCI, and conducted RNA-seq research at Stanford iLab.
               </p>
               <div className="flex flex-wrap gap-2 mb-6">
                 {clubs.map((item) => (
@@ -179,8 +179,8 @@ export default function About() {
                 <p className="text-sm mb-4" style={{ color: '#94a3b8' }}>B.S. Computer Science</p>
                 <div className="pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
                   <p className="text-3xl font-semibold text-white">3.86</p>
-                  <p className="text-xs font-mono mt-1" style={{ color: '#475569' }}>GPA · Class of 2028</p>
-                  <p className="text-xs font-mono mt-2" style={{ color: '#4ade80' }}>Dean's Honor List: Fall '25, Winter '26</p>
+                  <p className="text-xs font-mono mt-1" style={{ color: '#475569' }}>GPA · Class of 2027</p>
+                  <p className="text-xs font-mono mt-2" style={{ color: '#4ade80' }}>Dean's Honor List: Fall '25, Winter '26, Spring '26</p>
                 </div>
               </div>
             </div>
@@ -190,8 +190,8 @@ export default function About() {
         {/* ═══ STATS ═══ */}
         <RevealSection>
           <div className="flex gap-10 md:gap-16 mb-20 pt-8 pb-8" style={{ borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-            <AnimatedCounter value={35} suffix="K+" label="Images trained on" />
-            <AnimatedCounter value={200} suffix="K+" label="Characters processed" />
+            <AnimatedCounter value={93} suffix="%" label="Model accuracy" />
+            <AnimatedCounter value={1200} suffix="+" label="UCI courses indexed" />
             <AnimatedCounter value={50} suffix="+" label="Students mentored" />
             <div>
               <p className="text-3xl font-semibold text-white">Top 10</p>

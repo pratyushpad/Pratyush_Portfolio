@@ -64,15 +64,15 @@ const roles = [
   'Machine Learning Engineer.',
   'Deep Learning Researcher.',
   'CS Student @ UC Irvine.',
-  'Data@UCI Mentor.',
+  'SWE Intern @ TCS.',
 ]
 
 const sections = ['Hero', 'About', 'Projects', 'Contact']
 
 const stats = [
-  { val: 3.86, display: '3.86', suffix: '', label: 'GPA' },
-  { val: 50, display: '50', suffix: '+', label: 'Students Mentored' },
-  { val: 35, display: '35', suffix: 'K+', label: 'Training Images' },
+  { val: 3.86, suffix: '', prefix: '', label: 'GPA' },
+  { val: 93, suffix: '%', prefix: '', label: 'Model Accuracy' },
+  { val: 5500, suffix: '', prefix: '$', label: 'Funding Secured' },
 ]
 
 function useTypewriter(words: string[], speed = 55, pause = 2400) {
@@ -105,7 +105,11 @@ function useCountUp(target: number, decimals = 0) {
       duration: 1.6,
       ease: 'easeOut',
       onUpdate(v) {
-        if (ref.current) ref.current.textContent = v.toFixed(decimals)
+        if (ref.current)
+          ref.current.textContent = v.toLocaleString('en-US', {
+            minimumFractionDigits: decimals,
+            maximumFractionDigits: decimals,
+          })
       },
     })
     return () => controls.stop()
@@ -191,9 +195,9 @@ function TerminalCard() {
     { prompt: true, text: 'status' },
     { prompt: false, text: '✦ open to ML & software internships' },
     { prompt: true, text: 'current --list' },
-    { prompt: false, text: '├── Data@UCI Mentor' },
-    { prompt: false, text: '├── UC Irvine CS, Y1' },
-    { prompt: false, text: '└── Deep Learning Research' },
+    { prompt: false, text: '├── SWE Intern @ TCS' },
+    { prompt: false, text: '├── UC Irvine CS, Class of 2027' },
+    { prompt: false, text: '└── Medical AI & Computer Vision' },
     { prompt: true, text: 'location' },
     { prompt: false, text: 'Irvine, CA' },
   ]
@@ -259,11 +263,12 @@ function TerminalCard() {
   )
 }
 
-function StatCounter({ val, suffix, label, decimals = 0 }: { val: number; suffix: string; label: string; decimals?: number }) {
+function StatCounter({ val, suffix, label, decimals = 0, prefix = '' }: { val: number; suffix: string; label: string; decimals?: number; prefix?: string }) {
   const ref = useCountUp(val, decimals)
   return (
     <div className="text-center md:text-left">
       <p className="text-3xl font-bold text-white tabular-nums">
+        <span>{prefix}</span>
         <span ref={ref}>0</span>
         <span>{suffix}</span>
       </p>
@@ -411,7 +416,7 @@ export default function Home() {
                   {stats.map((s, i) => (
                     <div key={s.label} className="flex items-center">
                       <div className="pr-8 md:pr-10">
-                        <StatCounter val={s.val} suffix={s.suffix} label={s.label} decimals={s.val % 1 !== 0 ? 2 : 0} />
+                        <StatCounter val={s.val} suffix={s.suffix} prefix={s.prefix} label={s.label} decimals={s.val % 1 !== 0 ? 2 : 0} />
                       </div>
                       {i < stats.length - 1 && (
                         <div className="h-10 mr-8 md:mr-10" style={{ width: 1, background: 'rgba(255,255,255,0.07)' }} />
@@ -448,8 +453,10 @@ export default function Home() {
                   focused on deep learning and NLP.
                 </h2>
                 <p className="text-sm leading-relaxed mb-10" style={{ color: '#94a3b8', lineHeight: 1.85 }}>
-                  I build deep learning models from scratch, conduct ML research, and mentor 50+ students at Data@UCI.
-                  Previously placed top 10 at Berkeley ROAR and conducted RNA-seq research at Stanford iLab.
+                  I build deep learning models from scratch and ship full-stack ML systems. Currently a software
+                  engineer intern at TCS, working on medical AI and computer vision for early cancer detection.
+                  Previously built course-planning tools at Ready Tutor, mentored 50+ students at Data@UCI, and
+                  conducted RNA-seq research at Stanford iLab.
                 </p>
 
                 {/* Currently block */}
@@ -466,8 +473,8 @@ export default function Home() {
                   </p>
                   <ul className="space-y-2">
                     {[
-                      'Mentoring students as Data@UCI Instructor',
-                      'Exploring transformer architectures',
+                      'SWE intern at TCS — medical AI & computer vision',
+                      'Building full-stack ML tools & research projects',
                       'Open to ML & software internship opportunities',
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-2 text-sm" style={{ color: '#94a3b8' }}>
