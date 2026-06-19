@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <rect width="100" height="100" rx="20" fill="#232a3b"/>
-  <!-- stem of the P -->
-  <polygon points="25,17 43,17 43,91 25,91" fill="#ffffff"/>
-  <!-- bowl: bold right-pointing arrow -->
-  <polygon points="43,15 88,47 43,69" fill="#ffffff"/>
-  <!-- counter (cut-out) giving the folded-ring look -->
-  <polygon points="55,36 70,47 55,58" fill="#232a3b"/>
-</svg>

@@ -45,7 +45,7 @@ const experiences = [
     role: 'Software Engineer Intern',
     org: 'Tata Consultancy Services',
     period: 'Jun 2026 – Present',
-    desc: "Building computer vision and deep learning models (TensorFlow, PyTorch, OpenCV) at TCS's Medical Robotics Center on Carnegie Mellon University's campus for early cancer prediction and detection. Developing end-to-end CNN-based segmentation, detection, and classification pipelines over DICOM/NIfTI volumetric scans — spanning preprocessing, augmentation, and validation tuned for clinical-grade accuracy and real-time inference.",
+    desc: "Building computer vision and deep learning models (TensorFlow, PyTorch, OpenCV) at TCS's Medical Robotics Center on Carnegie Mellon University's campus for early cancer prediction and detection. Developing end-to-end CNN-based segmentation, detection, and classification pipelines over DICOM/NIfTI volumetric scans, spanning preprocessing, augmentation, and validation tuned for clinical-grade accuracy and real-time inference.",
   },
   {
     role: 'Software Engineer Intern',
