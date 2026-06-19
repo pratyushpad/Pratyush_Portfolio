@@ -273,7 +273,7 @@ function StatCounter({ val, suffix, label, decimals = 0, prefix = '' }: { val: n
     <div className="text-center md:text-left">
       <p className="text-3xl font-bold text-white tabular-nums">
         <span>{prefix}</span>
-        <span ref={ref}>0</span>
+        <span ref={ref}>{val.toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals })}</span>
         <span>{suffix}</span>
       </p>
       <p className="text-xs font-mono mt-1.5 uppercase tracking-wider" style={{ color: '#9a9a9a' }}>{label}</p>
@@ -458,7 +458,7 @@ export default function Home() {
                 </h2>
                 <p className="text-sm leading-relaxed mb-10" style={{ color: '#d0d0d0', lineHeight: 1.85 }}>
                   I build deep learning models from scratch and ship full-stack ML systems. Currently a software
-                  engineer intern at TCS, working on medical AI and computer vision for early cancer detection.
+                  engineer intern at TCS, building medical AI and computer vision for early cancer detection.
                   Previously built course-planning tools at Ready Tutor, mentored 50+ students at Data@UCI, and
                   conducted RNA-seq research at Stanford iLab.
                 </p>
