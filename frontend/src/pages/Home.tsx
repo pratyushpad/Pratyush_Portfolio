@@ -55,9 +55,9 @@ const projects = [
 ]
 
 const skillCategories = [
-  { label: 'ML / AI', color: '#3b82f6', skills: ['TensorFlow', 'Keras', 'scikit-learn', 'OpenCV', 'Dlib'] },
-  { label: 'Languages', color: '#8b5cf6', skills: ['Python', 'Java', 'C++', 'R', 'TypeScript'] },
-  { label: 'Web & Tools', color: '#10b981', skills: ['React', 'Git', 'Vite', 'Tailwind'] },
+  { label: 'ML / AI', color: '#ffffff', skills: ['TensorFlow', 'Keras', 'scikit-learn', 'OpenCV', 'Dlib'] },
+  { label: 'Languages', color: '#a3a3a3', skills: ['Python', 'Java', 'C++', 'R', 'TypeScript'] },
+  { label: 'Web & Tools', color: '#ffffff', skills: ['React', 'Git', 'Vite', 'Tailwind'] },
 ]
 
 const roles = [
@@ -120,9 +120,9 @@ function useCountUp(target: number, decimals = 0) {
 function SectionLabel({ number, label }: { number: string; label: string }) {
   return (
     <div className="flex items-center gap-4 mb-16">
-      <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#3b82f6' }}>{number}</span>
-      <span style={{ width: 40, height: 1, background: 'rgba(59,130,246,0.35)', display: 'block' }} />
-      <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#475569' }}>{label}</span>
+      <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#ffffff' }}>{number}</span>
+      <span style={{ width: 40, height: 1, background: 'rgba(255,255,255,0.35)', display: 'block' }} />
+      <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#9a9a9a' }}>{label}</span>
     </div>
   )
 }
@@ -142,7 +142,7 @@ function SectionNav({ active }: { active: number }) {
         >
           <span
             className="text-xs font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-            style={{ color: active === i ? '#3b82f6' : '#475569' }}
+            style={{ color: active === i ? '#ffffff' : '#9a9a9a' }}
           >
             {name}
           </span>
@@ -151,7 +151,7 @@ function SectionNav({ active }: { active: number }) {
             style={{
               width: active === i ? 32 : 12,
               height: 2,
-              background: active === i ? '#3b82f6' : 'rgba(255,255,255,0.12)',
+              background: active === i ? '#ffffff' : 'rgba(255,255,255,0.12)',
             }}
           />
         </a>
@@ -173,7 +173,7 @@ function NextSection({ target, label }: { target: string; label: string }) {
       animate={{ opacity: 1 }}
       transition={{ delay: 1.2 }}
     >
-      <span className="text-xs font-mono uppercase tracking-widest group-hover:text-white transition-colors" style={{ color: '#475569' }}>
+      <span className="text-xs font-mono uppercase tracking-widest group-hover:text-white transition-colors" style={{ color: '#9a9a9a' }}>
         {label}
       </span>
       <motion.div
@@ -181,7 +181,7 @@ function NextSection({ target, label }: { target: string; label: string }) {
         transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
       >
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <path d="M8 2v12M3 9l5 5 5-5" stroke="#3b82f6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M8 2v12M3 9l5 5 5-5" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </motion.div>
     </motion.a>
@@ -190,16 +190,16 @@ function NextSection({ target, label }: { target: string; label: string }) {
 
 function TerminalCard() {
   const lines = [
-    { prompt: true, text: 'whoami' },
-    { prompt: false, text: 'pratyush padhy' },
-    { prompt: true, text: 'status' },
-    { prompt: false, text: '✦ open to ML & software internships' },
-    { prompt: true, text: 'current --list' },
-    { prompt: false, text: '├── SWE Intern @ TCS' },
-    { prompt: false, text: '├── UC Irvine CS, Class of 2028' },
-    { prompt: false, text: '└── Medical AI & Computer Vision' },
-    { prompt: true, text: 'location' },
-    { prompt: false, text: 'Irvine, CA' },
+    { prompt: true, text: 'whoami', color: '' },
+    { prompt: false, text: 'pratyush padhy', color: '#ffffff' },
+    { prompt: true, text: 'status', color: '' },
+    { prompt: false, text: '✦ open to ML & software internships', color: '#ffffff' },
+    { prompt: true, text: 'current --list', color: '' },
+    { prompt: false, text: '├── SWE Intern @ TCS', color: '#e5e7eb' },
+    { prompt: false, text: '├── UC Irvine CS, Class of 2028', color: '#e5e7eb' },
+    { prompt: false, text: '└── Medical AI & Computer Vision', color: '#e5e7eb' },
+    { prompt: true, text: 'location', color: '' },
+    { prompt: false, text: 'Irvine, CA', color: '#ffffff' },
   ]
 
   return (
@@ -209,18 +209,22 @@ function TerminalCard() {
       transition={{ duration: 0.9, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
       className="relative"
       style={{
-        background: 'rgba(14,14,22,0.9)',
-        border: '1px solid rgba(255,255,255,0.08)',
+        background: 'rgba(12,14,16,0.92)',
+        border: '1px solid rgba(255,255,255,0.18)',
         borderRadius: 12,
         backdropFilter: 'blur(20px)',
+        boxShadow: '0 0 50px rgba(255,255,255,0.07), inset 0 0 0 1px rgba(255,255,255,0.02)',
       }}
     >
       {/* Terminal header */}
-      <div className="flex items-center gap-2 px-4 py-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+      <div className="flex items-center gap-2 px-4 py-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
         <span className="w-3 h-3 rounded-full" style={{ background: '#ff5f57' }} />
         <span className="w-3 h-3 rounded-full" style={{ background: '#febc2e' }} />
         <span className="w-3 h-3 rounded-full" style={{ background: '#28c840' }} />
-        <span className="ml-2 font-mono text-xs" style={{ color: '#475569' }}>pratyush@portfolio ~ %</span>
+        <span className="ml-2 font-mono text-xs">
+          <span style={{ color: '#ffffff' }}>pratyush@portfolio</span>
+          <span style={{ color: '#b0b0b0' }}> : ~ %</span>
+        </span>
       </div>
 
       {/* Terminal body */}
@@ -235,11 +239,11 @@ function TerminalCard() {
           >
             {line.prompt ? (
               <>
-                <span style={{ color: '#3b82f6' }}>›</span>
-                <span style={{ color: '#e2e8f0' }}>{line.text}</span>
+                <span style={{ color: '#ffffff' }}>❯</span>
+                <span style={{ color: '#ffffff' }}>{line.text}</span>
               </>
             ) : (
-              <span className="pl-4" style={{ color: '#64748b' }}>{line.text}</span>
+              <span className="pl-4" style={{ color: line.color || '#9ca3af' }}>{line.text}</span>
             )}
           </motion.div>
         ))}
@@ -250,12 +254,12 @@ function TerminalCard() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.8 }}
         >
-          <span style={{ color: '#3b82f6' }}>›</span>
+          <span style={{ color: '#ffffff' }}>❯</span>
           <motion.span
             className="inline-block w-2 h-4"
             animate={{ opacity: [1, 0, 1] }}
             transition={{ repeat: Infinity, duration: 1.2 }}
-            style={{ background: '#3b82f6' }}
+            style={{ background: '#ffffff' }}
           />
         </motion.div>
       </div>
@@ -272,7 +276,7 @@ function StatCounter({ val, suffix, label, decimals = 0, prefix = '' }: { val: n
         <span ref={ref}>0</span>
         <span>{suffix}</span>
       </p>
-      <p className="text-xs font-mono mt-1.5 uppercase tracking-wider" style={{ color: '#475569' }}>{label}</p>
+      <p className="text-xs font-mono mt-1.5 uppercase tracking-wider" style={{ color: '#9a9a9a' }}>{label}</p>
     </div>
   )
 }
@@ -328,12 +332,12 @@ export default function Home() {
           <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
             <div style={{
               position: 'absolute', top: '15%', left: '5%', width: 480, height: 480,
-              background: 'radial-gradient(circle, rgba(59,130,246,0.09) 0%, transparent 70%)',
+              background: 'radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%)',
               borderRadius: '50%', filter: 'blur(40px)',
             }} />
             <div style={{
               position: 'absolute', top: '40%', right: '10%', width: 360, height: 360,
-              background: 'radial-gradient(circle, rgba(139,92,246,0.07) 0%, transparent 70%)',
+              background: 'radial-gradient(circle, rgba(255,255,255,0.07) 0%, transparent 70%)',
               borderRadius: '50%', filter: 'blur(40px)',
             }} />
           </div>
@@ -355,14 +359,14 @@ export default function Home() {
                 >
                   Pratyush{' '}
                   <span className="text-white">Padhy</span>
-                  <span style={{ color: 'rgba(255,255,255,0.25)' }}>.</span>
+                  <span style={{ color: '#ffffff' }}>.</span>
                 </motion.h1>
 
                 {/* Short descriptor */}
                 <motion.p
                   variants={stagger.item}
                   className="text-lg font-light mb-4"
-                  style={{ color: '#94a3b8', letterSpacing: '-0.01em', lineHeight: 1.5 }}
+                  style={{ color: '#d0d0d0', letterSpacing: '-0.01em', lineHeight: 1.5 }}
                 >
                   I build <span className="text-white font-medium">intelligent systems</span> — deep learning models,{' '}
                   NLP experiments, and things that learn from data.
@@ -370,10 +374,10 @@ export default function Home() {
 
                 {/* Typewriter */}
                 <motion.div variants={stagger.item} className="flex items-center gap-2 mb-10 h-6">
-                  <span className="font-mono text-xs" style={{ color: '#475569' }}>~$</span>
-                  <span className="font-mono text-sm" style={{ color: '#60a5fa' }}>
+                  <span className="font-mono text-xs" style={{ color: '#ffffff' }}>~$</span>
+                  <span className="font-mono text-sm" style={{ color: '#ffffff' }}>
                     {typeText}
-                    <span className="inline-block w-px h-3.5 ml-0.5 align-middle animate-pulse" style={{ backgroundColor: '#3b82f6' }} aria-hidden="true" />
+                    <span className="inline-block w-px h-3.5 ml-0.5 align-middle animate-pulse" style={{ backgroundColor: '#ffffff' }} aria-hidden="true" />
                   </span>
                 </motion.div>
 
@@ -382,8 +386,8 @@ export default function Home() {
                   <a
                     href="#s2"
                     onClick={(e) => { e.preventDefault(); document.getElementById('s2')?.scrollIntoView({ behavior: 'smooth' }) }}
-                    className="px-7 py-3 text-sm font-semibold text-white transition-all duration-200 hover:opacity-90 active:scale-95"
-                    style={{ background: 'linear-gradient(135deg, #3b82f6, #6366f1)', borderRadius: 8 }}
+                    className="px-7 py-3 text-sm font-semibold text-black transition-all duration-200 hover:opacity-90 active:scale-95"
+                    style={{ background: 'linear-gradient(135deg, #ffffff, #d4d4d4)', borderRadius: 8 }}
                   >
                     View my work
                   </a>
@@ -392,7 +396,7 @@ export default function Home() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-7 py-3 text-sm font-medium transition-all duration-200 hover:text-white hover:border-white/20 active:scale-95"
-                    style={{ color: '#94a3b8', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8 }}
+                    style={{ color: '#d0d0d0', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8 }}
                   >
                     Resume ↗
                   </a>
@@ -401,7 +405,7 @@ export default function Home() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-7 py-3 text-sm font-medium transition-all duration-200 hover:text-white hover:border-white/20 active:scale-95"
-                    style={{ color: '#94a3b8', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8 }}
+                    style={{ color: '#d0d0d0', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8 }}
                   >
                     GitHub ↗
                   </a>
@@ -452,7 +456,7 @@ export default function Home() {
                   CS student at <span className="font-semibold">UC Irvine</span>{' '}
                   focused on deep learning and NLP.
                 </h2>
-                <p className="text-sm leading-relaxed mb-10" style={{ color: '#94a3b8', lineHeight: 1.85 }}>
+                <p className="text-sm leading-relaxed mb-10" style={{ color: '#d0d0d0', lineHeight: 1.85 }}>
                   I build deep learning models from scratch and ship full-stack ML systems. Currently a software
                   engineer intern at TCS, working on medical AI and computer vision for early cancer detection.
                   Previously built course-planning tools at Ready Tutor, mentored 50+ students at Data@UCI, and
@@ -463,12 +467,12 @@ export default function Home() {
                 <div
                   className="p-5 mb-8"
                   style={{
-                    background: 'rgba(59,130,246,0.05)',
-                    border: '1px solid rgba(59,130,246,0.15)',
+                    background: 'rgba(255,255,255,0.05)',
+                    border: '1px solid rgba(255,255,255,0.15)',
                     borderRadius: 8,
                   }}
                 >
-                  <p className="font-mono text-xs uppercase tracking-[0.25em] mb-3" style={{ color: '#3b82f6' }}>
+                  <p className="font-mono text-xs uppercase tracking-[0.25em] mb-3" style={{ color: '#ffffff' }}>
                     Currently
                   </p>
                   <ul className="space-y-2">
@@ -477,8 +481,8 @@ export default function Home() {
                       'Building full-stack ML tools & research projects',
                       'Open to ML & software internship opportunities',
                     ].map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm" style={{ color: '#94a3b8' }}>
-                        <span style={{ color: '#3b82f6', marginTop: 2 }}>›</span>
+                      <li key={item} className="flex items-start gap-2 text-sm" style={{ color: '#d0d0d0' }}>
+                        <span style={{ color: '#ffffff', marginTop: 2 }}>›</span>
                         {item}
                       </li>
                     ))}
@@ -486,14 +490,14 @@ export default function Home() {
                 </div>
 
                 <div className="flex gap-6">
-                  <a href="/Pratyush_Resume.pdf" target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:text-white" style={{ color: '#3b82f6' }}>Resume ↗</a>
-                  <a href="https://www.linkedin.com/in/pratyush-padhy-b7017a269/" target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:text-white" style={{ color: '#475569' }}>LinkedIn ↗</a>
-                  <a href="mailto:ppadhy@uci.edu" className="text-sm font-medium transition-colors hover:text-white" style={{ color: '#475569' }}>Email ↗</a>
+                  <a href="/Pratyush_Resume.pdf" target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:text-white" style={{ color: '#ffffff' }}>Resume ↗</a>
+                  <a href="https://www.linkedin.com/in/pratyush-padhy-b7017a269/" target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:text-white" style={{ color: '#9a9a9a' }}>LinkedIn ↗</a>
+                  <a href="mailto:ppadhy@uci.edu" className="text-sm font-medium transition-colors hover:text-white" style={{ color: '#9a9a9a' }}>Email ↗</a>
                 </div>
               </RevealSection>
 
               <RevealSection>
-                <p className="font-mono text-xs uppercase tracking-[0.3em] mb-6" style={{ color: '#475569' }}>
+                <p className="font-mono text-xs uppercase tracking-[0.3em] mb-6" style={{ color: '#9a9a9a' }}>
                   Technologies
                 </p>
                 <div className="space-y-6">
@@ -515,7 +519,7 @@ export default function Home() {
                             key={s}
                             className="px-3 py-1.5 text-xs font-mono cursor-default transition-all duration-150"
                             style={{
-                              color: '#94a3b8',
+                              color: '#d0d0d0',
                               border: '1px solid rgba(255,255,255,0.07)',
                               borderRadius: 4,
                             }}
@@ -554,7 +558,7 @@ export default function Home() {
                 <Link
                   to="/projects"
                   className="hidden md:flex items-center gap-2 text-sm font-medium transition-colors hover:text-white"
-                  style={{ color: '#475569' }}
+                  style={{ color: '#9a9a9a' }}
                 >
                   All projects →
                 </Link>
@@ -598,7 +602,7 @@ export default function Home() {
                         >
                           <div
                             className="absolute inset-0 flex items-center justify-center p-10"
-                            style={{ backgroundColor: 'rgba(12,12,18,0.95)' }}
+                            style={{ backgroundColor: 'rgba(10,10,10,0.95)' }}
                           >
                             <img
                               src={project.thumbnail}
@@ -610,11 +614,11 @@ export default function Home() {
                           {/* Hover overlay */}
                           <div
                             className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                            style={{ background: 'rgba(10,10,15,0.65)' }}
+                            style={{ background: 'rgba(0,0,0,0.65)' }}
                           >
                             <span
                               className="px-5 py-2.5 text-sm font-medium text-white"
-                              style={{ border: '1px solid rgba(59,130,246,0.5)', background: 'rgba(59,130,246,0.12)', borderRadius: 4 }}
+                              style={{ border: '1px solid rgba(255,255,255,0.5)', background: 'rgba(255,255,255,0.12)', borderRadius: 4 }}
                             >
                               View project →
                             </span>
@@ -637,21 +641,21 @@ export default function Home() {
                         <div className="p-10 md:p-12 flex flex-col justify-between" style={{ direction: 'ltr' }}>
                           <div>
                             <div className="flex items-center gap-4 mb-4">
-                              <span className="font-mono text-xs" style={{ color: '#475569' }}>{project.number}</span>
+                              <span className="font-mono text-xs" style={{ color: '#9a9a9a' }}>{project.number}</span>
                               <span
                                 className="font-mono text-xs px-2 py-0.5"
-                                style={{ color: '#3b82f6', border: '1px solid rgba(59,130,246,0.25)', borderRadius: 3 }}
+                                style={{ color: '#ffffff', border: '1px solid rgba(255,255,255,0.25)', borderRadius: 3 }}
                               >
                                 {project.subtitle}
                               </span>
                             </div>
                             <h3
-                              className="text-2xl font-semibold text-white mb-4 group-hover:text-blue-400 transition-colors duration-300"
+                              className="text-2xl font-semibold text-white mb-4 group-hover:text-white transition-colors duration-300"
                               style={{ letterSpacing: '-0.01em' }}
                             >
                               {project.title}
                             </h3>
-                            <p className="text-sm leading-relaxed mb-8" style={{ color: '#94a3b8', lineHeight: 1.8 }}>
+                            <p className="text-sm leading-relaxed mb-8" style={{ color: '#d0d0d0', lineHeight: 1.8 }}>
                               {project.description}
                             </p>
                             <div className="flex flex-wrap gap-2">
@@ -659,7 +663,7 @@ export default function Home() {
                                 <span
                                   key={t}
                                   className="text-xs font-mono px-3 py-1"
-                                  style={{ color: '#64748b', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 3 }}
+                                  style={{ color: '#b0b0b0', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 3 }}
                                 >
                                   {t}
                                 </span>
@@ -671,8 +675,8 @@ export default function Home() {
                             style={{ borderTop: '1px solid rgba(255,255,255,0.04)' }}
                           >
                             <span
-                              className="text-sm font-medium group-hover:text-blue-400 transition-colors inline-flex items-center gap-1"
-                              style={{ color: '#3b82f6' }}
+                              className="text-sm font-medium group-hover:text-white transition-colors inline-flex items-center gap-1"
+                              style={{ color: '#ffffff' }}
                             >
                               Learn more
                               <span className="group-hover:translate-x-1 transition-transform inline-block">→</span>
@@ -683,7 +687,7 @@ export default function Home() {
                               target="_blank"
                               rel="noopener noreferrer"
                               className="text-xs font-mono transition-colors hover:text-white"
-                              style={{ color: '#475569' }}
+                              style={{ color: '#9a9a9a' }}
                               onClick={(e) => e.stopPropagation()}
                             >
                               source ↗
@@ -699,7 +703,7 @@ export default function Home() {
             </div>
 
             <div className="mt-8 text-center md:hidden">
-              <Link to="/projects" className="text-sm font-medium hover:text-white transition-colors" style={{ color: '#475569' }}>
+              <Link to="/projects" className="text-sm font-medium hover:text-white transition-colors" style={{ color: '#9a9a9a' }}>
                 All projects →
               </Link>
             </div>
@@ -736,15 +740,15 @@ export default function Home() {
             >
               Let's build something.
             </h2>
-            <p className="text-sm leading-relaxed mb-12 max-w-md mx-auto" style={{ color: '#94a3b8', lineHeight: 1.85 }}>
+            <p className="text-sm leading-relaxed mb-12 max-w-md mx-auto" style={{ color: '#d0d0d0', lineHeight: 1.85 }}>
               Open to machine learning and software internships, research, and collaborations.
               I respond to every message.
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <a
                 href="mailto:ppadhy@uci.edu"
-                className="px-8 py-3.5 text-sm font-medium text-white transition-all duration-200 hover:bg-blue-500/25 active:scale-95"
-                style={{ border: '1px solid rgba(59,130,246,0.5)', background: 'rgba(59,130,246,0.1)', borderRadius: 6 }}
+                className="px-8 py-3.5 text-sm font-medium text-white transition-all duration-200 hover:bg-white/25 active:scale-95"
+                style={{ border: '1px solid rgba(255,255,255,0.5)', background: 'rgba(255,255,255,0.1)', borderRadius: 6 }}
               >
                 Email ↗
               </a>
@@ -753,7 +757,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3.5 text-sm font-medium transition-all duration-200 hover:text-white hover:border-white/30 active:scale-95"
-                style={{ color: '#64748b', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6 }}
+                style={{ color: '#b0b0b0', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6 }}
               >
                 LinkedIn ↗
               </a>

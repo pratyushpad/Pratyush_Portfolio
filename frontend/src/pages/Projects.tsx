@@ -79,14 +79,14 @@ export default function Projects() {
         {/* ═══ HEADER ═══ */}
         <RevealSection>
           <div className="flex items-center gap-4 mb-16">
-            <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#3b82f6' }}>00</span>
-            <span style={{ width: 40, height: 1, background: 'rgba(59,130,246,0.4)' }} />
-            <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#475569' }}>Projects</span>
+            <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#ffffff' }}>00</span>
+            <span style={{ width: 40, height: 1, background: 'rgba(255,255,255,0.4)' }} />
+            <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#9a9a9a' }}>Projects</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-light text-white mb-3" style={{ letterSpacing: '-0.02em' }}>
             Selected <span className="font-semibold">work</span>.
           </h1>
-          <p className="text-sm mb-16" style={{ color: '#475569' }}>Deep learning and ML models built from scratch.</p>
+          <p className="text-sm mb-16" style={{ color: '#9a9a9a' }}>Deep learning and ML models built from scratch.</p>
         </RevealSection>
 
         {/* ═══ PROJECT LIST ═══ */}
@@ -96,20 +96,20 @@ export default function Projects() {
               <div className="py-12">
                 {/* Meta row */}
                 <div className="flex items-center gap-4 mb-6">
-                  <span className="font-mono text-xs" style={{ color: '#3b82f6' }}>{project.number}</span>
-                  <span style={{ width: 24, height: 1, background: 'rgba(59,130,246,0.4)' }} />
-                  <span className="font-mono text-xs" style={{ color: '#475569' }}>{project.subtitle}</span>
+                  <span className="font-mono text-xs" style={{ color: '#ffffff' }}>{project.number}</span>
+                  <span style={{ width: 24, height: 1, background: 'rgba(255,255,255,0.4)' }} />
+                  <span className="font-mono text-xs" style={{ color: '#9a9a9a' }}>{project.subtitle}</span>
                 </div>
 
                 {/* Title & description */}
                 <Link to={project.path} className="group block mb-8">
                   <h2
-                    className="text-3xl font-semibold text-white mb-4 group-hover:text-blue-400 transition-colors duration-200"
+                    className="text-3xl font-semibold text-white mb-4 group-hover:text-white transition-colors duration-200"
                     style={{ letterSpacing: '-0.01em' }}
                   >
                     {project.title}
                   </h2>
-                  <p className="text-sm leading-relaxed max-w-3xl" style={{ color: '#94a3b8' }}>
+                  <p className="text-sm leading-relaxed max-w-3xl" style={{ color: '#d0d0d0' }}>
                     {project.description}
                   </p>
                 </Link>
@@ -119,14 +119,14 @@ export default function Projects() {
                   {project.stats.map((stat) => (
                     <div key={stat.label}>
                       <p className="text-xl font-semibold text-white">{stat.value}</p>
-                      <p className="text-xs font-mono mt-1" style={{ color: '#475569' }}>{stat.label}</p>
+                      <p className="text-xs font-mono mt-1" style={{ color: '#9a9a9a' }}>{stat.label}</p>
                     </div>
                   ))}
                 </div>
 
                 {/* Outcome */}
-                <p className="text-xs font-mono mb-6" style={{ color: '#94a3b8' }}>
-                  <span style={{ color: '#3b82f6' }}>Result:</span> {project.outcome}
+                <p className="text-xs font-mono mb-6" style={{ color: '#d0d0d0' }}>
+                  <span style={{ color: '#ffffff' }}>Result:</span> {project.outcome}
                 </p>
 
                 {/* Tech + links */}
@@ -136,8 +136,8 @@ export default function Projects() {
                       <motion.span
                         key={t}
                         className="text-xs px-3 py-1.5 font-mono cursor-default"
-                        style={{ color: '#64748b', border: '1px solid rgba(255,255,255,0.08)' }}
-                        whileHover={{ color: '#fff', borderColor: 'rgba(59,130,246,0.4)' }}
+                        style={{ color: '#b0b0b0', border: '1px solid rgba(255,255,255,0.08)' }}
+                        whileHover={{ color: '#fff', borderColor: 'rgba(255,255,255,0.4)' }}
                       >
                         {t}
                       </motion.span>
@@ -151,15 +151,15 @@ export default function Projects() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-xs font-mono transition-colors hover:text-white"
-                        style={{ color: '#4ade80' }}
+                        style={{ color: '#ffffff' }}
                       >
                         Live demo ↗
                       </a>
                     )}
                     <Link
                       to={project.path}
-                      className="px-6 py-2.5 text-sm font-medium text-white transition-all duration-200 hover:bg-blue-500/20"
-                      style={{ border: '1px solid rgba(59,130,246,0.5)', background: 'rgba(59,130,246,0.08)' }}
+                      className="px-6 py-2.5 text-sm font-medium text-white transition-all duration-200 hover:bg-white/20"
+                      style={{ border: '1px solid rgba(255,255,255,0.5)', background: 'rgba(255,255,255,0.08)' }}
                     >
                       Explore →
                     </Link>
@@ -168,7 +168,7 @@ export default function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-xs font-mono transition-colors hover:text-white"
-                      style={{ color: '#475569' }}
+                      style={{ color: '#9a9a9a' }}
                     >
                       source ↗
                     </a>

@@ -12,12 +12,12 @@ export default function Marquee({ items, speed = 30 }: MarqueeProps) {
     <div className="overflow-hidden py-6 relative">
       <div
         className="absolute inset-y-0 left-0 w-24 z-10"
-        style={{ background: 'linear-gradient(to right, #0a0a0f, transparent)' }}
+        style={{ background: 'linear-gradient(to right, #000000, transparent)' }}
         aria-hidden="true"
       />
       <div
         className="absolute inset-y-0 right-0 w-24 z-10"
-        style={{ background: 'linear-gradient(to left, #0a0a0f, transparent)' }}
+        style={{ background: 'linear-gradient(to left, #000000, transparent)' }}
         aria-hidden="true"
       />
       <motion.div
@@ -37,14 +37,14 @@ export default function Marquee({ items, speed = 30 }: MarqueeProps) {
             key={`${item}-${i}`}
             className="flex items-center gap-2 text-sm font-mono px-4 py-2 rounded-lg flex-shrink-0"
             style={{
-              color: '#9ca3af',
+              color: '#d0d0d0',
               background: 'rgba(255,255,255,0.03)',
               border: '1px solid rgba(255,255,255,0.06)',
             }}
           >
             <span
               className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-              style={{ backgroundColor: '#3b82f6' }}
+              style={{ backgroundColor: '#ffffff' }}
               aria-hidden="true"
             />
             {item}

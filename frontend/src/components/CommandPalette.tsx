@@ -79,7 +79,7 @@ export default function CommandPalette() {
             transition={{ duration: 0.15 }}
             className="w-full max-w-lg rounded-xl overflow-hidden"
             style={{
-              background: 'rgba(19,19,26,0.98)',
+              background: 'rgba(18,18,18,0.98)',
               border: '1px solid rgba(255,255,255,0.1)',
               boxShadow: '0 25px 50px rgba(0,0,0,0.5)',
             }}
@@ -98,7 +98,7 @@ export default function CommandPalette() {
                 strokeWidth={2}
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                style={{ color: '#6b7280' }}
+                style={{ color: '#b0b0b0' }}
                 aria-hidden="true"
               >
                 <circle cx="11" cy="11" r="8" />
@@ -119,7 +119,7 @@ export default function CommandPalette() {
               />
               <kbd
                 className="text-xs px-2 py-1 rounded font-mono"
-                style={{ backgroundColor: 'rgba(255,255,255,0.06)', color: '#6b7280' }}
+                style={{ backgroundColor: 'rgba(255,255,255,0.06)', color: '#b0b0b0' }}
               >
                 ESC
               </kbd>
@@ -135,18 +135,18 @@ export default function CommandPalette() {
                     key={page.path}
                     onClick={() => handleSelect(page.path)}
                     className="w-full flex items-center gap-3 px-5 py-3 text-left text-sm transition-colors hover:text-white"
-                    style={{ color: '#9ca3af' }}
+                    style={{ color: '#d0d0d0' }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = 'rgba(59,130,246,0.08)'
+                      e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.08)'
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.backgroundColor = 'transparent'
                     }}
                   >
-                    <span className="flex-shrink-0" style={{ color: '#3b82f6' }}>→</span>
+                    <span className="flex-shrink-0" style={{ color: '#ffffff' }}>→</span>
                     <span>{page.label}</span>
                     {(page.path.startsWith('http') || page.path.endsWith('.pdf')) && (
-                      <span className="text-xs ml-auto" style={{ color: '#4b5563' }}>↗</span>
+                      <span className="text-xs ml-auto" style={{ color: '#9a9a9a' }}>↗</span>
                     )}
                   </button>
                 ))
@@ -156,7 +156,7 @@ export default function CommandPalette() {
             {/* Footer hint */}
             <div
               className="px-5 py-3 flex items-center gap-4 text-xs"
-              style={{ borderTop: '1px solid rgba(255,255,255,0.06)', color: '#4b5563' }}
+              style={{ borderTop: '1px solid rgba(255,255,255,0.06)', color: '#9a9a9a' }}
             >
               <span>
                 <kbd className="font-mono px-1.5 py-0.5 rounded" style={{ backgroundColor: 'rgba(255,255,255,0.06)' }}>↵</kbd> select

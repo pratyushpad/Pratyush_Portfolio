@@ -68,7 +68,7 @@ export default function Navbar() {
         transition={{ duration: 0.3 }}
         className="fixed top-0 w-full z-50 border-b"
         style={{
-          backgroundColor: isScrolled ? 'rgba(10, 10, 15, 0.92)' : 'rgba(10, 10, 15, 0.75)',
+          backgroundColor: isScrolled ? 'rgba(0,0,0, 0.92)' : 'rgba(0,0,0, 0.75)',
           borderColor: 'rgba(255, 255, 255, 0.06)',
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
@@ -80,7 +80,7 @@ export default function Navbar() {
           className="absolute top-0 left-0 right-0 h-0.5 origin-left"
           style={{
             scaleX: scrollYProgress,
-            background: 'linear-gradient(90deg, #3b82f6, #8b5cf6)',
+            background: 'linear-gradient(90deg, #ffffff, #a3a3a3)',
           }}
           aria-hidden="true"
         />
@@ -89,7 +89,7 @@ export default function Navbar() {
           <Link
             to="/"
             className="font-mono text-lg font-semibold transition-opacity hover:opacity-80"
-            style={{ color: '#60a5fa' }}
+            style={{ color: '#ffffff' }}
             aria-label="Pratyush Padhy — Home"
           >
             Pratyush Padhy
@@ -106,14 +106,14 @@ export default function Navbar() {
               >
                 {({ isActive }) => (
                   <>
-                    <span className={isActive ? 'text-blue-400' : 'text-gray-400 hover:text-white'}>
+                    <span className={isActive ? 'text-white' : 'text-gray-400 hover:text-white'}>
                       {link.label}
                     </span>
                     {isActive && (
                       <motion.span
                         layoutId="activeNavBar"
                         className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full"
-                        style={{ background: 'linear-gradient(90deg, #3b82f6, #8b5cf6)' }}
+                        style={{ background: 'linear-gradient(90deg, #ffffff, #a3a3a3)' }}
                         aria-hidden="true"
                       />
                     )}
@@ -129,7 +129,7 @@ export default function Navbar() {
       <nav
         className="md:hidden fixed bottom-0 left-0 right-0 z-50 border-t"
         style={{
-          backgroundColor: 'rgba(10, 10, 15, 0.96)',
+          backgroundColor: 'rgba(0,0,0, 0.96)',
           borderColor: 'rgba(255, 255, 255, 0.08)',
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
@@ -147,12 +147,12 @@ export default function Navbar() {
             >
               {({ isActive }) => (
                 <>
-                  <span style={{ color: isActive ? '#60a5fa' : '#6b7280' }}>
+                  <span style={{ color: isActive ? '#ffffff' : '#b0b0b0' }}>
                     {link.icon}
                   </span>
                   <span
                     className="text-xs font-medium"
-                    style={{ color: isActive ? '#60a5fa' : '#6b7280' }}
+                    style={{ color: isActive ? '#ffffff' : '#b0b0b0' }}
                   >
                     {link.label}
                   </span>

@@ -11,28 +11,28 @@ const models = [
     description: 'Fully connected network on raw 48×48 pixel inputs.',
     result: 'Baseline performance',
     icon: '01',
-    accent: '#475569',
+    accent: '#9a9a9a',
   },
   {
     name: 'MLP (Landmarks)',
     description: 'MLP trained on geometric facial landmark distances.',
     result: 'Improved over pixels',
     icon: '02',
-    accent: '#64748b',
+    accent: '#b0b0b0',
   },
   {
     name: 'CNN',
     description: 'Convolutional network with batch normalization and dropout.',
     result: 'Strong spatial feature learning',
     icon: '03',
-    accent: '#3b82f6',
+    accent: '#ffffff',
   },
   {
     name: 'VGG16 Transfer',
     description: 'Pretrained ImageNet model fine-tuned for emotion classification.',
     result: 'Best overall performance ✦',
     icon: '04',
-    accent: '#10b981',
+    accent: '#ffffff',
   },
 ]
 
@@ -73,29 +73,29 @@ export default function EmotionDetection() {
           {/* Accent gradient */}
           <div
             className="pointer-events-none absolute inset-0"
-            style={{ background: 'radial-gradient(ellipse 60% 50% at 70% 50%, rgba(59,130,246,0.07) 0%, transparent 70%)' }}
+            style={{ background: 'radial-gradient(ellipse 60% 50% at 70% 50%, rgba(255,255,255,0.07) 0%, transparent 70%)' }}
             aria-hidden="true"
           />
           <div className="max-w-4xl mx-auto relative">
             {/* Breadcrumb */}
             <FadeUp>
               <nav aria-label="Breadcrumb" className="mb-8">
-                <ol className="flex items-center gap-2 text-xs font-mono" style={{ color: '#475569' }}>
+                <ol className="flex items-center gap-2 text-xs font-mono" style={{ color: '#9a9a9a' }}>
                   <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
                   <li aria-hidden="true">/</li>
                   <li><Link to="/projects" className="hover:text-white transition-colors">Projects</Link></li>
                   <li aria-hidden="true">/</li>
-                  <li style={{ color: '#94a3b8' }}>Face Pulse</li>
+                  <li style={{ color: '#d0d0d0' }}>Face Pulse</li>
                 </ol>
               </nav>
             </FadeUp>
 
             <FadeUp delay={0.05}>
               <div className="flex items-center gap-3 mb-5">
-                <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#3b82f6' }}>Project 01</span>
+                <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#ffffff' }}>Project 01</span>
                 <span
                   className="text-xs px-2.5 py-0.5 font-mono"
-                  style={{ background: 'rgba(16,185,129,0.1)', color: '#10b981', border: '1px solid rgba(16,185,129,0.2)', borderRadius: 4 }}
+                  style={{ background: 'rgba(255,255,255,0.1)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 4 }}
                 >
                   VGG16 outperformed all baselines
                 </span>
@@ -108,7 +108,7 @@ export default function EmotionDetection() {
                 Face Pulse
               </h1>
 
-              <p className="text-base leading-relaxed max-w-2xl mb-8" style={{ color: '#94a3b8', lineHeight: 1.85 }}>
+              <p className="text-base leading-relaxed max-w-2xl mb-8" style={{ color: '#d0d0d0', lineHeight: 1.85 }}>
                 A real-time emotion recognition system and comparative study of 4 deep learning architectures
                 for detecting human emotions from facial images — from a simple MLP all the way to VGG16 transfer learning on 35,000+ images.
               </p>
@@ -122,7 +122,7 @@ export default function EmotionDetection() {
                 ].map((s) => (
                   <div key={s.label}>
                     <p className="text-2xl font-bold text-white">{s.val}</p>
-                    <p className="font-mono text-xs mt-1 uppercase tracking-wider" style={{ color: '#475569' }}>{s.label}</p>
+                    <p className="font-mono text-xs mt-1 uppercase tracking-wider" style={{ color: '#9a9a9a' }}>{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -133,7 +133,7 @@ export default function EmotionDetection() {
                   <span
                     key={t}
                     className="text-xs font-mono px-3 py-1"
-                    style={{ color: '#60a5fa', background: 'rgba(59,130,246,0.08)', border: '1px solid rgba(59,130,246,0.2)', borderRadius: 4 }}
+                    style={{ color: '#ffffff', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 4 }}
                   >
                     {t}
                   </span>
@@ -146,8 +146,8 @@ export default function EmotionDetection() {
                   href="https://face-pulse.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-2.5 text-sm font-medium text-white transition-all duration-200 hover:opacity-90 active:scale-95"
-                  style={{ background: 'linear-gradient(135deg, #10b981, #059669)', borderRadius: 6 }}
+                  className="px-6 py-2.5 text-sm font-medium text-black transition-all duration-200 hover:opacity-90 active:scale-95"
+                  style={{ background: 'linear-gradient(135deg, #ffffff, #d4d4d4)', borderRadius: 6 }}
                 >
                   Live Demo ↗
                 </a>
@@ -155,8 +155,8 @@ export default function EmotionDetection() {
                   href="https://github.com/Pratyushpad27/fer2013-emotion-detection"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-2.5 text-sm font-medium text-white transition-all duration-200 hover:opacity-90 active:scale-95"
-                  style={{ background: 'linear-gradient(135deg, #3b82f6, #6366f1)', borderRadius: 6 }}
+                  className="px-6 py-2.5 text-sm font-medium text-black transition-all duration-200 hover:opacity-90 active:scale-95"
+                  style={{ background: 'linear-gradient(135deg, #ffffff, #d4d4d4)', borderRadius: 6 }}
                 >
                   View on GitHub ↗
                 </a>
@@ -175,7 +175,7 @@ export default function EmotionDetection() {
               <div
                 className="p-6 text-sm leading-relaxed"
                 style={{
-                  color: '#94a3b8',
+                  color: '#d0d0d0',
                   background: 'rgba(255,255,255,0.02)',
                   border: '1px solid rgba(255,255,255,0.07)',
                   borderRadius: 8,
@@ -216,7 +216,7 @@ export default function EmotionDetection() {
                       </span>
                       <h3 className="text-white font-semibold text-sm">{model.name}</h3>
                     </div>
-                    <p className="text-sm mb-3" style={{ color: '#64748b', lineHeight: 1.7 }}>{model.description}</p>
+                    <p className="text-sm mb-3" style={{ color: '#b0b0b0', lineHeight: 1.7 }}>{model.description}</p>
                     <p className="text-xs font-mono" style={{ color: model.accent }}>{model.result}</p>
                   </motion.div>
                 ))}
@@ -234,7 +234,7 @@ export default function EmotionDetection() {
                     key={img.alt}
                     className="overflow-hidden cursor-pointer group"
                     style={{ border: '1px solid rgba(255,255,255,0.07)', borderRadius: 8 }}
-                    whileHover={{ borderColor: 'rgba(59,130,246,0.3)' }}
+                    whileHover={{ borderColor: 'rgba(255,255,255,0.3)' }}
                     transition={{ duration: 0.2 }}
                     onClick={() => setLightbox(img)}
                     role="button"
@@ -244,7 +244,7 @@ export default function EmotionDetection() {
                   >
                     <div
                       className="flex items-center justify-center p-4"
-                      style={{ background: 'rgba(14,14,22,0.8)', minHeight: 180 }}
+                      style={{ background: 'rgba(18,18,18,0.8)', minHeight: 180 }}
                     >
                       <img
                         src={img.src}
@@ -255,10 +255,10 @@ export default function EmotionDetection() {
                     </div>
                     <div
                       className="flex items-center justify-between px-4 py-2.5"
-                      style={{ background: 'rgba(14,14,22,0.6)', borderTop: '1px solid rgba(255,255,255,0.05)' }}
+                      style={{ background: 'rgba(18,18,18,0.6)', borderTop: '1px solid rgba(255,255,255,0.05)' }}
                     >
-                      <p className="font-mono text-xs" style={{ color: '#475569' }}>{img.alt}</p>
-                      <span className="text-xs opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: '#3b82f6' }}>expand ↗</span>
+                      <p className="font-mono text-xs" style={{ color: '#9a9a9a' }}>{img.alt}</p>
+                      <span className="text-xs opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: '#ffffff' }}>expand ↗</span>
                     </div>
                   </motion.div>
                 ))}
@@ -278,14 +278,14 @@ export default function EmotionDetection() {
                     style={{
                       background: 'rgba(255,255,255,0.02)',
                       border: '1px solid rgba(255,255,255,0.06)',
-                      borderLeft: '2px solid rgba(59,130,246,0.4)',
+                      borderLeft: '2px solid rgba(255,255,255,0.4)',
                       borderRadius: '0 8px 8px 0',
                     }}
                   >
-                    <span className="font-mono text-xs font-bold flex-shrink-0 mt-0.5" style={{ color: '#3b82f6' }}>
+                    <span className="font-mono text-xs font-bold flex-shrink-0 mt-0.5" style={{ color: '#ffffff' }}>
                       {String(i + 1).padStart(2, '0')}
                     </span>
-                    <span style={{ color: '#94a3b8', lineHeight: 1.75 }}>{item}</span>
+                    <span style={{ color: '#d0d0d0', lineHeight: 1.75 }}>{item}</span>
                   </div>
                 ))}
               </div>
@@ -302,17 +302,17 @@ export default function EmotionDetection() {
                   border: '1px solid rgba(255,255,255,0.07)',
                   borderRadius: 10,
                 }}
-                whileHover={{ borderColor: 'rgba(59,130,246,0.3)', background: 'rgba(59,130,246,0.04)' }}
+                whileHover={{ borderColor: 'rgba(255,255,255,0.3)', background: 'rgba(255,255,255,0.04)' }}
                 transition={{ duration: 0.2 }}
               >
                 <div>
-                  <p className="font-mono text-xs uppercase tracking-wider mb-1" style={{ color: '#475569' }}>Next Project</p>
-                  <p className="text-white font-semibold group-hover:text-blue-400 transition-colors">
+                  <p className="font-mono text-xs uppercase tracking-wider mb-1" style={{ color: '#9a9a9a' }}>Next Project</p>
+                  <p className="text-white font-semibold group-hover:text-white transition-colors">
                     Argus AI
                   </p>
                 </div>
                 <motion.span
-                  className="text-gray-500 group-hover:text-blue-400 transition-colors"
+                  className="text-gray-500 group-hover:text-white transition-colors"
                   whileHover={{ x: 4 }}
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -340,8 +340,8 @@ export default function EmotionDetection() {
               to="/projects"
               className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium transition-all duration-200 hover:text-white"
               style={{
-                color: '#94a3b8',
-                background: 'rgba(10,10,15,0.9)',
+                color: '#d0d0d0',
+                background: 'rgba(0,0,0,0.9)',
                 backdropFilter: 'blur(12px)',
                 border: '1px solid rgba(255,255,255,0.1)',
                 borderRadius: 8,
@@ -367,9 +367,9 @@ function SectionHeading({ number, label, title }: { number: string; label: strin
   return (
     <div className="mb-6">
       <div className="flex items-center gap-3 mb-2">
-        <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#3b82f6' }}>{number}</span>
-        <span style={{ width: 24, height: 1, background: 'rgba(59,130,246,0.3)', display: 'block' }} />
-        <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#475569' }}>{label}</span>
+        <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#ffffff' }}>{number}</span>
+        <span style={{ width: 24, height: 1, background: 'rgba(255,255,255,0.3)', display: 'block' }} />
+        <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#9a9a9a' }}>{label}</span>
       </div>
       <h2 className="text-2xl font-bold text-white" style={{ letterSpacing: '-0.015em' }}>{title}</h2>
     </div>

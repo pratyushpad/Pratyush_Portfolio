@@ -10,7 +10,7 @@ export default function SectionDivider() {
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
         style={{
-          background: 'linear-gradient(90deg, transparent, rgba(59,130,246,0.3), transparent)',
+          background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)',
         }}
         aria-hidden="true"
       />

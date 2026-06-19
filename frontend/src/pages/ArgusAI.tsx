@@ -10,25 +10,25 @@ const pipeline = [
     name: 'Upload',
     description: 'Drop a dashcam frame (JPG, PNG, WebP) into the detection workspace.',
     icon: '01',
-    accent: '#3b82f6',
+    accent: '#ffffff',
   },
   {
     name: 'YOLOv8 Inference',
     description: 'YOLOv8s runs object detection across 23 classes — vehicles, signs, lights, pedestrians.',
     icon: '02',
-    accent: '#6366f1',
+    accent: '#d4d4d4',
   },
   {
     name: 'Rule Engine',
     description: 'Spatial proximity rules cross-check detections to flag violations like red light running or no-entry breaches.',
     icon: '03',
-    accent: '#8b5cf6',
+    accent: '#a3a3a3',
   },
   {
     name: 'Annotated Output',
     description: 'Bounding boxes, confidence scores, and a violation report are returned and can be saved for audit.',
     icon: '04',
-    accent: '#10b981',
+    accent: '#ffffff',
   },
 ]
 
@@ -65,28 +65,28 @@ export default function ArgusAI() {
         <div className="relative overflow-hidden pt-28 md:pt-36 pb-16 px-6" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
           <div
             className="pointer-events-none absolute inset-0"
-            style={{ background: 'radial-gradient(ellipse 60% 50% at 70% 50%, rgba(99,102,241,0.07) 0%, transparent 70%)' }}
+            style={{ background: 'radial-gradient(ellipse 60% 50% at 70% 50%, rgba(255,255,255,0.07) 0%, transparent 70%)' }}
             aria-hidden="true"
           />
           <div className="max-w-4xl mx-auto relative">
             <FadeUp>
               <nav aria-label="Breadcrumb" className="mb-8">
-                <ol className="flex items-center gap-2 text-xs font-mono" style={{ color: '#475569' }}>
+                <ol className="flex items-center gap-2 text-xs font-mono" style={{ color: '#9a9a9a' }}>
                   <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
                   <li aria-hidden="true">/</li>
                   <li><Link to="/projects" className="hover:text-white transition-colors">Projects</Link></li>
                   <li aria-hidden="true">/</li>
-                  <li style={{ color: '#94a3b8' }}>Argus AI</li>
+                  <li style={{ color: '#d0d0d0' }}>Argus AI</li>
                 </ol>
               </nav>
             </FadeUp>
 
             <FadeUp delay={0.05}>
               <div className="flex items-center gap-3 mb-5">
-                <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#6366f1' }}>Project 03</span>
+                <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#d4d4d4' }}>Project 03</span>
                 <span
                   className="text-xs px-2.5 py-0.5 font-mono"
-                  style={{ background: 'rgba(16,185,129,0.1)', color: '#10b981', border: '1px solid rgba(16,185,129,0.2)', borderRadius: 4 }}
+                  style={{ background: 'rgba(255,255,255,0.1)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 4 }}
                 >
                   Rule engine flags violations in &lt;35ms
                 </span>
@@ -99,7 +99,7 @@ export default function ArgusAI() {
                 Argus AI
               </h1>
 
-              <p className="text-base leading-relaxed max-w-2xl mb-8" style={{ color: '#94a3b8', lineHeight: 1.85 }}>
+              <p className="text-base leading-relaxed max-w-2xl mb-8" style={{ color: '#d0d0d0', lineHeight: 1.85 }}>
                 A full-stack traffic violation detection system — upload a dashcam frame, run YOLOv8 inference
                 across 23 object classes, and get a structured violation report back in under 35ms. Built with
                 a spatial rule engine that reads like an operational review, not just a raw model output.
@@ -114,7 +114,7 @@ export default function ArgusAI() {
                 ].map((s) => (
                   <div key={s.label}>
                     <p className="text-2xl font-bold text-white">{s.val}</p>
-                    <p className="font-mono text-xs mt-1 uppercase tracking-wider" style={{ color: '#475569' }}>{s.label}</p>
+                    <p className="font-mono text-xs mt-1 uppercase tracking-wider" style={{ color: '#9a9a9a' }}>{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -125,7 +125,7 @@ export default function ArgusAI() {
                   <span
                     key={t}
                     className="text-xs font-mono px-3 py-1"
-                    style={{ color: '#a5b4fc', background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.2)', borderRadius: 4 }}
+                    style={{ color: '#d4d4d4', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 4 }}
                   >
                     {t}
                   </span>
@@ -138,8 +138,8 @@ export default function ArgusAI() {
                   href="https://ai-argus.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-2.5 text-sm font-medium text-white transition-all duration-200 hover:opacity-90 active:scale-95"
-                  style={{ background: 'linear-gradient(135deg, #10b981, #059669)', borderRadius: 6 }}
+                  className="px-6 py-2.5 text-sm font-medium text-black transition-all duration-200 hover:opacity-90 active:scale-95"
+                  style={{ background: 'linear-gradient(135deg, #ffffff, #d4d4d4)', borderRadius: 6 }}
                 >
                   Live Demo ↗
                 </a>
@@ -147,8 +147,8 @@ export default function ArgusAI() {
                   href="https://github.com/Pratyushpad27/Argus-AI"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-2.5 text-sm font-medium text-white transition-all duration-200 hover:opacity-90 active:scale-95"
-                  style={{ background: 'linear-gradient(135deg, #6366f1, #8b5cf6)', borderRadius: 6 }}
+                  className="px-6 py-2.5 text-sm font-medium text-black transition-all duration-200 hover:opacity-90 active:scale-95"
+                  style={{ background: 'linear-gradient(135deg, #d4d4d4, #a3a3a3)', borderRadius: 6 }}
                 >
                   View on GitHub ↗
                 </a>
@@ -167,7 +167,7 @@ export default function ArgusAI() {
               <div
                 className="p-6 text-sm leading-relaxed"
                 style={{
-                  color: '#94a3b8',
+                  color: '#d0d0d0',
                   background: 'rgba(255,255,255,0.02)',
                   border: '1px solid rgba(255,255,255,0.07)',
                   borderRadius: 8,
@@ -208,7 +208,7 @@ export default function ArgusAI() {
                       </span>
                       <h3 className="text-white font-semibold text-sm">{step.name}</h3>
                     </div>
-                    <p className="text-sm" style={{ color: '#64748b', lineHeight: 1.7 }}>{step.description}</p>
+                    <p className="text-sm" style={{ color: '#b0b0b0', lineHeight: 1.7 }}>{step.description}</p>
                   </motion.div>
                 ))}
               </div>
@@ -225,7 +225,7 @@ export default function ArgusAI() {
                     key={img.alt}
                     className="overflow-hidden cursor-pointer group"
                     style={{ border: '1px solid rgba(255,255,255,0.07)', borderRadius: 8 }}
-                    whileHover={{ borderColor: 'rgba(99,102,241,0.3)' }}
+                    whileHover={{ borderColor: 'rgba(255,255,255,0.3)' }}
                     transition={{ duration: 0.2 }}
                     onClick={() => setLightbox(img)}
                     role="button"
@@ -235,7 +235,7 @@ export default function ArgusAI() {
                   >
                     <div
                       className="flex items-center justify-center p-4"
-                      style={{ background: 'rgba(14,14,22,0.8)' }}
+                      style={{ background: 'rgba(18,18,18,0.8)' }}
                     >
                       <img
                         src={img.src}
@@ -247,10 +247,10 @@ export default function ArgusAI() {
                     </div>
                     <div
                       className="flex items-center justify-between px-4 py-2.5"
-                      style={{ background: 'rgba(14,14,22,0.6)', borderTop: '1px solid rgba(255,255,255,0.05)' }}
+                      style={{ background: 'rgba(18,18,18,0.6)', borderTop: '1px solid rgba(255,255,255,0.05)' }}
                     >
-                      <p className="font-mono text-xs" style={{ color: '#475569' }}>{img.alt}</p>
-                      <span className="text-xs opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: '#6366f1' }}>expand ↗</span>
+                      <p className="font-mono text-xs" style={{ color: '#9a9a9a' }}>{img.alt}</p>
+                      <span className="text-xs opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: '#d4d4d4' }}>expand ↗</span>
                     </div>
                   </motion.div>
                 ))}
@@ -270,14 +270,14 @@ export default function ArgusAI() {
                     style={{
                       background: 'rgba(255,255,255,0.02)',
                       border: '1px solid rgba(255,255,255,0.06)',
-                      borderLeft: '2px solid rgba(99,102,241,0.4)',
+                      borderLeft: '2px solid rgba(255,255,255,0.4)',
                       borderRadius: '0 8px 8px 0',
                     }}
                   >
-                    <span className="font-mono text-xs font-bold flex-shrink-0 mt-0.5" style={{ color: '#6366f1' }}>
+                    <span className="font-mono text-xs font-bold flex-shrink-0 mt-0.5" style={{ color: '#d4d4d4' }}>
                       {String(i + 1).padStart(2, '0')}
                     </span>
-                    <span style={{ color: '#94a3b8', lineHeight: 1.75 }}>{item}</span>
+                    <span style={{ color: '#d0d0d0', lineHeight: 1.75 }}>{item}</span>
                   </div>
                 ))}
               </div>
@@ -294,17 +294,17 @@ export default function ArgusAI() {
                   border: '1px solid rgba(255,255,255,0.07)',
                   borderRadius: 10,
                 }}
-                whileHover={{ borderColor: 'rgba(99,102,241,0.3)', background: 'rgba(99,102,241,0.04)' }}
+                whileHover={{ borderColor: 'rgba(255,255,255,0.3)', background: 'rgba(255,255,255,0.04)' }}
                 transition={{ duration: 0.2 }}
               >
                 <div>
-                  <p className="font-mono text-xs uppercase tracking-wider mb-1" style={{ color: '#475569' }}>Next Project</p>
-                  <p className="text-white font-semibold group-hover:text-indigo-400 transition-colors">
+                  <p className="font-mono text-xs uppercase tracking-wider mb-1" style={{ color: '#9a9a9a' }}>Next Project</p>
+                  <p className="text-white font-semibold group-hover:text-neutral-300 transition-colors">
                     Character-Level Language Model
                   </p>
                 </div>
                 <motion.span
-                  className="text-gray-500 group-hover:text-indigo-400 transition-colors"
+                  className="text-gray-500 group-hover:text-neutral-300 transition-colors"
                   whileHover={{ x: 4 }}
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -332,8 +332,8 @@ export default function ArgusAI() {
               to="/projects"
               className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium transition-all duration-200 hover:text-white"
               style={{
-                color: '#94a3b8',
-                background: 'rgba(10,10,15,0.9)',
+                color: '#d0d0d0',
+                background: 'rgba(0,0,0,0.9)',
                 backdropFilter: 'blur(12px)',
                 border: '1px solid rgba(255,255,255,0.1)',
                 borderRadius: 8,
@@ -359,9 +359,9 @@ function SectionHeading({ number, label, title }: { number: string; label: strin
   return (
     <div className="mb-6">
       <div className="flex items-center gap-3 mb-2">
-        <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#6366f1' }}>{number}</span>
-        <span style={{ width: 24, height: 1, background: 'rgba(99,102,241,0.3)', display: 'block' }} />
-        <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#475569' }}>{label}</span>
+        <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#d4d4d4' }}>{number}</span>
+        <span style={{ width: 24, height: 1, background: 'rgba(255,255,255,0.3)', display: 'block' }} />
+        <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#9a9a9a' }}>{label}</span>
       </div>
       <h2 className="text-2xl font-bold text-white" style={{ letterSpacing: '-0.015em' }}>{title}</h2>
     </div>

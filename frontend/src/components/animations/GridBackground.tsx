@@ -26,11 +26,11 @@ export default function GridBackground() {
     let particles: Particle[] = []
 
     const colors = [
-      'rgba(59,130,246,0.7)',
-      'rgba(59,130,246,0.4)',
-      'rgba(139,92,246,0.35)',
-      'rgba(239,68,68,0.25)',
-      'rgba(59,130,246,0.5)',
+      'rgba(255,255,255,0.7)',
+      'rgba(255,255,255,0.4)',
+      'rgba(255,255,255,0.35)',
+      'rgba(255,255,255,0.25)',
+      'rgba(255,255,255,0.5)',
     ]
 
     const resize = () => {
@@ -115,7 +115,7 @@ export default function GridBackground() {
             ctx.moveTo(particles[i].x, particles[i].y)
             ctx.lineTo(particles[j].x, particles[j].y)
             const alpha = (1 - dist / 180) * 0.15
-            ctx.strokeStyle = `rgba(59,130,246,${alpha})`
+            ctx.strokeStyle = `rgba(255,255,255,${alpha})`
             ctx.lineWidth = 0.5
             ctx.stroke()
           }
@@ -138,7 +138,7 @@ export default function GridBackground() {
               ctx.lineTo(particles[j].x, particles[j].y)
               ctx.lineTo(particles[k].x, particles[k].y)
               ctx.closePath()
-              ctx.fillStyle = `rgba(59,130,246,${alpha})`
+              ctx.fillStyle = `rgba(255,255,255,${alpha})`
               ctx.fill()
             }
           }

@@ -9,25 +9,25 @@ const temperatures = [
   {
     temp: '0.2',
     label: 'Conservative',
-    color: '#10b981',
-    bg: 'rgba(16,185,129,0.06)',
-    border: 'rgba(16,185,129,0.2)',
+    color: '#ffffff',
+    bg: 'rgba(255,255,255,0.06)',
+    border: 'rgba(255,255,255,0.2)',
     output: 'the president announced today that the state of the country was a strong and the party of the election was a former president of the united states...',
   },
   {
     temp: '0.5',
     label: 'Balanced',
-    color: '#f59e0b',
-    bg: 'rgba(245,158,11,0.06)',
-    border: 'rgba(245,158,11,0.2)',
+    color: '#d4d4d4',
+    bg: 'rgba(255,255,255,0.06)',
+    border: 'rgba(255,255,255,0.2)',
     output: 'the president announced comple vate in the has election an was be neworng do the ussistance that the clinton interely is a commenter of the state...',
   },
   {
     temp: '0.7',
     label: 'Creative',
-    color: '#f87171',
-    bg: 'rgba(248,113,113,0.06)',
-    border: 'rgba(248,113,113,0.2)',
+    color: '#a3a3a3',
+    bg: 'rgba(255,255,255,0.06)',
+    border: 'rgba(255,255,255,0.2)',
     output: 'the president announced evemipmon to post in o hatimer to consrations. marh rin n a doment that other get a foundateoth, share shick dictrual internet...',
   },
 ]
@@ -74,29 +74,29 @@ export default function FakeNews() {
           {/* Accent gradient */}
           <div
             className="pointer-events-none absolute inset-0"
-            style={{ background: 'radial-gradient(ellipse 60% 50% at 70% 50%, rgba(139,92,246,0.07) 0%, transparent 70%)' }}
+            style={{ background: 'radial-gradient(ellipse 60% 50% at 70% 50%, rgba(255,255,255,0.07) 0%, transparent 70%)' }}
             aria-hidden="true"
           />
           <div className="max-w-4xl mx-auto relative">
             {/* Breadcrumb */}
             <FadeUp>
               <nav aria-label="Breadcrumb" className="mb-8">
-                <ol className="flex items-center gap-2 text-xs font-mono" style={{ color: '#475569' }}>
+                <ol className="flex items-center gap-2 text-xs font-mono" style={{ color: '#9a9a9a' }}>
                   <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
                   <li aria-hidden="true">/</li>
                   <li><Link to="/projects" className="hover:text-white transition-colors">Projects</Link></li>
                   <li aria-hidden="true">/</li>
-                  <li style={{ color: '#94a3b8' }}>Character-Level Language Model</li>
+                  <li style={{ color: '#d0d0d0' }}>Character-Level Language Model</li>
                 </ol>
               </nav>
             </FadeUp>
 
             <FadeUp delay={0.05}>
               <div className="flex items-center gap-3 mb-5">
-                <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#8b5cf6' }}>Project 02</span>
+                <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#a3a3a3' }}>Project 02</span>
                 <span
                   className="text-xs px-2.5 py-0.5 font-mono"
-                  style={{ background: 'rgba(139,92,246,0.1)', color: '#a78bfa', border: '1px solid rgba(139,92,246,0.25)', borderRadius: 4 }}
+                  style={{ background: 'rgba(255,255,255,0.1)', color: '#d4d4d4', border: '1px solid rgba(255,255,255,0.25)', borderRadius: 4 }}
                 >
                   LSTM outperformed SimpleRNN
                 </span>
@@ -109,7 +109,7 @@ export default function FakeNews() {
                 Character-Level<br className="hidden md:block" /> Language Model
               </h1>
 
-              <p className="text-base leading-relaxed max-w-2xl mb-8" style={{ color: '#94a3b8', lineHeight: 1.85 }}>
+              <p className="text-base leading-relaxed max-w-2xl mb-8" style={{ color: '#d0d0d0', lineHeight: 1.85 }}>
                 An RNN and LSTM trained on 200,000 characters of text to generate new text from scratch,
                 one character at a time. Built to understand how language models like GPT work at their
                 most fundamental level.
@@ -124,7 +124,7 @@ export default function FakeNews() {
                 ].map((s) => (
                   <div key={s.label}>
                     <p className="text-2xl font-bold text-white">{s.val}</p>
-                    <p className="font-mono text-xs mt-1 uppercase tracking-wider" style={{ color: '#475569' }}>{s.label}</p>
+                    <p className="font-mono text-xs mt-1 uppercase tracking-wider" style={{ color: '#9a9a9a' }}>{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -135,7 +135,7 @@ export default function FakeNews() {
                   <span
                     key={t}
                     className="text-xs font-mono px-3 py-1"
-                    style={{ color: '#a78bfa', background: 'rgba(139,92,246,0.08)', border: '1px solid rgba(139,92,246,0.2)', borderRadius: 4 }}
+                    style={{ color: '#d4d4d4', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 4 }}
                   >
                     {t}
                   </span>
@@ -148,7 +148,7 @@ export default function FakeNews() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-6 py-2.5 text-sm font-medium text-white transition-all duration-200 hover:opacity-90 active:scale-95"
-                style={{ background: 'linear-gradient(135deg, #8b5cf6, #6366f1)', borderRadius: 6 }}
+                style={{ background: 'linear-gradient(135deg, #a3a3a3, #d4d4d4)', borderRadius: 6 }}
               >
                 View on GitHub ↗
               </a>
@@ -173,19 +173,19 @@ export default function FakeNews() {
                       border: '1px solid rgba(255,255,255,0.07)',
                       borderRadius: 8,
                     }}
-                    whileHover={{ borderColor: 'rgba(139,92,246,0.3)', background: 'rgba(139,92,246,0.04)' }}
+                    whileHover={{ borderColor: 'rgba(255,255,255,0.3)', background: 'rgba(255,255,255,0.04)' }}
                     transition={{ duration: 0.2 }}
                   >
                     <div className="flex items-center gap-3 mb-3">
                       <span
                         className="w-8 h-8 flex items-center justify-center font-mono text-xs font-bold flex-shrink-0"
-                        style={{ background: 'rgba(139,92,246,0.15)', color: '#a78bfa', border: '1px solid rgba(139,92,246,0.3)', borderRadius: 6 }}
+                        style={{ background: 'rgba(255,255,255,0.15)', color: '#d4d4d4', border: '1px solid rgba(255,255,255,0.3)', borderRadius: 6 }}
                       >
                         {item.step}
                       </span>
                       <h3 className="text-white font-semibold text-sm">{item.title}</h3>
                     </div>
-                    <p className="text-sm" style={{ color: '#64748b', lineHeight: 1.7 }}>{item.desc}</p>
+                    <p className="text-sm" style={{ color: '#b0b0b0', lineHeight: 1.7 }}>{item.desc}</p>
                   </motion.div>
                 ))}
               </div>
@@ -196,8 +196,8 @@ export default function FakeNews() {
           <FadeUp delay={0.05}>
             <section>
               <SectionHeading number="02" label="Generation" title="Sample Outputs" />
-              <p className="text-sm mb-6" style={{ color: '#64748b' }}>
-                Seed: <span className="font-mono" style={{ color: '#a78bfa' }}>"the president announced today that"</span>
+              <p className="text-sm mb-6" style={{ color: '#b0b0b0' }}>
+                Seed: <span className="font-mono" style={{ color: '#d4d4d4' }}>"the president announced today that"</span>
               </p>
               <div className="space-y-3">
                 {temperatures.map((t) => (
@@ -215,7 +215,7 @@ export default function FakeNews() {
                       </span>
                       <span className="text-sm font-medium" style={{ color: t.color }}>{t.label}</span>
                     </div>
-                    <p className="font-mono text-sm leading-relaxed" style={{ color: '#9ca3af', lineHeight: 1.75 }}>
+                    <p className="font-mono text-sm leading-relaxed" style={{ color: '#d0d0d0', lineHeight: 1.75 }}>
                       {t.output}
                     </p>
                   </div>
@@ -234,7 +234,7 @@ export default function FakeNews() {
                     key={img.alt}
                     className="overflow-hidden cursor-pointer group"
                     style={{ border: '1px solid rgba(255,255,255,0.07)', borderRadius: 8 }}
-                    whileHover={{ borderColor: 'rgba(139,92,246,0.3)' }}
+                    whileHover={{ borderColor: 'rgba(255,255,255,0.3)' }}
                     transition={{ duration: 0.2 }}
                     onClick={() => setLightbox(img)}
                     role="button"
@@ -244,7 +244,7 @@ export default function FakeNews() {
                   >
                     <div
                       className="flex items-center justify-center p-4"
-                      style={{ background: 'rgba(14,14,22,0.8)', minHeight: 180 }}
+                      style={{ background: 'rgba(18,18,18,0.8)', minHeight: 180 }}
                     >
                       <img
                         src={img.src}
@@ -255,10 +255,10 @@ export default function FakeNews() {
                     </div>
                     <div
                       className="flex items-center justify-between px-4 py-2.5"
-                      style={{ background: 'rgba(14,14,22,0.6)', borderTop: '1px solid rgba(255,255,255,0.05)' }}
+                      style={{ background: 'rgba(18,18,18,0.6)', borderTop: '1px solid rgba(255,255,255,0.05)' }}
                     >
-                      <p className="font-mono text-xs" style={{ color: '#475569' }}>{img.alt}</p>
-                      <span className="text-xs opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: '#8b5cf6' }}>expand ↗</span>
+                      <p className="font-mono text-xs" style={{ color: '#9a9a9a' }}>{img.alt}</p>
+                      <span className="text-xs opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: '#a3a3a3' }}>expand ↗</span>
                     </div>
                   </motion.div>
                 ))}
@@ -278,14 +278,14 @@ export default function FakeNews() {
                     style={{
                       background: 'rgba(255,255,255,0.02)',
                       border: '1px solid rgba(255,255,255,0.06)',
-                      borderLeft: '2px solid rgba(139,92,246,0.4)',
+                      borderLeft: '2px solid rgba(255,255,255,0.4)',
                       borderRadius: '0 8px 8px 0',
                     }}
                   >
-                    <span className="font-mono text-xs font-bold flex-shrink-0 mt-0.5" style={{ color: '#8b5cf6' }}>
+                    <span className="font-mono text-xs font-bold flex-shrink-0 mt-0.5" style={{ color: '#a3a3a3' }}>
                       {String(i + 1).padStart(2, '0')}
                     </span>
-                    <span style={{ color: '#94a3b8', lineHeight: 1.75 }}>{item}</span>
+                    <span style={{ color: '#d0d0d0', lineHeight: 1.75 }}>{item}</span>
                   </div>
                 ))}
               </div>
@@ -302,17 +302,17 @@ export default function FakeNews() {
                   border: '1px solid rgba(255,255,255,0.07)',
                   borderRadius: 10,
                 }}
-                whileHover={{ borderColor: 'rgba(139,92,246,0.3)', background: 'rgba(139,92,246,0.04)' }}
+                whileHover={{ borderColor: 'rgba(255,255,255,0.3)', background: 'rgba(255,255,255,0.04)' }}
                 transition={{ duration: 0.2 }}
               >
                 <div>
-                  <p className="font-mono text-xs uppercase tracking-wider mb-1" style={{ color: '#475569' }}>Next Project</p>
-                  <p className="text-white font-semibold group-hover:text-purple-400 transition-colors">
+                  <p className="font-mono text-xs uppercase tracking-wider mb-1" style={{ color: '#9a9a9a' }}>Next Project</p>
+                  <p className="text-white font-semibold group-hover:text-neutral-300 transition-colors">
                     Face Pulse
                   </p>
                 </div>
                 <motion.span
-                  className="text-gray-500 group-hover:text-purple-400 transition-colors"
+                  className="text-gray-500 group-hover:text-neutral-300 transition-colors"
                   whileHover={{ x: 4 }}
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -340,8 +340,8 @@ export default function FakeNews() {
               to="/projects"
               className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium transition-all duration-200 hover:text-white"
               style={{
-                color: '#94a3b8',
-                background: 'rgba(10,10,15,0.9)',
+                color: '#d0d0d0',
+                background: 'rgba(0,0,0,0.9)',
                 backdropFilter: 'blur(12px)',
                 border: '1px solid rgba(255,255,255,0.1)',
                 borderRadius: 8,
@@ -367,9 +367,9 @@ function SectionHeading({ number, label, title }: { number: string; label: strin
   return (
     <div className="mb-6">
       <div className="flex items-center gap-3 mb-2">
-        <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#8b5cf6' }}>{number}</span>
-        <span style={{ width: 24, height: 1, background: 'rgba(139,92,246,0.3)', display: 'block' }} />
-        <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#475569' }}>{label}</span>
+        <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#a3a3a3' }}>{number}</span>
+        <span style={{ width: 24, height: 1, background: 'rgba(255,255,255,0.3)', display: 'block' }} />
+        <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#9a9a9a' }}>{label}</span>
       </div>
       <h2 className="text-2xl font-bold text-white" style={{ letterSpacing: '-0.015em' }}>{title}</h2>
     </div>

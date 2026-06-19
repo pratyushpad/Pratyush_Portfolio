@@ -37,7 +37,7 @@ export default function Footer() {
         <Link
           to="/"
           className="font-mono text-lg font-semibold transition-opacity hover:opacity-80"
-          style={{ color: '#60a5fa' }}
+          style={{ color: '#ffffff' }}
         >
           Pratyush Padhy
         </Link>
@@ -55,7 +55,7 @@ export default function Footer() {
               href={href}
               {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
               className="transition-colors"
-              style={{ color: '#6b7280' }}
+              style={{ color: '#b0b0b0' }}
               whileHover={{ color: '#ffffff', y: -2 }}
               transition={{ duration: 0.15 }}
               aria-label={label}

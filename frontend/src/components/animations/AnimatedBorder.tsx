@@ -13,7 +13,7 @@ export default function AnimatedBorder({ children, className = '', style }: Anim
       <motion.div
         className="absolute inset-0 rounded-2xl"
         style={{
-          background: 'conic-gradient(from 0deg, transparent, rgba(59,130,246,0.4), transparent, rgba(139,92,246,0.3), transparent)',
+          background: 'conic-gradient(from 0deg, transparent, rgba(255,255,255,0.4), transparent, rgba(255,255,255,0.3), transparent)',
           filter: 'blur(1px)',
         }}
         animate={{ rotate: 360 }}
@@ -22,7 +22,7 @@ export default function AnimatedBorder({ children, className = '', style }: Anim
       />
       <div
         className="relative rounded-2xl h-full"
-        style={{ background: '#0c0c14' }}
+        style={{ background: '#0a0a0a' }}
       >
         {children}
       </div>
