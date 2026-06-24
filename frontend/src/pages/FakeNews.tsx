@@ -144,7 +144,7 @@ export default function FakeNews() {
 
               {/* CTA */}
               <a
-                href="https://github.com/Pratyushpad27/char-level-language-model"
+                href="https://github.com/pratyushpad/char-level-language-model"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-6 py-2.5 text-sm font-medium text-white transition-all duration-200 hover:opacity-90 active:scale-95"

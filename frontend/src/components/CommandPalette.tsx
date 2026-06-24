@@ -10,8 +10,8 @@ const pages = [
   { label: 'Language Model', path: '/projects/language-model', keywords: 'rnn lstm character language model text generation' },
 
   { label: 'Resume', path: '/Pratyush_Resume.pdf', keywords: 'resume cv pdf download' },
-  { label: 'GitHub', path: 'https://github.com/Pratyushpad27', keywords: 'github code source' },
-  { label: 'LinkedIn', path: 'https://www.linkedin.com/in/pratyush-padhy-b7017a269/', keywords: 'linkedin social connect' },
+  { label: 'GitHub', path: 'https://github.com/pratyushpad', keywords: 'github code source' },
+  { label: 'LinkedIn', path: 'https://www.linkedin.com/in/pratyushpad', keywords: 'linkedin social connect' },
   { label: 'Email', path: 'mailto:ppadhy@uci.edu', keywords: 'email contact mail' },
 ]
 

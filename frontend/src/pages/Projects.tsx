@@ -27,7 +27,7 @@ const projects = [
     description: 'A systematic comparison of 4 deep learning architectures on 35,000+ facial images across 7 emotion classes. Evaluated MLP (raw pixels), MLP (geometric landmarks), CNN, and VGG16 transfer learning — demonstrating how model complexity translates to accuracy in a genuinely hard problem where human accuracy is only ~65%.',
     tech: ['Python', 'TensorFlow', 'Keras', 'CNN', 'VGG16', 'OpenCV'],
     path: '/projects/emotion-detection',
-    github: 'https://github.com/Pratyushpad27/fer2013-emotion-detection',
+    github: 'https://github.com/pratyushpad/fer2013-emotion-detection',
     demo: 'https://face-pulse.netlify.app/',
     outcome: 'VGG16 transfer learning outperformed all baselines',
     stats: [
@@ -43,7 +43,7 @@ const projects = [
     description: 'A full-stack traffic violation detection system — upload a dashcam frame, run YOLOv8 inference across 23 object classes, and get a structured violation report back in under 35ms. A spatial rule engine cross-checks detections to flag violations like red light running or no-entry breaches, producing output that reads like an operational review, not raw model output.',
     tech: ['Python', 'YOLOv8', 'FastAPI', 'Next.js', 'TypeScript', 'Docker', 'GCP'],
     path: '/projects/argus-ai',
-    github: 'https://github.com/Pratyushpad27/Argus-AI',
+    github: 'https://github.com/pratyushpad/Argus-AI',
     demo: 'https://ai-argus.netlify.app/',
     outcome: 'Rule engine flags violations across 23 detection classes in <35ms',
     stats: [
@@ -59,7 +59,7 @@ const projects = [
     description: 'An RNN and LSTM trained character-by-character on 200,000 characters of text — building a generative language model from scratch. Uses a 70-character vocabulary, sliding window of 40 characters creating 66,000+ training pairs, and temperature sampling to control how creative vs coherent the output is.',
     tech: ['Python', 'TensorFlow', 'Keras', 'RNN', 'LSTM', 'NLP'],
     path: '/projects/language-model',
-    github: 'https://github.com/Pratyushpad27/char-level-language-model',
+    github: 'https://github.com/pratyushpad/char-level-language-model',
     outcome: 'LSTM outperformed SimpleRNN on coherent text generation',
     stats: [
       { label: 'Characters', value: '200K' },

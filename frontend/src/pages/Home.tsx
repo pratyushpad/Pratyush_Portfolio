@@ -26,7 +26,7 @@ const projects = [
     description: 'Compared 4 architectures on 35,000+ facial images. VGG16 transfer learning outperformed all baselines on 7 emotion classes.',
     tech: ['Python', 'TensorFlow', 'CNN', 'VGG16'],
     path: '/projects/emotion-detection',
-    github: 'https://github.com/Pratyushpad27/fer2013-emotion-detection',
+    github: 'https://github.com/pratyushpad/fer2013-emotion-detection',
     demo: 'https://face-pulse.netlify.app/',
     number: '01',
     thumbnail: '/emotion/face_pulse_preview.png',
@@ -37,7 +37,7 @@ const projects = [
     description: 'Upload a dashcam frame, run YOLOv8 inference across 23 classes, get a structured violation report back in <35ms. Rule engine flags red light running, no-entry breaches, and pedestrian proximity risk.',
     tech: ['Python', 'YOLOv8', 'FastAPI', 'Next.js'],
     path: '/projects/argus-ai',
-    github: 'https://github.com/Pratyushpad27/Argus-AI',
+    github: 'https://github.com/pratyushpad/Argus-AI',
     demo: 'https://ai-argus.netlify.app/',
     number: '02',
     thumbnail: '/argus/ArgusAI.png',
@@ -48,7 +48,7 @@ const projects = [
     description: 'RNN and LSTM trained on 200K characters with temperature sampling controlling creativity vs coherence.',
     tech: ['Python', 'TensorFlow', 'RNN', 'LSTM'],
     path: '/projects/language-model',
-    github: 'https://github.com/Pratyushpad27/char-level-language-model',
+    github: 'https://github.com/pratyushpad/char-level-language-model',
     number: '03',
     thumbnail: '/fakenews/training_loss.png',
   },
@@ -401,7 +401,7 @@ export default function Home() {
                     Resume ↗
                   </a>
                   <a
-                    href="https://github.com/Pratyushpad27"
+                    href="https://github.com/pratyushpad"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-7 py-3 text-sm font-medium transition-all duration-200 hover:text-white hover:border-white/20 active:scale-95"
@@ -491,7 +491,7 @@ export default function Home() {
 
                 <div className="flex gap-6">
                   <a href="/Pratyush_Resume.pdf" target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:text-white" style={{ color: '#ffffff' }}>Resume ↗</a>
-                  <a href="https://www.linkedin.com/in/pratyush-padhy-b7017a269/" target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:text-white" style={{ color: '#9a9a9a' }}>LinkedIn ↗</a>
+                  <a href="https://www.linkedin.com/in/pratyushpad" target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:text-white" style={{ color: '#9a9a9a' }}>LinkedIn ↗</a>
                   <a href="mailto:ppadhy@uci.edu" className="text-sm font-medium transition-colors hover:text-white" style={{ color: '#9a9a9a' }}>Email ↗</a>
                 </div>
               </RevealSection>
@@ -753,7 +753,7 @@ export default function Home() {
                 Email ↗
               </a>
               <a
-                href="https://www.linkedin.com/in/pratyush-padhy-b7017a269/"
+                href="https://www.linkedin.com/in/pratyushpad"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3.5 text-sm font-medium transition-all duration-200 hover:text-white hover:border-white/30 active:scale-95"

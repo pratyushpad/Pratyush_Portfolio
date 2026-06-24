@@ -152,7 +152,7 @@ export default function EmotionDetection() {
                   Live Demo ↗
                 </a>
                 <a
-                  href="https://github.com/Pratyushpad27/fer2013-emotion-detection"
+                  href="https://github.com/pratyushpad/fer2013-emotion-detection"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-2.5 text-sm font-medium text-black transition-all duration-200 hover:opacity-90 active:scale-95"

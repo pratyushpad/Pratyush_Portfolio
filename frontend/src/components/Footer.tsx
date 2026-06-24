@@ -21,8 +21,8 @@ const EmailIcon = () => (
 )
 
 const links = [
-  { label: 'GitHub', href: 'https://github.com/Pratyushpad27', icon: <GitHubIcon />, external: true },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/pratyush-padhy-b7017a269/', icon: <LinkedInIcon />, external: true },
+  { label: 'GitHub', href: 'https://github.com/pratyushpad', icon: <GitHubIcon />, external: true },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/pratyushpad', icon: <LinkedInIcon />, external: true },
   { label: 'Email', href: 'mailto:ppadhy@uci.edu', icon: <EmailIcon />, external: false },
 ]
 

@@ -336,7 +336,7 @@ export default function About() {
                 Resume ↗
               </a>
               <a
-                href="https://github.com/Pratyushpad27"
+                href="https://github.com/pratyushpad"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3 text-sm font-medium transition-all duration-200 hover:text-white hover:border-white/30"
@@ -345,7 +345,7 @@ export default function About() {
                 GitHub
               </a>
               <a
-                href="https://www.linkedin.com/in/pratyush-padhy-b7017a269/"
+                href="https://www.linkedin.com/in/pratyushpad"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3 text-sm font-medium transition-all duration-200 hover:text-white hover:border-white/30"
