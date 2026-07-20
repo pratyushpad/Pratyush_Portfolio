@@ -13,8 +13,10 @@ const Home = lazy(() => import('./pages/Home'))
 const About = lazy(() => import('./pages/About'))
 const Projects = lazy(() => import('./pages/Projects'))
 const EmotionDetection = lazy(() => import('./pages/EmotionDetection'))
-const FakeNews = lazy(() => import('./pages/FakeNews'))
 const ArgusAI = lazy(() => import('./pages/ArgusAI'))
+const Chronicle = lazy(() => import('./pages/Chronicle'))
+const Forge = lazy(() => import('./pages/Forge'))
+const Lumina = lazy(() => import('./pages/Lumina'))
 
 
 // AnimatePresence needs to be inside the Router to access location
@@ -27,8 +29,10 @@ function AnimatedRoutes() {
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/emotion-detection" element={<EmotionDetection />} />
-        <Route path="/projects/language-model" element={<FakeNews />} />
         <Route path="/projects/argus-ai" element={<ArgusAI />} />
+        <Route path="/projects/chronicle" element={<Chronicle />} />
+        <Route path="/projects/forge" element={<Forge />} />
+        <Route path="/projects/lumina" element={<Lumina />} />
 
         <Route path="*" element={
           <main id="main-content" className="max-w-4xl mx-auto px-6 pt-28 md:pt-36 pb-28 md:pb-20 text-center">

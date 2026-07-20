@@ -42,16 +42,10 @@ function AnimatedCounter({ value, suffix = '', label }: { value: number; suffix?
 
 const experiences = [
   {
-    role: 'Software Engineer Intern',
-    org: 'Tata Consultancy Services',
+    role: 'AI/ML Intern',
+    org: 'TCS Medical Robotics Center',
     period: 'Jun 2026 – Present',
-    desc: "Building computer vision and deep learning models (TensorFlow, PyTorch, OpenCV) at TCS's Medical Robotics Center on Carnegie Mellon University's campus for early cancer prediction and detection. Developing end-to-end CNN-based segmentation, detection, and classification pipelines over DICOM/NIfTI volumetric scans, spanning preprocessing, augmentation, and validation tuned for clinical-grade accuracy and real-time inference.",
-  },
-  {
-    role: 'Software Engineer Intern',
-    org: 'AXENTRA OS',
-    period: 'May 2026 – Present',
-    desc: 'Software Engineer – Python & FastAPI.',
+    desc: "Working on the team teaching robots how to act, not just perceive. Building a multi-stage behavior-tree pipeline for autonomous manipulation in ROS2 and Gazebo — with automated recovery strategies for when a grasp doesn't go as planned — and training reinforcement-learning policies that learn precise reach-and-grasp motion in just minutes of CPU-only training. Also fine-tuning a small vision-language-action model through imitation learning, trading raw speed for a model light enough to run without a GPU in sight.",
   },
   {
     role: 'API Developer',
@@ -154,9 +148,10 @@ export default function About() {
               </div>
               <p className="text-sm leading-relaxed mb-6" style={{ color: '#d0d0d0' }}>
                 Computer Science student at UC Irvine (Dean's Honor List) with a passion
-                for machine learning and AI. Currently a software engineer intern at TCS, building medical AI and
-                computer vision models for early cancer detection. Previously built full-stack course-planning tools
-                at Ready Tutor, mentored 50+ students at Data@UCI, and conducted RNA-seq research at Stanford iLab.
+                for machine learning and AI. Currently an AI/ML intern at TCS's Medical Robotics Center, training
+                reinforcement- and imitation-learning models that teach robots how to act. Previously built full-stack
+                course-planning tools at Ready Tutor, mentored 50+ students at Data@UCI, and conducted RNA-seq
+                research at Stanford iLab.
               </p>
               <div className="flex flex-wrap gap-2 mb-6">
                 {clubs.map((item) => (
@@ -176,7 +171,7 @@ export default function About() {
               <div className="p-6" style={{ border: '1px solid rgba(255,255,255,0.06)' }}>
                 <p className="font-mono text-xs uppercase tracking-[0.3em] mb-4" style={{ color: '#9a9a9a' }}>Education</p>
                 <h3 className="text-white font-semibold text-lg">UC Irvine</h3>
-                <p className="text-sm mb-4" style={{ color: '#d0d0d0' }}>B.S. Computer Science</p>
+                <p className="text-sm mb-4" style={{ color: '#d0d0d0' }}>B.S. Computer Science, Intelligent Systems</p>
                 <div className="pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
                   <p className="text-3xl font-semibold text-white">3.86</p>
                   <p className="text-xs font-mono mt-1" style={{ color: '#9a9a9a' }}>GPA · Class of 2028</p>

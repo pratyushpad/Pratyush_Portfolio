@@ -6,8 +6,11 @@ const pages = [
   { label: 'Home', path: '/', keywords: 'home landing hero' },
   { label: 'About', path: '/about', keywords: 'about bio education experience' },
   { label: 'Projects', path: '/projects', keywords: 'projects work portfolio' },
+  { label: 'Chronicle', path: '/projects/chronicle', keywords: 'chronicle job intelligence aggregation search ats' },
+  { label: 'Forge', path: '/projects/forge', keywords: 'forge reinforcement learning grpo qwen reasoning llm' },
+  { label: 'Lumina', path: '/projects/lumina', keywords: 'lumina rag retrieval multimodal documents citations' },
   { label: 'Face Pulse', path: '/projects/emotion-detection', keywords: 'face pulse fer2013 cnn vgg16 emotion detection facial' },
-  { label: 'Language Model', path: '/projects/language-model', keywords: 'rnn lstm character language model text generation' },
+  { label: 'Argus AI', path: '/projects/argus-ai', keywords: 'argus yolov8 object detection traffic violations dashcam' },
 
   { label: 'Resume', path: '/Pratyush_Resume.pdf', keywords: 'resume cv pdf download' },
   { label: 'GitHub', path: 'https://github.com/pratyushpad', keywords: 'github code source' },

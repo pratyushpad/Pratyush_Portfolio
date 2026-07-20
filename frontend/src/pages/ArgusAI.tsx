@@ -83,7 +83,7 @@ export default function ArgusAI() {
 
             <FadeUp delay={0.05}>
               <div className="flex items-center gap-3 mb-5">
-                <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#d4d4d4' }}>Project 03</span>
+                <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#d4d4d4' }}>Project 05</span>
                 <span
                   className="text-xs px-2.5 py-0.5 font-mono"
                   style={{ background: 'rgba(255,255,255,0.1)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 4 }}
@@ -286,7 +286,7 @@ export default function ArgusAI() {
 
           {/* Next project */}
           <FadeUp delay={0.05}>
-            <Link to="/projects/language-model" className="block group">
+            <Link to="/projects/chronicle" className="block group">
               <motion.div
                 className="flex items-center justify-between p-6"
                 style={{
@@ -300,7 +300,7 @@ export default function ArgusAI() {
                 <div>
                   <p className="font-mono text-xs uppercase tracking-wider mb-1" style={{ color: '#9a9a9a' }}>Next Project</p>
                   <p className="text-white font-semibold group-hover:text-neutral-300 transition-colors">
-                    Character-Level Language Model
+                    Chronicle
                   </p>
                 </div>
                 <motion.span

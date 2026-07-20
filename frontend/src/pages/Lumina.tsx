@@ -5,59 +5,51 @@ import PageTransition from '../components/animations/PageTransition'
 import FadeUp from '../components/animations/FadeUp'
 import Lightbox from '../components/Lightbox'
 
-const temperatures = [
+const pipeline = [
   {
-    temp: '0.2',
-    label: 'Conservative',
-    color: '#ffffff',
-    bg: 'rgba(255,255,255,0.06)',
-    border: 'rgba(255,255,255,0.2)',
-    output: 'the president announced today that the state of the country was a strong and the party of the election was a former president of the united states...',
+    name: 'Ingest',
+    description: 'Upload PDFs, images, and raw text into a single workbench.',
+    icon: '01',
+    accent: '#ffffff',
   },
   {
-    temp: '0.5',
-    label: 'Balanced',
-    color: '#d4d4d4',
-    bg: 'rgba(255,255,255,0.06)',
-    border: 'rgba(255,255,255,0.2)',
-    output: 'the president announced comple vate in the has election an was be neworng do the ussistance that the clinton interely is a commenter of the state...',
+    name: 'Embed & Index',
+    description: 'Content is chunked and embedded across modalities into a shared vector index.',
+    icon: '02',
+    accent: '#d4d4d4',
   },
   {
-    temp: '0.7',
-    label: 'Creative',
-    color: '#a3a3a3',
-    bg: 'rgba(255,255,255,0.06)',
-    border: 'rgba(255,255,255,0.2)',
-    output: 'the president announced evemipmon to post in o hatimer to consrations. marh rin n a doment that other get a foundateoth, share shick dictrual internet...',
+    name: 'Retrieve',
+    description: 'A query pulls the most relevant passages and images from your own uploaded context, not the open web.',
+    icon: '03',
+    accent: '#a3a3a3',
   },
-]
-
-const steps = [
-  { step: '01', title: 'Encode', desc: 'Every character in the corpus is converted to a one-hot vector across a 70-character vocabulary.' },
-  { step: '02', title: 'Sequence', desc: 'A sliding window of 40 characters creates 66,000+ input/output training pairs.' },
-  { step: '03', title: 'Train', desc: 'The LSTM learns to predict the next character by minimizing categorical crossentropy loss.' },
-  { step: '04', title: 'Generate', desc: 'Given a seed phrase, the model generates new characters one at a time using temperature sampling.' },
+  {
+    name: 'Cite',
+    description: 'Answers are generated with inline citations pointing back to the exact source passage, so every claim can be checked.',
+    icon: '04',
+    accent: '#ffffff',
+  },
 ]
 
 const images = [
-  { src: '/fakenews/training_loss.png', alt: 'Training Loss' },
-  { src: '/fakenews/confidence_heatmap.png', alt: 'Confidence Heatmap' },
+  { src: '/lumina/lumina_preview.png', alt: 'Lumina — Talk to your documents' },
 ]
 
-const techTags = ['Python', 'TensorFlow', 'Keras', 'RNN', 'LSTM', 'NLP', 'Text Generation']
+const techTags = ['Python', 'RAG', 'Vector Search', 'Multimodal Embeddings', 'Next.js', 'TypeScript']
 
 const learned = [
-  'LSTMs outperform SimpleRNNs on sequence tasks due to their gating mechanism.',
-  'Temperature sampling controls the creativity vs coherence tradeoff in generation.',
-  'Sliding window tokenization turns raw text into thousands of labeled training sequences.',
-  'Character-level models reveal how modern LLMs like GPT learn language fundamentals.',
+  'Grounding answers in citations changes how much you can trust a RAG system — it turns "trust me" into "check this passage."',
+  'Multimodal retrieval (text + image) needs a shared embedding space, not two separate pipelines bolted together.',
+  'A workbench-style UI, where you can see what got retrieved before reading the answer, catches bad retrievals before they become bad answers.',
+  'Grounded RAG is as much a UX problem as a retrieval problem — citations only help if they are easy to check.',
 ]
 
-export default function FakeNews() {
+export default function Lumina() {
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
   const [showBack, setShowBack] = useState(false)
 
-  useEffect(() => { document.title = 'Language Model | Pratyush Padhy' }, [])
+  useEffect(() => { document.title = 'Lumina | Pratyush Padhy' }, [])
 
   useEffect(() => {
     const handleScroll = () => setShowBack(window.scrollY > 200)
@@ -71,14 +63,12 @@ export default function FakeNews() {
 
         {/* ── Hero band ── */}
         <div className="relative overflow-hidden pt-28 md:pt-36 pb-16 px-6" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-          {/* Accent gradient */}
           <div
             className="pointer-events-none absolute inset-0"
-            style={{ background: 'radial-gradient(ellipse 60% 50% at 70% 50%, rgba(255,255,255,0.07) 0%, transparent 70%)' }}
+            style={{ background: 'radial-gradient(ellipse 60% 50% at 70% 50%, rgba(94,110,255,0.08) 0%, transparent 70%)' }}
             aria-hidden="true"
           />
           <div className="max-w-4xl mx-auto relative">
-            {/* Breadcrumb */}
             <FadeUp>
               <nav aria-label="Breadcrumb" className="mb-8">
                 <ol className="flex items-center gap-2 text-xs font-mono" style={{ color: '#9a9a9a' }}>
@@ -86,19 +76,19 @@ export default function FakeNews() {
                   <li aria-hidden="true">/</li>
                   <li><Link to="/projects" className="hover:text-white transition-colors">Projects</Link></li>
                   <li aria-hidden="true">/</li>
-                  <li style={{ color: '#d0d0d0' }}>Character-Level Language Model</li>
+                  <li style={{ color: '#d0d0d0' }}>Lumina</li>
                 </ol>
               </nav>
             </FadeUp>
 
             <FadeUp delay={0.05}>
               <div className="flex items-center gap-3 mb-5">
-                <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#a3a3a3' }}>Project 02</span>
+                <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#8b93ff' }}>Project 03</span>
                 <span
                   className="text-xs px-2.5 py-0.5 font-mono"
-                  style={{ background: 'rgba(255,255,255,0.1)', color: '#d4d4d4', border: '1px solid rgba(255,255,255,0.25)', borderRadius: 4 }}
+                  style={{ background: 'rgba(94,110,255,0.12)', color: '#8b93ff', border: '1px solid rgba(94,110,255,0.3)', borderRadius: 4 }}
                 >
-                  LSTM outperformed SimpleRNN
+                  Grounded, Multimodal RAG
                 </span>
               </div>
 
@@ -106,21 +96,20 @@ export default function FakeNews() {
                 className="text-4xl md:text-5xl font-bold text-white mb-5"
                 style={{ letterSpacing: '-0.025em', lineHeight: 1.1 }}
               >
-                Character-Level<br className="hidden md:block" /> Language Model
+                Lumina
               </h1>
 
               <p className="text-base leading-relaxed max-w-2xl mb-8" style={{ color: '#d0d0d0', lineHeight: 1.85 }}>
-                An RNN and LSTM trained on 200,000 characters of text to generate new text from scratch,
-                one character at a time. Built to understand how language models like GPT work at their
-                most fundamental level.
+                A grounded, multimodal RAG workbench. Upload PDFs, images, and text — get cited answers backed by
+                your own context instead of the model's memory.
               </p>
 
               {/* Stats */}
               <div className="flex flex-wrap gap-8 mb-8 pb-8" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                 {[
-                  { val: '200K', label: 'Characters' },
-                  { val: '70', label: 'Vocab Size' },
-                  { val: '66K+', label: 'Training Pairs' },
+                  { val: 'PDF/Img/Text', label: 'Input Types' },
+                  { val: 'Cited', label: 'Answers' },
+                  { val: 'Multimodal', label: 'Retrieval' },
                 ].map((s) => (
                   <div key={s.label}>
                     <p className="text-2xl font-bold text-white">{s.val}</p>
@@ -135,23 +124,34 @@ export default function FakeNews() {
                   <span
                     key={t}
                     className="text-xs font-mono px-3 py-1"
-                    style={{ color: '#d4d4d4', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 4 }}
+                    style={{ color: '#8b93ff', background: 'rgba(94,110,255,0.08)', border: '1px solid rgba(94,110,255,0.25)', borderRadius: 4 }}
                   >
                     {t}
                   </span>
                 ))}
               </div>
 
-              {/* CTA */}
-              <a
-                href="https://github.com/pratyushpad/char-level-language-model"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-6 py-2.5 text-sm font-medium text-white transition-all duration-200 hover:opacity-90 active:scale-95"
-                style={{ background: 'linear-gradient(135deg, #a3a3a3, #d4d4d4)', borderRadius: 6 }}
-              >
-                View on GitHub ↗
-              </a>
+              {/* CTAs */}
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="https://lumina-rag-two.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-2.5 text-sm font-medium text-black transition-all duration-200 hover:opacity-90 active:scale-95"
+                  style={{ background: 'linear-gradient(135deg, #ffffff, #d4d4d4)', borderRadius: 6 }}
+                >
+                  Live Demo ↗
+                </a>
+                <a
+                  href="https://github.com/pratyushpad/Lumina"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-2.5 text-sm font-medium text-black transition-all duration-200 hover:opacity-90 active:scale-95"
+                  style={{ background: 'linear-gradient(135deg, #d4d4d4, #a3a3a3)', borderRadius: 6 }}
+                >
+                  View on GitHub ↗
+                </a>
+              </div>
             </FadeUp>
           </div>
         </div>
@@ -159,82 +159,71 @@ export default function FakeNews() {
         {/* ── Body ── */}
         <div className="max-w-4xl mx-auto px-6 py-16 space-y-20 pb-28 md:pb-20">
 
-          {/* How it works */}
+          {/* Problem */}
           <FadeUp>
             <section>
-              <SectionHeading number="01" label="Pipeline" title="How It Works" />
+              <SectionHeading number="01" label="Context" title="The Problem" />
+              <div
+                className="p-6 text-sm leading-relaxed"
+                style={{
+                  color: '#d0d0d0',
+                  background: 'rgba(255,255,255,0.02)',
+                  border: '1px solid rgba(255,255,255,0.07)',
+                  borderRadius: 8,
+                  lineHeight: 1.85,
+                }}
+              >
+                LLMs answer confidently even when they're wrong, and generic chat interfaces don't let you check
+                the answer against a source. Lumina is built around the opposite default: every answer is grounded
+                in documents you provided, and every claim is traceable back to the passage it came from.
+              </div>
+            </section>
+          </FadeUp>
+
+          {/* Pipeline */}
+          <FadeUp delay={0.05}>
+            <section>
+              <SectionHeading number="02" label="Architecture" title="How It Works" />
               <div className="grid md:grid-cols-2 gap-3">
-                {steps.map((item) => (
+                {pipeline.map((step) => (
                   <motion.div
-                    key={item.step}
+                    key={step.name}
                     className="p-5"
                     style={{
                       background: 'rgba(255,255,255,0.02)',
                       border: '1px solid rgba(255,255,255,0.07)',
                       borderRadius: 8,
                     }}
-                    whileHover={{ borderColor: 'rgba(255,255,255,0.3)', background: 'rgba(255,255,255,0.04)' }}
+                    whileHover={{ borderColor: step.accent + '40', background: step.accent + '06' }}
                     transition={{ duration: 0.2 }}
                   >
                     <div className="flex items-center gap-3 mb-3">
                       <span
                         className="w-8 h-8 flex items-center justify-center font-mono text-xs font-bold flex-shrink-0"
-                        style={{ background: 'rgba(255,255,255,0.15)', color: '#d4d4d4', border: '1px solid rgba(255,255,255,0.3)', borderRadius: 6 }}
+                        style={{ background: step.accent + '18', color: step.accent, border: `1px solid ${step.accent}30`, borderRadius: 6 }}
                       >
-                        {item.step}
+                        {step.icon}
                       </span>
-                      <h3 className="text-white font-semibold text-sm">{item.title}</h3>
+                      <h3 className="text-white font-semibold text-sm">{step.name}</h3>
                     </div>
-                    <p className="text-sm" style={{ color: '#b0b0b0', lineHeight: 1.7 }}>{item.desc}</p>
+                    <p className="text-sm" style={{ color: '#b0b0b0', lineHeight: 1.7 }}>{step.description}</p>
                   </motion.div>
                 ))}
               </div>
             </section>
           </FadeUp>
 
-          {/* Sample outputs */}
+          {/* Preview */}
           <FadeUp delay={0.05}>
             <section>
-              <SectionHeading number="02" label="Generation" title="Sample Outputs" />
-              <p className="text-sm mb-6" style={{ color: '#b0b0b0' }}>
-                Seed: <span className="font-mono" style={{ color: '#d4d4d4' }}>"the president announced today that"</span>
-              </p>
-              <div className="space-y-3">
-                {temperatures.map((t) => (
-                  <div
-                    key={t.temp}
-                    className="p-5"
-                    style={{ background: t.bg, border: `1px solid ${t.border}`, borderRadius: 8 }}
-                  >
-                    <div className="flex items-center gap-3 mb-3">
-                      <span
-                        className="font-mono text-xs font-bold px-2.5 py-0.5"
-                        style={{ color: t.color, background: t.bg, border: `1px solid ${t.border}`, borderRadius: 4 }}
-                      >
-                        t={t.temp}
-                      </span>
-                      <span className="text-sm font-medium" style={{ color: t.color }}>{t.label}</span>
-                    </div>
-                    <p className="font-mono text-sm leading-relaxed" style={{ color: '#d0d0d0', lineHeight: 1.75 }}>
-                      {t.output}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </section>
-          </FadeUp>
-
-          {/* Results */}
-          <FadeUp delay={0.05}>
-            <section>
-              <SectionHeading number="03" label="Output" title="Results" />
-              <div className="grid md:grid-cols-2 gap-4">
+              <SectionHeading number="03" label="Output" title="Talk to Your Documents" />
+              <div className="space-y-4">
                 {images.map((img) => (
                   <motion.div
                     key={img.alt}
                     className="overflow-hidden cursor-pointer group"
                     style={{ border: '1px solid rgba(255,255,255,0.07)', borderRadius: 8 }}
-                    whileHover={{ borderColor: 'rgba(255,255,255,0.3)' }}
+                    whileHover={{ borderColor: 'rgba(94,110,255,0.4)' }}
                     transition={{ duration: 0.2 }}
                     onClick={() => setLightbox(img)}
                     role="button"
@@ -244,12 +233,13 @@ export default function FakeNews() {
                   >
                     <div
                       className="flex items-center justify-center p-4"
-                      style={{ background: 'rgba(18,18,18,0.8)', minHeight: 180 }}
+                      style={{ background: 'rgba(18,18,18,0.8)' }}
                     >
                       <img
                         src={img.src}
                         alt={img.alt}
-                        className="w-full h-52 object-contain transition-transform duration-500 group-hover:scale-105"
+                        className="w-full object-contain rounded transition-transform duration-500 group-hover:scale-[1.02]"
+                        style={{ maxHeight: 480 }}
                         loading="lazy"
                       />
                     </div>
@@ -258,7 +248,7 @@ export default function FakeNews() {
                       style={{ background: 'rgba(18,18,18,0.6)', borderTop: '1px solid rgba(255,255,255,0.05)' }}
                     >
                       <p className="font-mono text-xs" style={{ color: '#9a9a9a' }}>{img.alt}</p>
-                      <span className="text-xs opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: '#a3a3a3' }}>expand ↗</span>
+                      <span className="text-xs opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: '#8b93ff' }}>expand ↗</span>
                     </div>
                   </motion.div>
                 ))}
@@ -278,11 +268,11 @@ export default function FakeNews() {
                     style={{
                       background: 'rgba(255,255,255,0.02)',
                       border: '1px solid rgba(255,255,255,0.06)',
-                      borderLeft: '2px solid rgba(255,255,255,0.4)',
+                      borderLeft: '2px solid rgba(94,110,255,0.4)',
                       borderRadius: '0 8px 8px 0',
                     }}
                   >
-                    <span className="font-mono text-xs font-bold flex-shrink-0 mt-0.5" style={{ color: '#a3a3a3' }}>
+                    <span className="font-mono text-xs font-bold flex-shrink-0 mt-0.5" style={{ color: '#8b93ff' }}>
                       {String(i + 1).padStart(2, '0')}
                     </span>
                     <span style={{ color: '#d0d0d0', lineHeight: 1.75 }}>{item}</span>
@@ -302,7 +292,7 @@ export default function FakeNews() {
                   border: '1px solid rgba(255,255,255,0.07)',
                   borderRadius: 10,
                 }}
-                whileHover={{ borderColor: 'rgba(255,255,255,0.3)', background: 'rgba(255,255,255,0.04)' }}
+                whileHover={{ borderColor: 'rgba(94,110,255,0.3)', background: 'rgba(94,110,255,0.04)' }}
                 transition={{ duration: 0.2 }}
               >
                 <div>
@@ -367,8 +357,8 @@ function SectionHeading({ number, label, title }: { number: string; label: strin
   return (
     <div className="mb-6">
       <div className="flex items-center gap-3 mb-2">
-        <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#a3a3a3' }}>{number}</span>
-        <span style={{ width: 24, height: 1, background: 'rgba(255,255,255,0.3)', display: 'block' }} />
+        <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#8b93ff' }}>{number}</span>
+        <span style={{ width: 24, height: 1, background: 'rgba(94,110,255,0.3)', display: 'block' }} />
         <span className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: '#9a9a9a' }}>{label}</span>
       </div>
       <h2 className="text-2xl font-bold text-white" style={{ letterSpacing: '-0.015em' }}>{title}</h2>

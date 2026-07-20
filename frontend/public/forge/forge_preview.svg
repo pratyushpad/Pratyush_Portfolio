@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1180" role="img" aria-labelledby="forgeTitle">
+  <title id="forgeTitle">Forge — Forged to Reason</title>
+  <defs>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d97a3f"/>
+      <stop offset="100%" stop-color="#f0b088"/>
+    </linearGradient>
+    <radialGradient id="ember" cx="78%" cy="20%" r="55%">
+      <stop offset="0%" stop-color="#3a1f10" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#0a0a0a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="1180" fill="#0a0908"/>
+  <rect width="1600" height="1180" fill="url(#ember)"/>
+
+  <!-- top accent + wordmark -->
+  <rect x="96" y="120" width="56" height="4" fill="url(#orangeGrad)"/>
+  <text x="96" y="180" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="20" letter-spacing="4" fill="#8a8a8a">FORGE &#183; RL WITH VERIFIABLE REWARDS</text>
+
+  <!-- headline -->
+  <text x="92" y="330" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="108" letter-spacing="-2" fill="#f4f1ec">FORGED TO</text>
+  <text x="92" y="450" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="108" letter-spacing="-2" fill="url(#orangeGrad)">REASON</text>
+
+  <!-- description -->
+  <text x="96" y="520" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#b8b3ab">Qwen2.5-1.5B, heat-treated with GRPO &#8212; reinforcement learning against a</text>
+  <text x="96" y="558" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#b8b3ab">math checker &#8212; on a single 8GB consumer GPU.</text>
+
+  <!-- divider -->
+  <line x1="96" y1="620" x2="1504" y2="620" stroke="#2a2724" stroke-width="1"/>
+
+  <!-- stats -->
+  <g font-family="ui-monospace, 'JetBrains Mono', monospace">
+    <text x="96" y="668" font-size="18" letter-spacing="2" fill="#8a8a8a">GSM8K PASS@1</text>
+    <text x="96" y="722" font-size="46" font-weight="700" fill="#f4f1ec">58.8% &#8594; <tspan fill="#e08a4f">70.0%</tspan></text>
+
+    <text x="536" y="668" font-size="18" letter-spacing="2" fill="#8a8a8a">FORGETTING (ARC)</text>
+    <text x="536" y="722" font-size="46" font-weight="700" fill="#f4f1ec">&#8776; flat</text>
+
+    <text x="936" y="668" font-size="18" letter-spacing="2" fill="#8a8a8a">TRAIN TIME</text>
+    <text x="936" y="722" font-size="46" font-weight="700" fill="#f4f1ec">86 min</text>
+
+    <text x="1256" y="668" font-size="18" letter-spacing="2" fill="#8a8a8a">SERVED</text>
+    <text x="1256" y="722" font-size="46" font-weight="700" fill="#f4f1ec">228 tok/s</text>
+  </g>
+
+  <!-- pick a problem -->
+  <rect x="96" y="796" width="32" height="3" fill="url(#orangeGrad)"/>
+  <text x="140" y="804" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="16" letter-spacing="3" fill="#8a8a8a">01 &#183; PICK A PROBLEM</text>
+
+  <!-- card 01 (highlighted) -->
+  <g>
+    <rect x="96" y="836" width="452" height="150" rx="4" fill="#120e0a" stroke="#c9713d" stroke-width="2"/>
+    <text x="120" y="874" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="18" font-weight="700" fill="#e08a4f">01</text>
+    <text x="120" y="906" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#e8e4dd">Kylar went to the store to buy glasses. One</text>
+    <text x="120" y="930" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#e8e4dd">glass costs $5, but every second glass costs</text>
+    <text x="120" y="954" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#e8e4dd">only 60...</text>
+    <text x="120" y="978" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="14" letter-spacing="1" fill="#e08a4f">&#8635; REPLAY</text>
+  </g>
+
+  <!-- card 02 -->
+  <g>
+    <rect x="574" y="836" width="452" height="150" rx="4" fill="#120e0a" stroke="#2a2724" stroke-width="1"/>
+    <text x="598" y="874" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="18" font-weight="700" fill="#8a8a8a">02</text>
+    <text x="598" y="906" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#c9c4bc">James runs 3 sprints 3 times a week. He runs</text>
+    <text x="598" y="930" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#c9c4bc">60 meters each sprint. How many total</text>
+    <text x="598" y="954" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#c9c4bc">meters does h...</text>
+  </g>
+
+  <!-- card 03 -->
+  <g>
+    <rect x="1052" y="836" width="452" height="150" rx="4" fill="#120e0a" stroke="#2a2724" stroke-width="1"/>
+    <text x="1076" y="874" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="18" font-weight="700" fill="#8a8a8a">03</text>
+    <text x="1076" y="906" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#c9c4bc">Weng earns $12 an hour for babysitting.</text>
+    <text x="1076" y="930" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#c9c4bc">Yesterday she babysat for 50 minutes. How</text>
+    <text x="1076" y="954" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#c9c4bc">much did she e...</text>
+  </g>
+
+  <!-- card 04 -->
+  <g>
+    <rect x="96" y="1006" width="452" height="150" rx="4" fill="#120e0a" stroke="#2a2724" stroke-width="1"/>
+    <text x="120" y="1044" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="18" font-weight="700" fill="#8a8a8a">04</text>
+    <text x="120" y="1076" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#c9c4bc">Betty is saving for a $100 wallet. She has half</text>
+    <text x="120" y="1100" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#c9c4bc">the money she needs. Her parents give her</text>
+    <text x="120" y="1124" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#c9c4bc">$15, a...</text>
+  </g>
+
+  <!-- card 05 -->
+  <g>
+    <rect x="574" y="1006" width="452" height="150" rx="4" fill="#120e0a" stroke="#2a2724" stroke-width="1"/>
+    <text x="598" y="1044" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="18" font-weight="700" fill="#8a8a8a">05</text>
+    <text x="598" y="1076" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#c9c4bc">A robe takes 2 bolts of blue fiber and half that</text>
+    <text x="598" y="1100" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#c9c4bc">much white fiber. How many bolts in total</text>
+    <text x="598" y="1124" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#c9c4bc">does...</text>
+  </g>
+
+  <!-- card 06 -->
+  <g>
+    <rect x="1052" y="1006" width="452" height="150" rx="4" fill="#120e0a" stroke="#2a2724" stroke-width="1"/>
+    <text x="1076" y="1044" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="18" font-weight="700" fill="#8a8a8a">06</text>
+    <text x="1076" y="1076" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#c9c4bc">Toulouse has twice as many sheep as</text>
+    <text x="1076" y="1100" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#c9c4bc">Charleston. Charleston has 4 times as many</text>
+    <text x="1076" y="1124" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#c9c4bc">sheep as Seattle....</text>
+  </g>
+</svg>

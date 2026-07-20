@@ -3,6 +3,9 @@
   <url><loc>https://pratyush-padhy-portfolio.netlify.app/</loc><priority>1.0</priority></url>
   <url><loc>https://pratyush-padhy-portfolio.netlify.app/about</loc><priority>0.8</priority></url>
   <url><loc>https://pratyush-padhy-portfolio.netlify.app/projects</loc><priority>0.8</priority></url>
+  <url><loc>https://pratyush-padhy-portfolio.netlify.app/projects/chronicle</loc><priority>0.7</priority></url>
+  <url><loc>https://pratyush-padhy-portfolio.netlify.app/projects/forge</loc><priority>0.7</priority></url>
+  <url><loc>https://pratyush-padhy-portfolio.netlify.app/projects/lumina</loc><priority>0.7</priority></url>
   <url><loc>https://pratyush-padhy-portfolio.netlify.app/projects/emotion-detection</loc><priority>0.7</priority></url>
-  <url><loc>https://pratyush-padhy-portfolio.netlify.app/projects/language-model</loc><priority>0.7</priority></url>
+  <url><loc>https://pratyush-padhy-portfolio.netlify.app/projects/argus-ai</loc><priority>0.7</priority></url>
 </urlset>

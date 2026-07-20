@@ -21,36 +21,36 @@ function RevealSection({ children, className = '' }: { children: React.ReactNode
 
 const projects = [
   {
-    title: 'Face Pulse',
-    subtitle: 'Deep Learning · Computer Vision',
-    description: 'Compared 4 architectures on 35,000+ facial images. VGG16 transfer learning outperformed all baselines on 7 emotion classes.',
-    tech: ['Python', 'TensorFlow', 'CNN', 'VGG16'],
-    path: '/projects/emotion-detection',
-    github: 'https://github.com/pratyushpad/fer2013-emotion-detection',
-    demo: 'https://face-pulse.netlify.app/',
+    title: 'Chronicle',
+    subtitle: 'Full-Stack · Job Intelligence',
+    description: 'A job aggregation platform ingesting live postings from 200+ companies via async fan-out. Hybrid semantic search lifts NDCG@10 from 0.853 to 0.943 over a rule-based baseline.',
+    tech: ['Python', 'FastAPI', 'PostgreSQL', 'Next.js'],
+    path: '/projects/chronicle',
+    github: 'https://github.com/pratyushpad/Chronicle',
+    demo: 'https://chronicles-weld.vercel.app/',
     number: '01',
-    thumbnail: '/emotion/face_pulse_preview.png',
+    thumbnail: '/chronicle/chronicle_preview.png',
   },
   {
-    title: 'Argus AI',
-    subtitle: 'Computer Vision · Object Detection',
-    description: 'Upload a dashcam frame, run YOLOv8 inference across 23 classes, get a structured violation report back in <35ms. Rule engine flags red light running, no-entry breaches, and pedestrian proximity risk.',
-    tech: ['Python', 'YOLOv8', 'FastAPI', 'Next.js'],
-    path: '/projects/argus-ai',
-    github: 'https://github.com/pratyushpad/Argus-AI',
-    demo: 'https://ai-argus.netlify.app/',
+    title: 'Forge',
+    subtitle: 'Reinforcement Learning · LLM Reasoning',
+    description: 'Fine-tuned Qwen2.5-1.5B with GRPO against a math checker on a single 8GB GPU — GSM8K accuracy climbed from 58.8% to 70.0% with no measurable forgetting.',
+    tech: ['Python', 'PyTorch', 'GRPO', 'Qwen2.5'],
+    path: '/projects/forge',
+    github: 'https://github.com/pratyushpad/Forge',
     number: '02',
-    thumbnail: '/argus/ArgusAI.png',
+    thumbnail: '/forge/forge_preview.svg',
   },
   {
-    title: 'Character-Level Language Model',
-    subtitle: 'NLP · Text Generation',
-    description: 'RNN and LSTM trained on 200K characters with temperature sampling controlling creativity vs coherence.',
-    tech: ['Python', 'TensorFlow', 'RNN', 'LSTM'],
-    path: '/projects/language-model',
-    github: 'https://github.com/pratyushpad/char-level-language-model',
+    title: 'Lumina',
+    subtitle: 'RAG · Multimodal Retrieval',
+    description: "A grounded, multimodal RAG workbench — upload PDFs, images, and text, and get cited answers backed by your own documents instead of the model's memory.",
+    tech: ['Python', 'RAG', 'Vector Search', 'Next.js'],
+    path: '/projects/lumina',
+    github: 'https://github.com/pratyushpad/Lumina',
+    demo: 'https://lumina-rag-two.vercel.app/',
     number: '03',
-    thumbnail: '/fakenews/training_loss.png',
+    thumbnail: '/lumina/lumina_preview.png',
   },
 ]
 
@@ -64,7 +64,7 @@ const roles = [
   'Machine Learning Engineer.',
   'Deep Learning Researcher.',
   'CS Student @ UC Irvine.',
-  'SWE Intern @ TCS.',
+  'AI/ML Intern @ TCS.',
 ]
 
 const sections = ['Hero', 'About', 'Projects', 'Contact']
@@ -195,9 +195,9 @@ function TerminalCard() {
     { prompt: true, text: 'status', color: '' },
     { prompt: false, text: '✦ open to ML & software internships', color: '#ffffff' },
     { prompt: true, text: 'current --list', color: '' },
-    { prompt: false, text: '├── SWE Intern @ TCS', color: '#e5e7eb' },
+    { prompt: false, text: '├── AI/ML Intern @ TCS', color: '#e5e7eb' },
     { prompt: false, text: '├── UC Irvine CS, Class of 2028', color: '#e5e7eb' },
-    { prompt: false, text: '└── Medical AI & Computer Vision', color: '#e5e7eb' },
+    { prompt: false, text: '└── Robotics · RL & Imitation Learning', color: '#e5e7eb' },
     { prompt: true, text: 'location', color: '' },
     { prompt: false, text: 'Irvine, CA', color: '#ffffff' },
   ]
@@ -457,10 +457,10 @@ export default function Home() {
                   focused on deep learning and NLP.
                 </h2>
                 <p className="text-sm leading-relaxed mb-10" style={{ color: '#d0d0d0', lineHeight: 1.85 }}>
-                  I build deep learning models from scratch and ship full-stack ML systems. Currently a software
-                  engineer intern at TCS, building medical AI and computer vision for early cancer detection.
-                  Previously built course-planning tools at Ready Tutor, mentored 50+ students at Data@UCI, and
-                  conducted RNA-seq research at Stanford iLab.
+                  I build deep learning models from scratch and ship full-stack ML systems. Currently an AI/ML
+                  intern at TCS's Medical Robotics Center, training reinforcement- and imitation-learning models
+                  that teach robots how to act. Previously built course-planning tools at Ready Tutor, mentored
+                  50+ students at Data@UCI, and conducted RNA-seq research at Stanford iLab.
                 </p>
 
                 {/* Currently block */}
@@ -477,7 +477,7 @@ export default function Home() {
                   </p>
                   <ul className="space-y-2">
                     {[
-                      'SWE intern at TCS — medical AI & computer vision',
+                      'AI/ML intern at TCS — reinforcement & imitation learning for robotics',
                       'Building full-stack ML tools & research projects',
                       'Open to ML & software internship opportunities',
                     ].map((item) => (
