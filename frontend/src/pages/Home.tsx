@@ -39,7 +39,7 @@ const projects = [
     path: '/projects/forge',
     github: 'https://github.com/pratyushpad/Forge',
     number: '02',
-    thumbnail: '/forge/forge_preview.svg',
+    thumbnail: '/forge/forge_preview.png',
   },
   {
     title: 'Lumina',

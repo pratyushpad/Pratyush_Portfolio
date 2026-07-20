@@ -33,7 +33,7 @@ const recipe = [
 ]
 
 const images = [
-  { src: '/forge/forge_preview.svg', alt: 'Forge — Forged to Reason, playground comparing cold and forged model' },
+  { src: '/forge/forge_preview.png', alt: 'Forge — Forged to Reason, playground comparing cold and forged model' },
 ]
 
 const techTags = ['Python', 'PyTorch', 'Transformers', 'GRPO', 'Qwen2.5', 'Reinforcement Learning']
