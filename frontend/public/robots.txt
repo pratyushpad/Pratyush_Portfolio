@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pratyush-padhy-portfolio.netlify.app/sitemap.xml
+Sitemap: https://pratyushp-portfolio.netlify.app/sitemap.xml

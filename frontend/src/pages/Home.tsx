@@ -23,7 +23,7 @@ const projects = [
   {
     title: 'Chronicle',
     subtitle: 'Full-Stack · Job Intelligence',
-    description: 'A job aggregation platform ingesting live postings from 200+ companies via async fan-out. Hybrid semantic search lifts NDCG@10 from 0.853 to 0.943 over a rule-based baseline.',
+    description: 'A job aggregation platform ingesting live postings from 600+ companies via async fan-out. Hybrid semantic search lifts NDCG@10 from 0.58 to 0.81 over a rule-based baseline.',
     tech: ['Python', 'FastAPI', 'PostgreSQL', 'Next.js'],
     path: '/projects/chronicle',
     github: 'https://github.com/pratyushpad/Chronicle',
@@ -72,7 +72,7 @@ const sections = ['Hero', 'About', 'Projects', 'Contact']
 
 const stats = [
   { val: 3.86, suffix: '', prefix: '', label: 'GPA' },
-  { val: 93, suffix: '%', prefix: '', label: 'Model Accuracy' },
+  { val: 70, suffix: '%', prefix: '', label: 'GSM8K after GRPO' },
   { val: 5500, suffix: '', prefix: '$', label: 'Funding Secured' },
 ]
 

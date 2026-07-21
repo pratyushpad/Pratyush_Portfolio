@@ -8,7 +8,7 @@ import Lightbox from '../components/Lightbox'
 const pipeline = [
   {
     name: 'Ingest',
-    description: 'Async fan-out across 200+ companies’ Greenhouse, Lever, and Ashby endpoints, with per-company fault isolation so one broken integration never stalls the rest.',
+    description: 'Async fan-out across 600+ companies’ Greenhouse, Lever, and Ashby endpoints, with per-company fault isolation so one broken integration never stalls the rest.',
     icon: '01',
     accent: '#ffffff',
   },
@@ -20,7 +20,7 @@ const pipeline = [
   },
   {
     name: 'Hybrid Search',
-    description: 'pgvector HNSW over int8 ONNX embeddings, fused with keyword signal via Reciprocal Rank Fusion, at p95 <35ms across 10K+ jobs.',
+    description: 'pgvector HNSW over int8 ONNX embeddings, fused with keyword signal via Reciprocal Rank Fusion across 25K+ live roles.',
     icon: '03',
     accent: '#a3a3a3',
   },
@@ -40,7 +40,7 @@ const techTags = ['Python', 'FastAPI', 'PostgreSQL', 'pgvector', 'Next.js', 'Typ
 
 const learned = [
   'Reciprocal Rank Fusion (blending semantic + keyword ranking) beat pure vector search on real job postings, where exact title and skill matches still matter.',
-  'int8-quantized ONNX embeddings cut inference latency enough to keep hybrid search under 35ms without a GPU in the serving path.',
+  'int8-quantized ONNX embeddings keep query embedding cheap enough to serve hybrid search without a GPU in the serving path.',
   'Per-company fault isolation in the ingestion fan-out meant one broken ATS integration never took down the whole pipeline.',
   'A browser extension that autofills applications turned out to be the feature people actually asked for, repeatedly.',
 ]
@@ -88,7 +88,7 @@ export default function Chronicle() {
                   className="text-xs px-2.5 py-0.5 font-mono"
                   style={{ background: 'rgba(255,255,255,0.1)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 4 }}
                 >
-                  NDCG@10 0.853 → 0.943
+                  NDCG@10 0.58 → 0.81
                 </span>
               </div>
 
@@ -108,9 +108,9 @@ export default function Chronicle() {
               {/* Stats */}
               <div className="flex flex-wrap gap-8 mb-8 pb-8" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                 {[
-                  { val: '200+', label: 'Companies Tracked' },
-                  { val: '<35ms', label: 'Search Latency (p95)' },
-                  { val: '0.943', label: 'NDCG@10' },
+                  { val: '600+', label: 'Companies Tracked' },
+                  { val: '25K+', label: 'Live Roles' },
+                  { val: '0.81', label: 'NDCG@10' },
                 ].map((s) => (
                   <div key={s.label}>
                     <p className="text-2xl font-bold text-white">{s.val}</p>

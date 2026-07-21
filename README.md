@@ -2,7 +2,7 @@
 
 Personal portfolio showcasing ML/AI projects, built with React, TypeScript, and Tailwind CSS.
 
-**Live site:** [pratyush-padhy-portfolio.netlify.app](https://pratyush-padhy-portfolio.netlify.app)
+**Live site:** [pratyushp-portfolio.netlify.app](https://pratyushp-portfolio.netlify.app)
 
 ## Tech Stack
 

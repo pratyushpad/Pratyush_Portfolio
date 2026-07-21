@@ -185,7 +185,7 @@ export default function About() {
         {/* ═══ STATS ═══ */}
         <RevealSection>
           <div className="flex gap-10 md:gap-16 mb-20 pt-8 pb-8" style={{ borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-            <AnimatedCounter value={93} suffix="%" label="Model accuracy" />
+            <AnimatedCounter value={70} suffix="%" label="GSM8K after GRPO" />
             <AnimatedCounter value={1200} suffix="+" label="UCI courses indexed" />
             <AnimatedCounter value={50} suffix="+" label="Students mentored" />
             <div>
