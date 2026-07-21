@@ -44,6 +44,7 @@ const projects = [
     tech: ['Python', 'PyTorch', 'Transformers', 'GRPO', 'Qwen2.5'],
     path: '/projects/forge',
     github: 'https://github.com/pratyushpad/Forge',
+    demo: 'https://forge-grpo.vercel.app/',
     outcome: 'GRPO lifted GSM8K pass@1 from 58.8% to 70.0% (+11.2 pts) with ARC accuracy essentially unchanged',
     stats: [
       { label: 'GSM8K Pass@1', value: '70.0%' },

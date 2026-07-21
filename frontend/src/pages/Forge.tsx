@@ -132,16 +132,27 @@ export default function Forge() {
                 ))}
               </div>
 
-              {/* CTA */}
-              <a
-                href="https://github.com/pratyushpad/Forge"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-6 py-2.5 text-sm font-medium text-black transition-all duration-200 hover:opacity-90 active:scale-95"
-                style={{ background: 'linear-gradient(135deg, #e0a172, #f0b088)', borderRadius: 6 }}
-              >
-                View on GitHub ↗
-              </a>
+              {/* CTAs */}
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="https://forge-grpo.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-2.5 text-sm font-medium text-black transition-all duration-200 hover:opacity-90 active:scale-95"
+                  style={{ background: 'linear-gradient(135deg, #e0a172, #f0b088)', borderRadius: 6 }}
+                >
+                  Live Demo ↗
+                </a>
+                <a
+                  href="https://github.com/pratyushpad/Forge"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-2.5 text-sm font-medium text-black transition-all duration-200 hover:opacity-90 active:scale-95"
+                  style={{ background: 'linear-gradient(135deg, #d4d4d4, #a3a3a3)', borderRadius: 6 }}
+                >
+                  View on GitHub ↗
+                </a>
+              </div>
             </FadeUp>
           </div>
         </div>

@@ -38,6 +38,7 @@ const projects = [
     tech: ['Python', 'PyTorch', 'GRPO', 'Qwen2.5'],
     path: '/projects/forge',
     github: 'https://github.com/pratyushpad/Forge',
+    demo: 'https://forge-grpo.vercel.app/',
     number: '02',
     thumbnail: '/forge/forge_preview.png',
   },
