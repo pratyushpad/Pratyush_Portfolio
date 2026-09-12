@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import PageTransition from '../components/animations/PageTransition'
 import FadeUp from '../components/animations/FadeUp'
 import Lightbox from '../components/Lightbox'
+import ArrowUpRight from '../components/ArrowUpRight'
 
 const pipeline = [
   {
@@ -141,7 +142,7 @@ export default function Chronicle() {
                   className="px-6 py-2.5 text-sm font-medium text-black transition-all duration-200 hover:opacity-90 active:scale-95"
                   style={{ background: 'linear-gradient(135deg, #ffffff, #d4d4d4)', borderRadius: 6 }}
                 >
-                  Live Demo ↗
+                  Live Demo <ArrowUpRight />
                 </a>
                 <a
                   href="https://github.com/pratyushpad/Chronicle"
@@ -150,7 +151,7 @@ export default function Chronicle() {
                   className="px-6 py-2.5 text-sm font-medium text-black transition-all duration-200 hover:opacity-90 active:scale-95"
                   style={{ background: 'linear-gradient(135deg, #d4d4d4, #a3a3a3)', borderRadius: 6 }}
                 >
-                  View on GitHub ↗
+                  View on GitHub <ArrowUpRight />
                 </a>
               </div>
             </FadeUp>
@@ -250,7 +251,7 @@ export default function Chronicle() {
                       style={{ background: 'rgba(18,18,18,0.6)', borderTop: '1px solid rgba(255,255,255,0.05)' }}
                     >
                       <p className="font-mono text-xs" style={{ color: '#9a9a9a' }}>{img.alt}</p>
-                      <span className="text-xs opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: '#d4d4d4' }}>expand ↗</span>
+                      <span className="text-xs opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: '#d4d4d4' }}>expand <ArrowUpRight /></span>
                     </div>
                   </motion.div>
                 ))}

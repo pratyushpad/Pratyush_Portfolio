@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useInView } from 'framer-motion'
 import PageTransition from '../components/animations/PageTransition'
+import ArrowUpRight from '../components/ArrowUpRight'
 
 function RevealSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   const ref = useRef(null)
@@ -186,7 +187,7 @@ export default function Projects() {
                         className="text-xs font-mono transition-colors hover:text-white"
                         style={{ color: '#ffffff' }}
                       >
-                        Live demo ↗
+                        Live demo <ArrowUpRight />
                       </a>
                     )}
                     <Link
@@ -203,7 +204,7 @@ export default function Projects() {
                       className="text-xs font-mono transition-colors hover:text-white"
                       style={{ color: '#9a9a9a' }}
                     >
-                      source ↗
+                      source <ArrowUpRight />
                     </a>
                   </div>
                 </div>

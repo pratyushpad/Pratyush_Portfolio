@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import ArrowUpRight from './ArrowUpRight'
 
 const pages = [
   { label: 'Home', path: '/', keywords: 'home landing hero' },
@@ -149,7 +150,7 @@ export default function CommandPalette() {
                     <span className="flex-shrink-0" style={{ color: '#ffffff' }}>→</span>
                     <span>{page.label}</span>
                     {(page.path.startsWith('http') || page.path.endsWith('.pdf')) && (
-                      <span className="text-xs ml-auto" style={{ color: '#9a9a9a' }}>↗</span>
+                      <span className="text-xs ml-auto" style={{ color: '#9a9a9a' }}><ArrowUpRight /></span>
                     )}
                   </button>
                 ))

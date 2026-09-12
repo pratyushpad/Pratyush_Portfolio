@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { motion, useInView, useMotionValue, useTransform, animate } from 'framer-motion'
 import PageTransition from '../components/animations/PageTransition'
+import ArrowUpRight from '../components/ArrowUpRight'
 
 function RevealSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   const ref = useRef(null)
@@ -335,7 +336,7 @@ export default function About() {
                 className="px-8 py-3 text-sm font-medium text-white transition-all duration-200 hover:bg-white/20"
                 style={{ border: '1px solid rgba(255,255,255,0.5)', background: 'rgba(255,255,255,0.08)' }}
               >
-                Resume ↗
+                Resume <ArrowUpRight />
               </a>
               <a
                 href="https://github.com/pratyushpad"
