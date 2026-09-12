@@ -141,7 +141,7 @@ export default function Chronicle() {
                   className="px-6 py-2.5 text-sm font-medium text-black transition-all duration-200 hover:opacity-90 active:scale-95"
                   style={{ background: 'linear-gradient(135deg, #ffffff, #d4d4d4)', borderRadius: 6 }}
                 >
-                  Live Demo ↗
+                  Live Demo <span className="arrow-icon" aria-hidden="true">↗</span>
                 </a>
                 <a
                   href="https://github.com/pratyushpad/Chronicle"
@@ -150,7 +150,7 @@ export default function Chronicle() {
                   className="px-6 py-2.5 text-sm font-medium text-black transition-all duration-200 hover:opacity-90 active:scale-95"
                   style={{ background: 'linear-gradient(135deg, #d4d4d4, #a3a3a3)', borderRadius: 6 }}
                 >
-                  View on GitHub ↗
+                  View on GitHub <span className="arrow-icon" aria-hidden="true">↗</span>
                 </a>
               </div>
             </FadeUp>

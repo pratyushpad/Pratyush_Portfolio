@@ -186,7 +186,7 @@ export default function Projects() {
                         className="text-xs font-mono transition-colors hover:text-white"
                         style={{ color: '#ffffff' }}
                       >
-                        Live demo ↗
+                        Live demo <span className="arrow-icon" aria-hidden="true">↗</span>
                       </a>
                     )}
                     <Link
@@ -203,7 +203,7 @@ export default function Projects() {
                       className="text-xs font-mono transition-colors hover:text-white"
                       style={{ color: '#9a9a9a' }}
                     >
-                      source ↗
+                      source <span className="arrow-icon" aria-hidden="true">↗</span>
                     </a>
                   </div>
                 </div>

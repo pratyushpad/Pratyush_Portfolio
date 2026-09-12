@@ -420,7 +420,7 @@ export default function Home() {
                     className="px-7 py-3 text-sm font-medium transition-all duration-200 hover:text-white hover:border-white/20 active:scale-95"
                     style={{ color: '#d0d0d0', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8 }}
                   >
-                    Resume ↗
+                    Resume <span className="arrow-icon" aria-hidden="true">↗</span>
                   </a>
                   <a
                     href="https://github.com/pratyushpad"
@@ -429,7 +429,7 @@ export default function Home() {
                     className="px-7 py-3 text-sm font-medium transition-all duration-200 hover:text-white hover:border-white/20 active:scale-95"
                     style={{ color: '#d0d0d0', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8 }}
                   >
-                    GitHub ↗
+                    GitHub <span className="arrow-icon" aria-hidden="true">↗</span>
                   </a>
                 </motion.div>
 
@@ -513,9 +513,9 @@ export default function Home() {
                 </div>
 
                 <div className="flex gap-6">
-                  <a href="/Pratyush_Padhy_Resume.pdf" target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:text-white" style={{ color: '#ffffff' }}>Resume ↗</a>
-                  <a href="https://www.linkedin.com/in/pratyushpad" target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:text-white" style={{ color: '#9a9a9a' }}>LinkedIn ↗</a>
-                  <a href="mailto:ppadhy@uci.edu" className="text-sm font-medium transition-colors hover:text-white" style={{ color: '#9a9a9a' }}>Email ↗</a>
+                  <a href="/Pratyush_Padhy_Resume.pdf" target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:text-white" style={{ color: '#ffffff' }}>Resume <span className="arrow-icon" aria-hidden="true">↗</span></a>
+                  <a href="https://www.linkedin.com/in/pratyushpad" target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:text-white" style={{ color: '#9a9a9a' }}>LinkedIn <span className="arrow-icon" aria-hidden="true">↗</span></a>
+                  <a href="mailto:ppadhy@uci.edu" className="text-sm font-medium transition-colors hover:text-white" style={{ color: '#9a9a9a' }}>Email <span className="arrow-icon" aria-hidden="true">↗</span></a>
                 </div>
               </RevealSection>
 
@@ -654,7 +654,7 @@ export default function Home() {
                                 style={{ border: '1px solid rgba(255,255,255,0.2)', borderRadius: 4 }}
                                 onClick={(e) => e.stopPropagation()}
                               >
-                                Live demo ↗
+                                Live demo <span className="arrow-icon" aria-hidden="true">↗</span>
                               </a>
                             )}
                           </div>
@@ -713,7 +713,7 @@ export default function Home() {
                               style={{ color: '#9a9a9a' }}
                               onClick={(e) => e.stopPropagation()}
                             >
-                              source ↗
+                              source <span className="arrow-icon" aria-hidden="true">↗</span>
                             </a>
                           </div>
                         </div>
@@ -773,7 +773,7 @@ export default function Home() {
                 className="px-8 py-3.5 text-sm font-medium text-white transition-all duration-200 hover:bg-white/25 active:scale-95"
                 style={{ border: '1px solid rgba(255,255,255,0.5)', background: 'rgba(255,255,255,0.1)', borderRadius: 6 }}
               >
-                Email ↗
+                Email <span className="arrow-icon" aria-hidden="true">↗</span>
               </a>
               <a
                 href="https://www.linkedin.com/in/pratyushpad"
@@ -782,7 +782,7 @@ export default function Home() {
                 className="px-8 py-3.5 text-sm font-medium transition-all duration-200 hover:text-white hover:border-white/30 active:scale-95"
                 style={{ color: '#b0b0b0', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6 }}
               >
-                LinkedIn ↗
+                LinkedIn <span className="arrow-icon" aria-hidden="true">↗</span>
               </a>
             </div>
           </RevealSection>
