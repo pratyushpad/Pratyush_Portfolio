@@ -43,10 +43,10 @@ function AnimatedCounter({ value, suffix = '', label }: { value: number; suffix?
 
 const experiences = [
   {
-    role: 'Incoming SDE Intern',
+    role: 'SDE Intern',
     org: 'AWS',
-    period: 'Fall 2026',
-    desc: 'Joining AWS as a Software Development Engineer Intern for Fall 2026.',
+    period: 'Sept 2026 – Present',
+    desc: 'Building an LLM agent that ranks culprit commits for nightly Spark 4.1 performance regressions. Extracting per-stage timings and flame-graph call trees from Spark event logs (Scala, Java), diffing each nightly run query by query to pinpoint the stage and operator responsible, and surfacing each diagnosis on the team’s S3/CloudFront dashboard.',
   },
   {
     role: 'AI/ML Intern',
@@ -155,7 +155,7 @@ export default function About() {
               </div>
               <p className="text-sm leading-relaxed mb-6" style={{ color: '#d0d0d0' }}>
                 Computer Science student at UC Irvine (Dean's Honor List) with a passion
-                for machine learning and AI. Incoming SDE intern at AWS for Fall 2026, and most recently an AI/ML
+                for machine learning and AI. Currently an SDE intern at AWS, and most recently an AI/ML
                 intern at TCS's Medical Robotics Center, where I trained reinforcement- and imitation-learning models
                 that teach robots how to act. Previously built full-stack
                 course-planning tools at Ready Tutor, mentored 50+ students at Data@UCI, and conducted RNA-seq
