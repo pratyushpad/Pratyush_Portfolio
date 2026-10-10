@@ -481,7 +481,7 @@ export default function Home() {
                 </h2>
                 <p className="text-sm leading-relaxed mb-10" style={{ color: '#d0d0d0', lineHeight: 1.85 }}>
                   I build deep learning models from scratch and ship full-stack ML systems. Currently an SDE intern at
-                  AWS, and most recently an AI/ML intern at TCS's Medical Robotics Center, where I
+                  AWS, and most recently a software engineer intern at TCS's Medical Robotics Center, where I
                   trained reinforcement- and imitation-learning models that teach robots how to act.
                   Previously built course-planning tools at Ready Tutor, mentored
                   50+ students at Data@UCI, and conducted RNA-seq research at Stanford iLab.

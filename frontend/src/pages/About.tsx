@@ -46,10 +46,10 @@ const experiences = [
     role: 'SDE Intern',
     org: 'AWS',
     period: 'Sept 2026 – Present',
-    desc: 'Building an LLM agent that ranks culprit commits for nightly Spark 4.1 performance regressions. Extracting per-stage timings and flame-graph call trees from Spark event logs (Scala, Java), diffing each nightly run query by query to pinpoint the stage and operator responsible, and surfacing each diagnosis on the team’s S3/CloudFront dashboard.',
+    desc: 'Designed and launched the Spark team’s new primary regression system end to end, replacing its old release checks. Built an LLM agent on Bedrock that reads code diffs to pinpoint each regression’s exact commit and root cause. Shipped 4 weeks early, cutting regression debugging from 1–3 hours to 5 minutes, and automated analysis of all 1,030 nightly benchmark runs, with 526,000+ metrics per build verified error-free.',
   },
   {
-    role: 'AI/ML Intern',
+    role: 'Software Engineer Intern',
     org: 'TCS Medical Robotics Center',
     period: 'Jun – Aug 2026',
     desc: "Worked on the team teaching robots how to act, not just perceive. Benchmarked task-specific reinforcement learning against a generalist vision-language-action policy (SmolVLA 450M, LeRobot) across 250+ episodes on an AgileX Piper 6-DOF arm; the pixel-only VLA matched state-based RL, 85.3% to 81.5%. Diagnosed a sparse-reward exploration collapse and solved it through action-space reparameterization (no reward shaping, no demonstrations), training PPO to 81.5% ± 3.3% liquid-transfer success across three seeds. Extended FluidLab (ICLR '23) into a robotics platform with URDF forward-kinematics joint control, analytic SDF vessels, and three upstream engine-bug fixes, and built behavior-tree manipulation pipelines with automated recovery in ROS2 and Gazebo.",
@@ -155,7 +155,7 @@ export default function About() {
               </div>
               <p className="text-sm leading-relaxed mb-6" style={{ color: '#d0d0d0' }}>
                 Computer Science student at UC Irvine (Dean's Honor List) with a passion
-                for machine learning and AI. Currently an SDE intern at AWS, and most recently an AI/ML
+                for machine learning and AI. Currently an SDE intern at AWS, and most recently a software engineer
                 intern at TCS's Medical Robotics Center, where I trained reinforcement- and imitation-learning models
                 that teach robots how to act. Previously built full-stack
                 course-planning tools at Ready Tutor, mentored 50+ students at Data@UCI, and conducted RNA-seq
