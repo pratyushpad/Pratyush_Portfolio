@@ -46,7 +46,7 @@ const experiences = [
     role: 'SDE Intern',
     org: 'AWS',
     period: 'Sept 2026 – Present',
-    desc: 'Designed and launched the Spark team’s new primary regression system end to end, replacing its old release checks. Built an LLM agent on Bedrock that reads code diffs to pinpoint each regression’s exact commit and root cause. Shipped 4 weeks early, cutting regression debugging from 1–3 hours to 5 minutes, and automated analysis of all 1,030 nightly benchmark runs, with 526,000+ metrics per build verified error-free.',
+    desc: 'Built an LLM agent that pins each Spark 4.1 performance regression to its exact commit by matching code diffs to the operators that slowed down. Replaced the team’s release-baseline checks with night-to-night Welch’s t-tests across 1,030 benchmark runs, now its primary regression tool. Shipped the agent 4 weeks early on Bedrock and ECS, cutting debugging time from 1–3 hours to 5 minutes, and verified 526,000+ extracted metrics per build against the team’s performance reports with zero mismatches.',
   },
   {
     role: 'Software Engineer Intern',
