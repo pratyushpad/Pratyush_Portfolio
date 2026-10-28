@@ -10,28 +10,28 @@ const models = [
   {
     name: 'MLP (Pixels)',
     description: 'Fully connected network on raw 48×48 pixel inputs.',
-    result: 'Baseline performance',
+    result: '41.3% on de-duplicated validation',
     icon: '01',
     accent: '#9a9a9a',
   },
   {
     name: 'MLP (Landmarks)',
     description: 'MLP trained on geometric facial landmark distances.',
-    result: 'Improved over pixels',
+    result: '49.4%, up from 41.3% on pixels',
     icon: '02',
     accent: '#b0b0b0',
   },
   {
     name: 'CNN',
     description: 'Convolutional network with batch normalization and dropout.',
-    result: 'Strong spatial feature learning',
+    result: '61.0%, level with VGG16',
     icon: '03',
     accent: '#ffffff',
   },
   {
     name: 'VGG16 Transfer',
     description: 'Pretrained ImageNet model fine-tuned for emotion classification.',
-    result: 'Best overall performance ✦',
+    result: '61.8%, level with the CNN',
     icon: '04',
     accent: '#ffffff',
   },
@@ -40,7 +40,6 @@ const models = [
 const images = [
   { src: '/emotion/cnn_training.png', alt: 'CNN Training Curves' },
   { src: '/emotion/cnn_confusion_matrix.png', alt: 'CNN Confusion Matrix' },
-  { src: '/emotion/model_comparison.png', alt: 'Model Comparison' },
   { src: '/emotion/vgg16_transfer_learning_training.png', alt: 'VGG16 Training' },
 ]
 
@@ -48,8 +47,8 @@ const techTags = ['Python', 'TensorFlow', 'Keras', 'CNN', 'VGG16', 'Transfer Lea
 
 const learned = [
   'CNNs outperform flat MLPs on image data by learning spatial features directly.',
-  'Transfer learning with VGG16 dramatically improves accuracy by reusing ImageNet features.',
-  'Dropout and batch normalization are essential for preventing overfitting.',
+  'Transfer learning is not automatically a win: fine-tuned VGG16 (61.8%) only matched a small custom CNN (61.0%) on 48x48 grayscale faces.',
+  'Near-duplicate images across the train and validation split inflated the first results (64.5% CNN); removing them gave the honest figure of about 61%.',
   'Geometric landmark features can outperform raw pixels as model inputs.',
 ]
 
@@ -57,7 +56,7 @@ export default function EmotionDetection() {
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
   const [showBack, setShowBack] = useState(false)
 
-  useEffect(() => { document.title = 'Face Pulse | Pratyush Padhy' }, [])
+  useEffect(() => { document.title = 'FacePulse | Pratyush Padhy' }, [])
 
   useEffect(() => {
     const handleScroll = () => setShowBack(window.scrollY > 200)
@@ -86,7 +85,7 @@ export default function EmotionDetection() {
                   <li aria-hidden="true">/</li>
                   <li><Link to="/projects" className="hover:text-white transition-colors">Projects</Link></li>
                   <li aria-hidden="true">/</li>
-                  <li style={{ color: '#d0d0d0' }}>Face Pulse</li>
+                  <li style={{ color: '#d0d0d0' }}>FacePulse</li>
                 </ol>
               </nav>
             </FadeUp>
@@ -98,7 +97,7 @@ export default function EmotionDetection() {
                   className="text-xs px-2.5 py-0.5 font-mono"
                   style={{ background: 'rgba(255,255,255,0.1)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 4 }}
                 >
-                  VGG16 outperformed all baselines
+                  CNN 61.0% vs VGG16 61.8%, about 61%
                 </span>
               </div>
 
@@ -106,20 +105,21 @@ export default function EmotionDetection() {
                 className="text-4xl md:text-5xl font-bold text-white mb-5"
                 style={{ letterSpacing: '-0.025em', lineHeight: 1.1 }}
               >
-                Face Pulse
+                FacePulse
               </h1>
 
               <p className="text-base leading-relaxed max-w-2xl mb-8" style={{ color: '#d0d0d0', lineHeight: 1.85 }}>
-                A real-time emotion recognition system and comparative study of 4 deep learning architectures
-                for detecting human emotions from facial images, from a simple MLP all the way to VGG16 transfer learning on 35,000+ images.
+                A comparative study of 4 models for recognizing 5 emotions (angry, happy, sad, surprise, neutral) from
+                facial images on FER2013, from a simple MLP to VGG16 transfer learning. The hosted demo runs
+                pretrained face-api.js in the browser.
               </p>
 
               {/* Stats */}
               <div className="flex flex-wrap gap-8 mb-8 pb-8" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                 {[
-                  { val: '35K+', label: 'Training Images' },
+                  { val: '~61%', label: 'Honest Accuracy' },
                   { val: '4', label: 'Models Compared' },
-                  { val: '7', label: 'Emotion Classes' },
+                  { val: '5', label: 'Emotion Classes' },
                 ].map((s) => (
                   <div key={s.label}>
                     <p className="text-2xl font-bold text-white">{s.val}</p>

@@ -21,7 +21,7 @@ const recipe = [
   },
   {
     name: 'Verifiable Reward',
-    description: 'The reward is binary and mechanical: does the final answer match the ground truth? No human preference labels, no hallucinated reward signal.',
+    description: 'Four rule-based rewards score each answer for correctness and format (max 3.25), including a graded tag reward that fixed a zero-reward cold start. No human preference labels, no learned reward model.',
     icon: '03',
     accent: '#a3a3a3',
   },
@@ -102,7 +102,7 @@ export default function Forge() {
 
               <p className="text-base leading-relaxed max-w-2xl mb-8" style={{ color: '#d0d0d0', lineHeight: 1.85 }}>
                 Qwen2.5-1.5B, fine-tuned with GRPO (the reinforcement-learning recipe behind DeepSeek-R1) against
-                a rule-based math checker on a single 8GB consumer GPU. An interactive playground replays the
+                four verifiable rewards on a single 8GB consumer GPU. An interactive playground replays the
                 base model and the tuned model solving the same problem, side by side.
               </p>
 
@@ -110,7 +110,7 @@ export default function Forge() {
               <div className="flex flex-wrap gap-8 mb-8 pb-8" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                 {[
                   { val: '70.0%', label: 'GSM8K Pass@1 (+11.2 pts)' },
-                  { val: '≈flat', label: 'ARC Forgetting' },
+                  { val: '69.5 → 68.5', label: 'ARC-Challenge (forgetting check)' },
                   { val: '86 min', label: 'Train Time (8GB GPU)' },
                 ].map((s) => (
                   <div key={s.label}>

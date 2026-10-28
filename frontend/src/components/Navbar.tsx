@@ -90,7 +90,7 @@ export default function Navbar() {
             to="/"
             className="font-mono text-lg font-semibold transition-opacity hover:opacity-80"
             style={{ color: '#ffffff' }}
-            aria-label="Pratyush Padhy — Home"
+            aria-label="Pratyush Padhy, Home"
           >
             Pratyush Padhy
           </Link>

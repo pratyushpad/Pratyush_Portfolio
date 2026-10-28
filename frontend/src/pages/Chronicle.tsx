@@ -9,7 +9,7 @@ import ArrowUpRight from '../components/ArrowUpRight'
 const pipeline = [
   {
     name: 'Ingest',
-    description: 'Async fan-out across 600+ companies’ Greenhouse, Lever, and Ashby endpoints, with per-company fault isolation so one broken integration never stalls the rest.',
+    description: 'Async fan-out across nearly 600 companies’ Greenhouse, Lever, and Ashby endpoints, with per-company fault isolation so one broken integration never stalls the rest.',
     icon: '01',
     accent: '#ffffff',
   },
@@ -21,13 +21,13 @@ const pipeline = [
   },
   {
     name: 'Hybrid Search',
-    description: 'pgvector HNSW over int8 ONNX embeddings, fused with keyword signal via Reciprocal Rank Fusion across 25K+ live roles.',
+    description: 'pgvector HNSW over int8 ONNX embeddings, fused with full-text ranking via Reciprocal Rank Fusion. Retrieval queries run at 19 ms p95 in local tests.',
     icon: '03',
     accent: '#a3a3a3',
   },
   {
     name: 'Track & Alert',
-    description: 'Kanban application tracking, saved-search email alerts, and a Manifest V3 browser extension that autofills applications from a stored profile.',
+    description: 'Google OAuth accounts, kanban application tracking, and saved-search email alerts for new matching roles.',
     icon: '04',
     accent: '#ffffff',
   },
@@ -40,10 +40,10 @@ const images = [
 const techTags = ['Python', 'FastAPI', 'PostgreSQL', 'pgvector', 'Next.js', 'TypeScript', 'Google OAuth']
 
 const learned = [
-  'Reciprocal Rank Fusion (blending semantic + keyword ranking) beat pure vector search on real job postings, where exact title and skill matches still matter.',
+  'Reciprocal Rank Fusion lets exact title and skill matches from full-text search count alongside semantic similarity, which matters on job postings.',
   'int8-quantized ONNX embeddings keep query embedding cheap enough to serve hybrid search without a GPU in the serving path.',
   'Per-company fault isolation in the ingestion fan-out meant one broken ATS integration never took down the whole pipeline.',
-  'A browser extension that autofills applications turned out to be the feature people actually asked for, repeatedly.',
+  'Reading structured ATS pay fields before parsing text raised correct pay on intern postings from 3.8% to 96.2%.',
 ]
 
 export default function Chronicle() {
@@ -103,14 +103,14 @@ export default function Chronicle() {
               <p className="text-base leading-relaxed max-w-2xl mb-8" style={{ color: '#d0d0d0', lineHeight: 1.85 }}>
                 A job aggregation platform that ingests live postings directly from the ATS systems companies
                 actually use (Greenhouse, Lever, Ashby), normalizes and deduplicates them across sources, then
-                ranks them with a hybrid semantic search layer instead of keyword matching.
+                serves them through hybrid full-text and vector search, with a recommendation ranker evaluated on 24 synthetic personas.
               </p>
 
               {/* Stats */}
               <div className="flex flex-wrap gap-8 mb-8 pb-8" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                 {[
-                  { val: '600+', label: 'Companies Tracked' },
-                  { val: '25K+', label: 'Live Roles' },
+                  { val: '596', label: 'Active Boards' },
+                  { val: '19 ms', label: 'p95 Search (local)' },
                   { val: '0.81', label: 'NDCG@10' },
                 ].map((s) => (
                   <div key={s.label}>

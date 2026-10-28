@@ -37,11 +37,11 @@ const images = [
   { src: '/lumina/lumina_preview.png', alt: 'Lumina: talk to your documents' },
 ]
 
-const techTags = ['Python', 'RAG', 'Vector Search', 'Multimodal Embeddings', 'Next.js', 'TypeScript']
+const techTags = ['Python', 'RAG', 'Vector Search', 'Hybrid BM25 + Dense Retrieval', 'Next.js', 'TypeScript']
 
 const learned = [
   'Grounding answers in citations changes how much you can trust a RAG system: it turns "trust me" into "check this passage."',
-  'Multimodal retrieval (text + image) needs a shared embedding space, not two separate pipelines bolted together.',
+  'Images go through a vision model into text before indexing, so one retrieval pipeline covers PDFs, images and text.',
   'A workbench-style UI, where you can see what got retrieved before reading the answer, catches bad retrievals before they become bad answers.',
   'Grounded RAG is as much a UX problem as a retrieval problem: citations only help if they are easy to check.',
 ]
@@ -89,7 +89,7 @@ export default function Lumina() {
                   className="text-xs px-2.5 py-0.5 font-mono"
                   style={{ background: 'rgba(94,110,255,0.12)', color: '#8b93ff', border: '1px solid rgba(94,110,255,0.3)', borderRadius: 4 }}
                 >
-                  Grounded, Multimodal RAG
+                  Grounded RAG from Primitives
                 </span>
               </div>
 
@@ -101,8 +101,9 @@ export default function Lumina() {
               </h1>
 
               <p className="text-base leading-relaxed max-w-2xl mb-8" style={{ color: '#d0d0d0', lineHeight: 1.85 }}>
-                A grounded, multimodal RAG workbench. Upload PDFs, images, and text, and get cited answers backed by
-                your own context instead of the model's memory.
+                A grounded RAG workbench written from primitives, with no LangChain and a provider-agnostic LLM layer
+                (Gemini). Upload PDFs, images, and text, and get cited answers backed by your own context instead of
+                the model's memory.
               </p>
 
               {/* Stats */}
@@ -110,7 +111,7 @@ export default function Lumina() {
                 {[
                   { val: 'PDF/Img/Text', label: 'Input Types' },
                   { val: 'Cited', label: 'Answers' },
-                  { val: 'Multimodal', label: 'Retrieval' },
+                  { val: 'Hybrid', label: 'Retrieval' },
                 ].map((s) => (
                   <div key={s.label}>
                     <p className="text-2xl font-bold text-white">{s.val}</p>
@@ -135,7 +136,7 @@ export default function Lumina() {
               {/* CTAs */}
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="https://lumina-rag-two.vercel.app/"
+                  href="https://luminarag.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-2.5 text-sm font-medium text-black transition-all duration-200 hover:opacity-90 active:scale-95"
@@ -299,7 +300,7 @@ export default function Lumina() {
                 <div>
                   <p className="font-mono text-xs uppercase tracking-wider mb-1" style={{ color: '#9a9a9a' }}>Next Project</p>
                   <p className="text-white font-semibold group-hover:text-neutral-300 transition-colors">
-                    Face Pulse
+                    FacePulse
                   </p>
                 </div>
                 <motion.span

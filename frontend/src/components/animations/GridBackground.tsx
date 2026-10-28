@@ -77,7 +77,7 @@ export default function GridBackground() {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
       particles.forEach((p) => {
-        // Mouse interaction — push particles away
+        // Mouse interaction: push particles away
         const dx = mouse.x - p.x
         const dy = mouse.y - p.y
         const dist = Math.sqrt(dx * dx + dy * dy)

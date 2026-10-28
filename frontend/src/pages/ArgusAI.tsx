@@ -37,13 +37,13 @@ const images = [
   { src: '/argus/ArgusAI.png', alt: 'Argus AI Detection Workspace' },
 ]
 
-const techTags = ['Python', 'YOLOv8', 'FastAPI', 'Next.js', 'TypeScript', 'Docker', 'Google Cloud Run']
+const techTags = ['Python', 'YOLOv8', 'FastAPI', 'Next.js', 'TypeScript', 'Docker', 'Hugging Face Spaces']
 
 const learned = [
-  'YOLOv8s achieves sub-35ms inference, fast enough for real-time dashcam review without heavy GPU hardware.',
+  'YOLOv8s serves from a free-tier Hugging Face Space: about 30 seconds to wake from idle, then a few seconds per request on CPU.',
   'Rule-based violation logic layered on top of raw detections is far more interpretable than end-to-end classification.',
   'Spatial proximity between detected objects (e.g. vehicle near red light) is a simple but effective proxy for violation detection.',
-  'Containerizing with Docker and deploying to Cloud Run decouples the ML backend from the frontend and makes scaling straightforward.',
+  'Containerizing the FastAPI backend with Docker kept it independent of the Next.js frontend on Netlify.',
 ]
 
 export default function ArgusAI() {
@@ -89,7 +89,7 @@ export default function ArgusAI() {
                   className="text-xs px-2.5 py-0.5 font-mono"
                   style={{ background: 'rgba(255,255,255,0.1)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 4 }}
                 >
-                  Rule engine flags violations in &lt;35ms
+                  Rule engine flags violations across 23 classes
                 </span>
               </div>
 
@@ -102,7 +102,7 @@ export default function ArgusAI() {
 
               <p className="text-base leading-relaxed max-w-2xl mb-8" style={{ color: '#d0d0d0', lineHeight: 1.85 }}>
                 A full-stack traffic violation detection system: upload a dashcam frame, run YOLOv8 inference
-                across 23 object classes, and get a structured violation report back in under 35ms. Built with
+                across 23 object classes, and get a structured violation report back. Built with
                 a spatial rule engine that reads like an operational review, not just a raw model output.
               </p>
 
@@ -111,7 +111,7 @@ export default function ArgusAI() {
                 {[
                   { val: '23', label: 'Object Classes' },
                   { val: '5.2K', label: 'Training Images' },
-                  { val: '<35ms', label: 'Inference Time' },
+                  { val: '92.7%', label: 'mAP50 (val split)' },
                 ].map((s) => (
                   <div key={s.label}>
                     <p className="text-2xl font-bold text-white">{s.val}</p>
