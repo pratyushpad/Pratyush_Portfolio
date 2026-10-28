@@ -24,7 +24,7 @@ const projects = [
   {
     title: 'Chronicle',
     subtitle: 'Full-Stack · Job Intelligence',
-    description: 'A job aggregation platform ingesting live postings from 600+ companies via async fan-out. Hybrid semantic search lifts NDCG@10 from 0.58 to 0.81 over a rule-based baseline.',
+    description: 'A job aggregation platform ingesting live postings from nearly 600 company boards via async fan-out. Hybrid recommendation ranking lifts NDCG@10 from 0.58 to 0.81 over a rule-based baseline (24 synthetic personas).',
     tech: ['Python', 'FastAPI', 'PostgreSQL', 'Next.js'],
     path: '/projects/chronicle',
     github: 'https://github.com/pratyushpad/Chronicle',
@@ -35,7 +35,7 @@ const projects = [
   {
     title: 'Forge',
     subtitle: 'Reinforcement Learning · LLM Reasoning',
-    description: 'Fine-tuned Qwen2.5-1.5B with GRPO against a math checker on a single 8GB GPU. GSM8K accuracy climbed from 58.8% to 70.0% with no measurable forgetting.',
+    description: 'Fine-tuned Qwen2.5-1.5B with GRPO against four verifiable rewards on a single 8GB GPU. GSM8K accuracy climbed from 58.8% to 70.0% with ARC-Challenge down only 1 point.',
     tech: ['Python', 'PyTorch', 'GRPO', 'Qwen2.5'],
     path: '/projects/forge',
     github: 'https://github.com/pratyushpad/Forge',
@@ -45,36 +45,35 @@ const projects = [
   },
   {
     title: 'Lumina',
-    subtitle: 'RAG · Multimodal Retrieval',
-    description: "A grounded, multimodal RAG workbench: upload PDFs, images, and text, and get cited answers backed by your own documents instead of the model's memory.",
+    subtitle: 'RAG · Grounded Retrieval',
+    description: "A grounded RAG workbench built from primitives, with no LangChain and a provider-agnostic LLM layer (Gemini). Upload PDFs, images, and text, and get cited answers backed by your own documents instead of the model's memory.",
     tech: ['Python', 'RAG', 'Vector Search', 'Next.js'],
     path: '/projects/lumina',
     github: 'https://github.com/pratyushpad/Lumina',
-    demo: 'https://lumina-rag-two.vercel.app/',
+    demo: 'https://luminarag.vercel.app/',
     number: '03',
     thumbnail: '/lumina/lumina_preview.png',
   },
 ]
 
 const skillCategories = [
-  { label: 'ML / AI', color: '#ffffff', skills: ['TensorFlow', 'Keras', 'scikit-learn', 'OpenCV', 'Dlib'] },
-  { label: 'Languages', color: '#a3a3a3', skills: ['Python', 'Java', 'C++', 'R', 'TypeScript'] },
-  { label: 'Web & Tools', color: '#ffffff', skills: ['React', 'Git', 'Vite', 'Tailwind'] },
+  { label: 'ML / AI', color: '#ffffff', skills: ['PyTorch', 'TensorFlow', 'Hugging Face', 'vLLM', 'scikit-learn', 'OpenCV'] },
+  { label: 'Languages', color: '#a3a3a3', skills: ['Python', 'Java', 'TypeScript', 'SQL', 'Scala'] },
+  { label: 'Cloud & Web', color: '#ffffff', skills: ['AWS', 'Docker', 'FastAPI', 'PostgreSQL', 'React', 'Next.js'] },
 ]
 
 const roles = [
-  'Machine Learning Engineer.',
-  'Deep Learning Researcher.',
-  'CS Student @ UC Irvine.',
-  'SDE Intern @ AWS.',
+  'Software Development Engineer Intern @ AWS.',
+  'I ship real systems.',
+  'CS @ UC Irvine, Class of 2028.',
 ]
 
 const sections = ['Hero', 'About', 'Projects', 'Contact']
 
 const stats = [
-  { val: 3.86, suffix: '', prefix: '', label: 'GPA' },
+  { val: 3.8, suffix: '', prefix: '', label: 'GPA' },
   { val: 70, suffix: '%', prefix: '', label: 'GSM8K after GRPO' },
-  { val: 5500, suffix: '', prefix: '$', label: 'Funding Secured' },
+  { val: 596, suffix: '', prefix: '', label: 'Chronicle boards' },
 ]
 
 function useTypewriter(words: string[], speed = 55, pause = 2400) {
@@ -83,7 +82,7 @@ function useTypewriter(words: string[], speed = 55, pause = 2400) {
   const [deleting, setDeleting] = useState(false)
   const shouldReduce = useReducedMotion()
   useEffect(() => {
-    if (shouldReduce) { setDisplayed(words[0]); return }
+    if (shouldReduce) return
     const word = words[idx]
     let timer: ReturnType<typeof setTimeout>
     if (!deleting && displayed.length < word.length)
@@ -95,7 +94,7 @@ function useTypewriter(words: string[], speed = 55, pause = 2400) {
     else { setDeleting(false); setIdx((i) => (i + 1) % words.length) }
     return () => clearTimeout(timer)
   }, [displayed, deleting, idx, words, speed, pause, shouldReduce])
-  return displayed
+  return shouldReduce ? words[0] : displayed
 }
 
 function useCountUp(target: number, decimals = 0) {
@@ -195,11 +194,11 @@ function TerminalCard() {
     { prompt: true, text: 'whoami', color: '' },
     { prompt: false, text: 'pratyush padhy', color: '#ffffff' },
     { prompt: true, text: 'status', color: '' },
-    { prompt: false, text: '✦ open to ML & software internships', color: '#ffffff' },
+    { prompt: false, text: '✦ open to Summer 2027 SWE & ML internships', color: '#ffffff' },
     { prompt: true, text: 'current --list', color: '' },
-    { prompt: false, text: '├── SDE Intern @ AWS', color: '#e5e7eb' },
+    { prompt: false, text: '├── Software Development Engineer Intern @ AWS', color: '#e5e7eb' },
     { prompt: false, text: '├── UC Irvine CS, Class of 2028', color: '#e5e7eb' },
-    { prompt: false, text: '└── Robotics · RL & Imitation Learning', color: '#e5e7eb' },
+    { prompt: false, text: '└── Building Chronicle & Forge', color: '#e5e7eb' },
     { prompt: true, text: 'location', color: '' },
     { prompt: false, text: 'Irvine, CA', color: '#ffffff' },
   ]
@@ -272,7 +271,7 @@ function TerminalCard() {
 function StatCounter({ val, suffix, label, decimals = 0, prefix = '' }: { val: number; suffix: string; label: string; decimals?: number; prefix?: string }) {
   const ref = useCountUp(val, decimals)
   return (
-    <div className="text-center md:text-left">
+    <div className="text-left">
       <p className="text-3xl font-bold text-white tabular-nums">
         <span>{prefix}</span>
         <span ref={ref}>{val.toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals })}</span>
@@ -288,7 +287,7 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState(0)
   const containerRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => { document.title = 'Pratyush Padhy | Portfolio' }, [])
+  useEffect(() => { document.title = 'Pratyush Padhy | Software Development Engineer Intern at AWS' }, [])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -348,9 +347,9 @@ export default function Home() {
             style={{ y: heroY, opacity: heroOpacity }}
             className="relative z-10 w-full max-w-6xl mx-auto"
           >
-            <div className="grid lg:grid-cols-[1fr_400px] gap-12 lg:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_400px] gap-12 lg:gap-16 items-center">
 
-              {/* Left — main text */}
+              {/* Left: main text */}
               <motion.div variants={stagger.container} initial="hidden" animate="show">
 
                 {/* Current role badge */}
@@ -370,11 +369,11 @@ export default function Home() {
                       style={{ background: '#ffffff', borderRadius: '50%' }}
                       aria-hidden="true"
                     />
-                    SDE Intern @ AWS · Fall 2026
+                    Software Development Engineer Intern @ AWS · Fall 2026
                   </span>
                 </motion.div>
 
-                {/* Name — single h1, inline gradient on last name */}
+                {/* Name: single h1, inline gradient on last name */}
                 <motion.h1
                   variants={stagger.item}
                   className="font-bold text-white mb-5"
@@ -391,8 +390,8 @@ export default function Home() {
                   className="text-lg font-light mb-4"
                   style={{ color: '#d0d0d0', letterSpacing: '-0.01em', lineHeight: 1.5 }}
                 >
-                  I build <span className="text-white font-medium">intelligent systems</span>: deep learning models,{' '}
-                  NLP experiments, and things that learn from data.
+                  I ship <span className="text-white font-medium">real systems</span>: at AWS, an LLM agent that cut
+                  debugging time from 1-3 hours to 5 minutes; on my own, Chronicle, a job search engine over nearly 600 company boards.
                 </motion.p>
 
                 {/* Typewriter */}
@@ -404,7 +403,7 @@ export default function Home() {
                   </span>
                 </motion.div>
 
-                {/* CTAs — primary filled + secondary ghost */}
+                {/* CTAs: primary filled + secondary ghost */}
                 <motion.div variants={stagger.item} className="flex gap-3 flex-wrap mb-12">
                   <a
                     href="#s2"
@@ -434,26 +433,26 @@ export default function Home() {
                   </a>
                 </motion.div>
 
-                {/* Stats row — with dividers */}
+                {/* Stats row: with dividers */}
                 <motion.div
                   variants={stagger.item}
-                  className="flex items-center gap-0 pt-8"
+                  className="flex flex-wrap items-center gap-y-5 gap-0 pt-8"
                   style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
                 >
                   {stats.map((s, i) => (
                     <div key={s.label} className="flex items-center">
                       <div className="pr-8 md:pr-10">
-                        <StatCounter val={s.val} suffix={s.suffix} prefix={s.prefix} label={s.label} decimals={s.val % 1 !== 0 ? 2 : 0} />
+                        <StatCounter val={s.val} suffix={s.suffix} prefix={s.prefix} label={s.label} decimals={s.val % 1 !== 0 ? 1 : 0} />
                       </div>
                       {i < stats.length - 1 && (
-                        <div className="h-10 mr-8 md:mr-10" style={{ width: 1, background: 'rgba(255,255,255,0.07)' }} />
+                        <div className="hidden sm:block h-10 mr-5 sm:mr-8 md:mr-10" style={{ width: 1, background: 'rgba(255,255,255,0.07)' }} />
                       )}
                     </div>
                   ))}
                 </motion.div>
               </motion.div>
 
-              {/* Right — terminal card */}
+              {/* Right: terminal card */}
               <div className="hidden lg:block">
                 <TerminalCard />
               </div>
@@ -477,14 +476,13 @@ export default function Home() {
                   style={{ lineHeight: 1.2, letterSpacing: '-0.02em' }}
                 >
                   CS student at <span className="font-semibold">UC Irvine</span>{' '}
-                  focused on deep learning and NLP.
+                  who ships ML and full-stack systems.
                 </h2>
                 <p className="text-sm leading-relaxed mb-10" style={{ color: '#d0d0d0', lineHeight: 1.85 }}>
-                  I build deep learning models from scratch and ship full-stack ML systems. Currently an SDE intern at
-                  AWS, and most recently a software engineer intern at TCS's Medical Robotics Center, where I
-                  trained reinforcement- and imitation-learning models that teach robots how to act.
-                  Previously built course-planning tools at Ready Tutor, mentored
-                  50+ students at Data@UCI, and conducted RNA-seq research at Stanford iLab.
+                  I build production ML and full-stack systems. Currently a Software Development Engineer Intern at
+                  Amazon Web Services (AWS). In Summer 2026 I was a Software Engineer Intern at Tata Consultancy
+                  Services (TCS), where I rebuilt a Python simulation and fine-tuned the SmolVLA model, and before
+                  that I extended course search for Course Eater at Ready Tutor.
                 </p>
 
                 {/* Currently block */}
@@ -501,9 +499,9 @@ export default function Home() {
                   </p>
                   <ul className="space-y-2">
                     {[
-                      'SDE intern at AWS, Fall 2026',
-                      'Building full-stack ML tools & research projects',
-                      'Open to ML & software internship opportunities',
+                      'Software Development Engineer Intern at AWS, Fall 2026',
+                      'Building Chronicle, a job search engine over nearly 600 company boards',
+                      'Open to Summer 2027 SWE and ML internships',
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-2 text-sm" style={{ color: '#d0d0d0' }}>
                         <span style={{ color: '#ffffff', marginTop: 2 }}>›</span>

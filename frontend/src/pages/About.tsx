@@ -43,81 +43,32 @@ function AnimatedCounter({ value, suffix = '', label }: { value: number; suffix?
 
 const experiences = [
   {
-    role: 'SDE Intern',
-    org: 'AWS',
-    period: 'Sept 2026 – Present',
-    desc: 'Built an LLM agent that pins each Spark 4.1 performance regression to its exact commit by matching code diffs to the operators that slowed down. Replaced the team’s release-baseline checks with night-to-night Welch’s t-tests across 1,030 benchmark runs, now its primary regression tool. Shipped the agent 4 weeks early on Bedrock and ECS, cutting debugging time from 1–3 hours to 5 minutes, and verified 526,000+ extracted metrics per build against the team’s performance reports with zero mismatches.',
+    role: 'Software Development Engineer Intern',
+    org: 'Amazon Web Services (AWS)',
+    period: 'Sept 2026 to Present',
+    desc: 'Built an LLM agent that pins each Spark 4.1 regression to its exact commit by matching diffs to slowed operators. Replaced the team’s release-baseline checks with night-to-night Welch’s t-tests on 1,030 runs, now its primary tool. Shipped the agent 4 weeks early on Bedrock and ECS, cutting debugging time from 1-3 hours to 5 minutes. Verified 526,000+ extracted metrics per build against the team’s performance reports, with zero mismatches.',
   },
   {
     role: 'Software Engineer Intern',
-    org: 'TCS Medical Robotics Center',
-    period: 'Jun – Aug 2026',
-    desc: "Worked on the team teaching robots how to act, not just perceive. Benchmarked task-specific reinforcement learning against a generalist vision-language-action policy (SmolVLA 450M, LeRobot) across 250+ episodes on an AgileX Piper 6-DOF arm; the pixel-only VLA matched state-based RL, 85.3% to 81.5%. Diagnosed a sparse-reward exploration collapse and solved it through action-space reparameterization (no reward shaping, no demonstrations), training PPO to 81.5% ± 3.3% liquid-transfer success across three seeds. Extended FluidLab (ICLR '23) into a robotics platform with URDF forward-kinematics joint control, analytic SDF vessels, and three upstream engine-bug fixes, and built behavior-tree manipulation pipelines with automated recovery in ROS2 and Gazebo.",
-  },
-  {
-    role: 'API Developer',
-    org: 'ZotBins',
-    period: 'May 2026 – Present',
-    desc: 'On the API subteam, working on FastAPI and API development.',
+    org: 'Tata Consultancy Services (TCS)',
+    period: 'June 2026 to Aug 2026',
+    desc: 'Rebuilt the simulation in Python on FluidLab in 3 weeks, fixing 3 engine bugs to unblock 1.5 months of work. Fine-tuned the SmolVLA AI model so a simulated robot arm pours liquid using only a camera (85.3% success), against a Stable-Baselines3 reinforcement learning baseline (81.5% over 3 seeds) that saw the full simulator state. Showed SmolVLA relies on pretraining: trained from scratch on identical input, it completed 0% of pours.',
   },
   {
     role: 'Software Developer Intern',
     org: 'Ready Tutor',
-    period: 'Mar – Jun 2026',
-    desc: 'Built CourseEater, a full-stack course planner for UC Irvine students. Engineered a scalable MongoDB/SQLite schema class with React useContext integration, replacing 10+ component-level instances across the stack. Built a Fall Quarter catalog with real-time retrieval of 1,200+ UCI courses and resolved 30+ bugs, contributing to securing $5,500 in funding. Redesigned the year-planning data model with a JSON-stringified array schema to support fully dynamic multi-year scheduling.',
-  },
-  {
-    role: 'Undergraduate Mentor',
-    org: 'Data@UCI',
-    period: 'Jan – Mar 2026',
-    desc: 'Mentored 50+ students on data-focused projects using Python, HTML, and JavaScript. Guided mentees through data collection, variable selection, exploratory analysis with Kaggle datasets, and predictive model development using Google Colab.',
-  },
-  {
-    role: 'Software Intern',
-    org: 'Computers 4 Kids',
-    period: 'Aug 2023 – May 2025',
-    desc: 'Assisted in planning and executing the collection and refurbishment of computers for underrepresented students. Led meetings proposing scalable outreach initiatives and established a school-based chapter with 200+ members.',
-  },
-  {
-    role: 'Software Intern',
-    org: 'Robotics for All',
-    period: 'June 2023 – Aug 2024',
-    desc: 'Contributed to the development of an AI-powered chatbot to enhance website functionality. Designed an online training system for volunteer tutors. Awarded the Presidential Service Award (Gold) for 250+ volunteer hours.',
-  },
-  {
-    role: 'Research Mentee',
-    org: 'iLab Stanford',
-    period: 'Dec 2023 – July 2024',
-    desc: 'Conducted research on human bulk RNA-seq data for non-small cell lung cancer (GSE268175). Generated graphical and statistical analyses using R under Dr. Qian Wang and Stanford researchers.',
-  },
-  {
-    role: 'Competitor',
-    org: 'Berkeley ROAR',
-    period: 'June – Aug 2023',
-    desc: 'Trained under UC Berkeley faculty in Python, AI, and autonomous systems. Optimized an autonomous vehicle simulation using ML, neural networks, and decision trees. Placed top 10.',
+    period: 'Mar 2026 to June 2026',
+    desc: 'Extended search-as-you-type over 1,200+ courses for Course Eater, a UCI degree planner used by 500+ students. Cut database writes to 1 per action by routing 10+ scattered storage calls through a React Context provider. Shipped 30+ production fixes in TypeScript, including a credit-calculation bug that broke schedule planning.',
   },
 ]
 
 const skillGroups: Record<string, string[]> = {
-  'Languages': ['Python', 'Java', 'R', 'C++', 'TypeScript', 'JavaScript', 'HTML', 'CSS'],
-  'ML / AI': ['TensorFlow', 'Keras', 'CNNs', 'LSTMs', 'scikit-learn', 'OpenCV', 'Dlib'],
-  'Libraries': ['NumPy', 'Pandas', 'Matplotlib', 'Seaborn', 'Chart.js'],
-  'Web': ['React', 'Tailwind CSS', 'Vite', 'Express.js'],
-  'Tools': ['Git', 'VS Code', 'PyCharm', 'Google Colab'],
+  'Languages': ['Python', 'Java', 'TypeScript', 'JavaScript', 'SQL', 'Scala', 'Bash', 'HTML/CSS'],
+  'Machine Learning': ['PyTorch', 'TensorFlow', 'Hugging Face', 'vLLM', 'Ollama', 'Stable-Baselines3', 'scikit-learn', 'OpenCV'],
+  'Data': ['Apache Spark', 'PostgreSQL (pgvector)', 'MongoDB', 'SQLite', 'NumPy', 'Pandas', 'Matplotlib'],
+  'Cloud & DevOps': ['AWS (S3, Lambda, ECS, Bedrock)', 'Google Cloud', 'Docker', 'GitHub Actions', 'Linux', 'Git'],
+  'Web & Testing': ['FastAPI', 'SQLAlchemy', 'REST APIs', 'React', 'Next.js', 'Tailwind CSS', 'pytest'],
 }
-
-const awards = [
-  'California ELC Award (Top 9% of Students)',
-  'AP Scholar with Distinction',
-  '5th Place @ DECA State (EIP)',
-  'Presidential Service Award (Gold)',
-]
-
-const certifications = [
-  'PCEP (Python)',
-  'Coursera UCSC (C++)',
-  'WorldTutor (Java)',
-]
 
 const clubs = ["Data@UCI", "AI@UCI", "Cyber@UCI", "Hack@UCI", "Dean's Honor List"]
 
@@ -154,12 +105,10 @@ export default function About() {
                 </div>
               </div>
               <p className="text-sm leading-relaxed mb-6" style={{ color: '#d0d0d0' }}>
-                Computer Science student at UC Irvine (Dean's Honor List) with a passion
-                for machine learning and AI. Currently an SDE intern at AWS, and most recently a software engineer
-                intern at TCS's Medical Robotics Center, where I trained reinforcement- and imitation-learning models
-                that teach robots how to act. Previously built full-stack
-                course-planning tools at Ready Tutor, mentored 50+ students at Data@UCI, and conducted RNA-seq
-                research at Stanford iLab.
+                Computer Science student at UC Irvine (Intelligent Systems, Dean's Honor List) who ships ML and
+                full-stack systems. Currently a Software Development Engineer Intern at Amazon Web Services (AWS).
+                Previously a Software Engineer Intern at Tata Consultancy Services (TCS) and a Software Developer
+                Intern at Ready Tutor.
               </p>
               <div className="flex flex-wrap gap-2 mb-6">
                 {clubs.map((item) => (
@@ -181,8 +130,8 @@ export default function About() {
                 <h3 className="text-white font-semibold text-lg">UC Irvine</h3>
                 <p className="text-sm mb-4" style={{ color: '#d0d0d0' }}>B.S. Computer Science, Intelligent Systems</p>
                 <div className="pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-                  <p className="text-3xl font-semibold text-white">3.86</p>
-                  <p className="text-xs font-mono mt-1" style={{ color: '#9a9a9a' }}>GPA · Class of 2028</p>
+                  <p className="text-3xl font-semibold text-white">3.8</p>
+                  <p className="text-xs font-mono mt-1" style={{ color: '#9a9a9a' }}>GPA · Expected June 2028</p>
                   <p className="text-xs font-mono mt-2" style={{ color: '#ffffff' }}>Dean's Honor List: Fall '25, Winter '26, Spring '26</p>
                 </div>
               </div>
@@ -192,14 +141,11 @@ export default function About() {
 
         {/* ═══ STATS ═══ */}
         <RevealSection>
-          <div className="flex gap-10 md:gap-16 mb-20 pt-8 pb-8" style={{ borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+          <div className="flex flex-wrap gap-x-8 gap-y-6 md:gap-x-16 mb-20 pt-8 pb-8" style={{ borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
             <AnimatedCounter value={70} suffix="%" label="GSM8K after GRPO" />
             <AnimatedCounter value={1200} suffix="+" label="UCI courses indexed" />
-            <AnimatedCounter value={50} suffix="+" label="Students mentored" />
-            <div>
-              <p className="text-3xl font-semibold text-white">Top 10</p>
-              <p className="text-xs font-mono mt-1" style={{ color: '#9a9a9a' }}>Berkeley ROAR</p>
-            </div>
+            <AnimatedCounter value={500} suffix="+" label="Course Eater users" />
+            <AnimatedCounter value={596} label="Chronicle boards" />
           </div>
         </RevealSection>
 
@@ -276,49 +222,6 @@ export default function About() {
               </div>
             </RevealSection>
           ))}
-        </div>
-
-        {/* ═══ AWARDS & CERTS ═══ */}
-        <RevealSection>
-          <div className="flex items-center gap-4 mb-12">
-            <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#ffffff' }}>03</span>
-            <span style={{ width: 40, height: 1, background: 'rgba(255,255,255,0.4)' }} />
-            <span className="font-mono text-xs uppercase tracking-[0.3em]" style={{ color: '#9a9a9a' }}>Recognition</span>
-          </div>
-        </RevealSection>
-
-        <div className="grid md:grid-cols-2 gap-12 mb-20">
-          <RevealSection>
-            <p className="text-xs font-mono uppercase tracking-wider mb-6" style={{ color: '#9a9a9a' }}>Awards</p>
-            <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-              {awards.map((award, i) => (
-                <div
-                  key={award}
-                  className="py-4 flex items-center gap-4"
-                  style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
-                >
-                  <span className="font-mono text-xs" style={{ color: '#ffffff' }}>0{i + 1}</span>
-                  <span className="text-sm" style={{ color: '#d0d0d0' }}>{award}</span>
-                </div>
-              ))}
-            </div>
-          </RevealSection>
-
-          <RevealSection>
-            <p className="text-xs font-mono uppercase tracking-wider mb-6" style={{ color: '#9a9a9a' }}>Certifications</p>
-            <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-              {certifications.map((cert, i) => (
-                <div
-                  key={cert}
-                  className="py-4 flex items-center gap-4"
-                  style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
-                >
-                  <span className="font-mono text-xs" style={{ color: '#ffffff' }}>0{i + 1}</span>
-                  <span className="text-sm" style={{ color: '#d0d0d0' }}>{cert}</span>
-                </div>
-              ))}
-            </div>
-          </RevealSection>
         </div>
 
         {/* ═══ CTA ═══ */}

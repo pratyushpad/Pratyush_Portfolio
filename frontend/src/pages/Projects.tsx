@@ -25,15 +25,15 @@ const projects = [
     number: '01',
     title: 'Chronicle',
     subtitle: 'Full-Stack · Job Intelligence',
-    description: "A job aggregation platform ingesting live postings from 600+ companies' ATS systems (Greenhouse, Lever, Ashby) via async fan-out with per-company fault isolation, then normalizing and deduplicating cross-source postings. A hybrid semantic search and recommendation layer (pgvector HNSW, int8 ONNX embeddings, RRF fusion) runs across 25K+ live roles. Ships Google OAuth, kanban application tracking, saved-search email alerts, and a Manifest V3 browser extension that autofills applications from a stored profile.",
+    description: "A job aggregation platform ingesting live postings from nearly 600 companies' ATS boards (Greenhouse, Lever, Ashby) via async fan-out with per-company fault isolation, then normalizing and deduplicating cross-source postings. Hybrid full-text and pgvector search (HNSW, int8 ONNX embeddings, reciprocal rank fusion) runs at 19 ms p95 in local tests. Ships Google OAuth, kanban application tracking, and saved-search email alerts.",
     tech: ['Python', 'FastAPI', 'PostgreSQL', 'pgvector', 'Next.js', 'TypeScript'],
     path: '/projects/chronicle',
     github: 'https://github.com/pratyushpad/Chronicle',
     demo: 'https://chronicles-weld.vercel.app/',
-    outcome: 'Hybrid semantic search lifted NDCG@10 from 0.58 to 0.81 and recall@50 from 0.71 to 0.96 over a rule-based baseline',
+    outcome: 'Hybrid recommendation ranking lifted NDCG@10 from 0.58 to 0.81 and recall@50 from 0.71 to 0.96 over a rule-based baseline (24 synthetic personas)',
     stats: [
-      { label: 'Companies Tracked', value: '600+' },
-      { label: 'Live Roles', value: '25K+' },
+      { label: 'Active Boards', value: '596' },
+      { label: 'p95 Search (local)', value: '19 ms' },
       { label: 'NDCG@10', value: '0.81' },
     ],
   },
@@ -41,64 +41,64 @@ const projects = [
     number: '02',
     title: 'Forge',
     subtitle: 'Reinforcement Learning · LLM Reasoning',
-    description: "Qwen2.5-1.5B, fine-tuned with GRPO (the reinforcement-learning recipe behind DeepSeek-R1) against a rule-based math checker on a single 8GB consumer GPU. An interactive playground replays the base model and the tuned model solving the same GSM8K problems side by side, making the reasoning gap visible instead of just reported.",
+    description: "Qwen2.5-1.5B, fine-tuned with GRPO (the reinforcement-learning recipe behind DeepSeek-R1) against four verifiable rewards on a single 8GB consumer GPU. An interactive playground replays the base model and the tuned model solving the same GSM8K problems side by side, making the reasoning gap visible instead of just reported.",
     tech: ['Python', 'PyTorch', 'Transformers', 'GRPO', 'Qwen2.5'],
     path: '/projects/forge',
     github: 'https://github.com/pratyushpad/Forge',
     demo: 'https://forge-grpo.vercel.app/',
-    outcome: 'GRPO lifted GSM8K pass@1 from 58.8% to 70.0% (+11.2 pts) with ARC accuracy essentially unchanged',
+    outcome: 'GRPO lifted GSM8K pass@1 from 58.8% to 70.0% (+11.2 pts) with ARC-Challenge down 1 point (69.5% to 68.5%)',
     stats: [
       { label: 'GSM8K Pass@1', value: '70.0%' },
-      { label: 'ARC Forgetting', value: '≈flat' },
+      { label: 'ARC-Challenge', value: '69.5 → 68.5' },
       { label: 'Train Time', value: '86 min' },
     ],
   },
   {
     number: '03',
     title: 'Lumina',
-    subtitle: 'RAG · Multimodal Retrieval',
-    description: 'A retrieval-augmented generation workbench built to stop LLMs from making things up. Upload PDFs, images, and raw text; Lumina indexes and embeds the content, then answers questions with citations that point back to the exact source passage. Grounded, multimodal, and auditable.',
+    subtitle: 'RAG · Grounded Retrieval',
+    description: 'A retrieval-augmented generation workbench built to stop LLMs from making things up, with RAG written from primitives (no LangChain) and a provider-agnostic LLM layer (Gemini). Upload PDFs, images, and raw text; Lumina indexes the content, then answers questions with citations that point back to the exact source passage.',
     tech: ['Python', 'RAG', 'Vector Search', 'Next.js', 'TypeScript'],
     path: '/projects/lumina',
     github: 'https://github.com/pratyushpad/Lumina',
-    demo: 'https://lumina-rag-two.vercel.app/',
+    demo: 'https://luminarag.vercel.app/',
     outcome: 'Every answer is grounded in cited, user-provided context across text, image, and PDF sources',
     stats: [
       { label: 'Input Types', value: 'PDF/Img/Text' },
       { label: 'Answers', value: 'Cited' },
-      { label: 'Retrieval', value: 'Multimodal' },
+      { label: 'Retrieval', value: 'Hybrid' },
     ],
   },
   {
     number: '04',
-    title: 'Face Pulse',
+    title: 'FacePulse',
     subtitle: 'Deep Learning · Computer Vision',
-    description: 'A systematic comparison of 4 deep learning architectures on 35,000+ facial images across 7 emotion classes. Evaluated MLP (raw pixels), MLP (geometric landmarks), CNN, and VGG16 transfer learning, showing how model complexity translates to accuracy in a genuinely hard problem where human accuracy is only ~65%.',
+    description: 'A comparison of 4 models for recognizing 5 emotions (angry, happy, sad, surprise, neutral) on FER2013: an MLP on raw pixels, an MLP on facial landmarks, a custom CNN, and fine-tuned VGG16. After removing train/validation near-duplicates, the honest headline is about 61%. The hosted demo runs pretrained face-api.js in the browser.',
     tech: ['Python', 'TensorFlow', 'Keras', 'CNN', 'VGG16', 'OpenCV'],
     path: '/projects/emotion-detection',
     github: 'https://github.com/pratyushpad/Face-Pulse',
     demo: 'https://face-pulse.netlify.app/',
-    outcome: 'VGG16 transfer learning outperformed all baselines',
+    outcome: 'A custom CNN (61.0%) and fine-tuned VGG16 (61.8%) are level at about 61% on de-duplicated validation; landmark features lifted an MLP from 41.3% to 49.4%',
     stats: [
-      { label: 'Images', value: '35K+' },
       { label: 'Models', value: '4' },
-      { label: 'Classes', value: '7' },
+      { label: 'Classes', value: '5' },
+      { label: 'Accuracy', value: '~61%' },
     ],
   },
   {
     number: '05',
     title: 'Argus AI',
     subtitle: 'Computer Vision · Object Detection',
-    description: 'A full-stack traffic violation detection system: upload a dashcam frame, run YOLOv8 inference across 23 object classes, and get a structured violation report back in under 35ms. A spatial rule engine cross-checks detections to flag violations like red light running or no-entry breaches, producing output that reads like an operational review, not raw model output.',
-    tech: ['Python', 'YOLOv8', 'FastAPI', 'Next.js', 'TypeScript', 'Docker', 'GCP'],
+    description: 'A full-stack traffic violation detection system: upload a dashcam frame, run YOLOv8 inference across 23 object classes, and get a structured violation report back. A spatial rule engine cross-checks detections to flag violations like red light running or no-entry breaches, producing output that reads like an operational review, not raw model output.',
+    tech: ['Python', 'YOLOv8', 'FastAPI', 'Next.js', 'TypeScript', 'Docker', 'Hugging Face Spaces'],
     path: '/projects/argus-ai',
     github: 'https://github.com/pratyushpad/Argus-AI',
     demo: 'https://ai-argus.netlify.app/',
-    outcome: 'Rule engine flags violations across 23 detection classes in <35ms',
+    outcome: 'Rule engine flags violations across 23 detection classes; YOLOv8 reaches 92.7% mAP50 on the validation split',
     stats: [
       { label: 'Object Classes', value: '23' },
       { label: 'Training Images', value: '5.2K' },
-      { label: 'Inference', value: '<35ms' },
+      { label: 'mAP50 (val)', value: '92.7%' },
     ],
   },
 ]
@@ -120,7 +120,7 @@ export default function Projects() {
           <h1 className="text-4xl md:text-5xl font-light text-white mb-3" style={{ letterSpacing: '-0.02em' }}>
             Selected <span className="font-semibold">work</span>.
           </h1>
-          <p className="text-sm mb-16" style={{ color: '#9a9a9a' }}>Deep learning and ML models built from scratch.</p>
+          <p className="text-sm mb-16" style={{ color: '#9a9a9a' }}>Full-stack and ML systems with measured results.</p>
         </RevealSection>
 
         {/* ═══ PROJECT LIST ═══ */}
@@ -149,7 +149,7 @@ export default function Projects() {
                 </Link>
 
                 {/* Stats */}
-                <div className="flex gap-10 mb-8 pb-8" style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
+                <div className="flex flex-wrap gap-x-8 gap-y-4 mb-8 pb-8" style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
                   {project.stats.map((stat) => (
                     <div key={stat.label}>
                       <p className="text-xl font-semibold text-white">{stat.value}</p>
