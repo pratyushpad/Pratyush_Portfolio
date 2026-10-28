@@ -52,13 +52,13 @@ const experiences = [
     role: 'Software Engineer Intern',
     org: 'Tata Consultancy Services (TCS)',
     period: 'June 2026 to Aug 2026',
-    desc: 'Rebuilt the simulation in Python on FluidLab in 3 weeks, fixing 3 engine bugs to unblock 1.5 months of work. Fine-tuned the SmolVLA AI model so a simulated robot arm pours liquid using only a camera (85.3% success), against a Stable-Baselines3 reinforcement learning baseline (81.5% over 3 seeds) that saw the full simulator state. Showed SmolVLA relies on pretraining: trained from scratch on identical input, it completed 0% of pours.',
+    desc: 'Rebuilt the simulation in Python on FluidLab, fixing 3 engine bugs. Fine-tuned the SmolVLA vision-language-action model from camera input and benchmarked it against a Stable-Baselines3 reinforcement learning baseline (81.5% over 3 seeds) that saw the full simulator state.',
   },
   {
     role: 'Software Developer Intern',
     org: 'Ready Tutor',
     period: 'Mar 2026 to June 2026',
-    desc: 'Extended search-as-you-type over 1,200+ courses for Course Eater, a UCI degree planner used by 500+ students. Cut database writes to 1 per action by routing 10+ scattered storage calls through a React Context provider. Shipped 30+ production fixes in TypeScript, including a credit-calculation bug that broke schedule planning.',
+    desc: 'Extended search-as-you-type over 1,200+ courses for Course Eater, a UCI degree planner. Cut database writes to 1 per action by routing 10+ scattered storage calls through a React Context provider. Shipped 30+ production fixes in TypeScript, including a credit-calculation bug that broke schedule planning.',
   },
 ]
 
@@ -144,7 +144,7 @@ export default function About() {
           <div className="flex flex-wrap gap-x-8 gap-y-6 md:gap-x-16 mb-20 pt-8 pb-8" style={{ borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
             <AnimatedCounter value={70} suffix="%" label="GSM8K after GRPO" />
             <AnimatedCounter value={1200} suffix="+" label="UCI courses indexed" />
-            <AnimatedCounter value={500} suffix="+" label="Course Eater users" />
+            <AnimatedCounter value={1319} label="GSM8K test problems" />
             <AnimatedCounter value={596} label="Chronicle boards" />
           </div>
         </RevealSection>

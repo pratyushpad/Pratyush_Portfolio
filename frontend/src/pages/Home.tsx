@@ -369,7 +369,7 @@ export default function Home() {
                       style={{ background: '#ffffff', borderRadius: '50%' }}
                       aria-hidden="true"
                     />
-                    Software Development Engineer Intern @ AWS · Fall 2026
+                    Software Development Engineer Intern @ AWS · Sept 2026 to Present
                   </span>
                 </motion.div>
 
@@ -499,7 +499,7 @@ export default function Home() {
                   </p>
                   <ul className="space-y-2">
                     {[
-                      'Software Development Engineer Intern at AWS, Fall 2026',
+                      'Software Development Engineer Intern at AWS, Sept 2026 to Present',
                       'Building Chronicle, a job search engine over nearly 600 company boards',
                       'Open to Summer 2027 SWE and ML internships',
                     ].map((item) => (

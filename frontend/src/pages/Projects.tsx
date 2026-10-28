@@ -25,7 +25,7 @@ const projects = [
     number: '01',
     title: 'Chronicle',
     subtitle: 'Full-Stack · Job Intelligence',
-    description: "A job aggregation platform ingesting live postings from nearly 600 companies' ATS boards (Greenhouse, Lever, Ashby) via async fan-out with per-company fault isolation, then normalizing and deduplicating cross-source postings. Hybrid full-text and pgvector search (HNSW, int8 ONNX embeddings, reciprocal rank fusion) runs at 19 ms p95 in local tests. Ships Google OAuth, kanban application tracking, and saved-search email alerts.",
+    description: "A job aggregation platform ingesting live postings from nearly 600 companies' ATS boards (Greenhouse, Lever, Ashby) via async fan-out with per-company fault isolation, then normalizing and deduplicating cross-source postings. Hybrid full-text and pgvector search (HNSW, int8 ONNX embeddings, reciprocal rank fusion); retrieval queries run at 19 ms p95 in local tests. Ships Google OAuth, kanban application tracking, and saved-search email alerts.",
     tech: ['Python', 'FastAPI', 'PostgreSQL', 'pgvector', 'Next.js', 'TypeScript'],
     path: '/projects/chronicle',
     github: 'https://github.com/pratyushpad/Chronicle',

@@ -21,7 +21,7 @@ const pipeline = [
   },
   {
     name: 'Hybrid Search',
-    description: 'pgvector HNSW over int8 ONNX embeddings, fused with full-text ranking via Reciprocal Rank Fusion, at 19 ms p95 in local tests.',
+    description: 'pgvector HNSW over int8 ONNX embeddings, fused with full-text ranking via Reciprocal Rank Fusion. Retrieval queries run at 19 ms p95 in local tests.',
     icon: '03',
     accent: '#a3a3a3',
   },
